@@ -1,6 +1,6 @@
 # Status da campanha Raze Geradores
 
-Atualizado em 07/10/2026, 12h, com a planilha de prospecção do dia. Publicado no GitHub Pages em 07/10.
+Carteira com 568 contas: 36 em andamento e 532 não abordadas. Publicado no GitHub Pages, com o relatório do cliente também entregue em arquivo HTML.
 
 ## Onde ver
 
@@ -31,6 +31,7 @@ Seis contas estão marcadas como de grande porte ou de rede, a validar com a Raz
 
 - **Painel:** só o Kanban e os contatos. O Kanban tem uma coluna por etapa (não abordada, localizar o responsável, retorno combinado, abordar por canais de apoio, apresentar a proposta personalizada, proposta enviada, proposta aceita, encerrada sem negócio), com o campo "Evolução até esta etapa" em cada cartão. A lista de leads abre a ficha de cada conta, com o contato, os dados da empresa e o histórico.
 - **Carteira:** 568 contas: as 40 da campanha, 263 da lista de indústria e cadeia fria (`incluir_lista.py`, a partir de `leads_cadeia_fria_300_raze.csv`; 37 das 300 linhas não entraram por repetirem telefone, nome ou CNPJ) e 265 da base do Rio de Janeiro e região metropolitana, estas montadas por `montar_carteira.py` a partir das listas do `Painel_Raze`: 87 condomínios, 59 supermercados e cadeia fria, 40 administradoras de condomínios, 40 de saúde, 32 postos de combustível e 7 de comércio e centros comerciais. Ordem: 15 na semana 1, 15 na semana 2, 9 em "validar dados antes" e 226 na base.
+- **Celular:** o painel foi ajustado para telas de 390 px e de 820 px (abas da ficha em duas linhas, kanban deslizando coluna a coluna). O teste foi por retrato de tela, não em aparelho.
 - **Playbook e catálogo:** `playbook.json` e `catalogo.json` estão escritos para a Raze (seis segmentos, sete soluções, objeções e qualificações), mas as telas Playbook, Soluções, Inteligência, Tarefas e Segmentação e a aba Ligação estão desligadas. Não há propostas visuais.
 
 ## Limitações da carteira
@@ -44,6 +45,11 @@ Seis contas estão marcadas como de grande porte ou de rede, a validar com a Raz
 
 ## Pendências
 
+- Cumprir os retornos: 17 contas na quinta, 08/10; 15 na sexta, 09/10; Centro Médico Pró-Cardíaco na terça, 13/10.
+- Validar com a Raze se entram na campanha as contas de grande porte ou de rede (Centro Empresarial Rio, Torre Almirante, Shopping Downtown, RB1, Sheraton, Croma Oncologia e Centro Médico Pró-Cardíaco).
+- Decidir a retirada do laboratório da UFRJ (órgão público, contratação por licitação) e achar o telefone real do Niemeyer 101.
+- Na lista de cadeia fria, 110 das 263 contas têm o telefone marcado como "a validar" no campo de sinal (celular sem o nono dígito, número de outra UF ou de preenchimento).
+- Abrir o painel em um celular para confirmar o toque e a rolagem do kanban.
 - Criar a campanha da Raze no Callix e preencher `.env` (token e número da campanha).
 - Confirmar com a Raze os 26 itens de `a_confirmar` do playbook, a começar pelo preço do Diagnóstico de prontidão, pelos municípios atendidos e pelo nome do responsável técnico.
 - Logotipo da Raze em branco para a barra lateral (hoje o nome vai escrito).
