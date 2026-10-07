@@ -257,7 +257,10 @@ section{margin-bottom:38px}
 
 .menu{display:none}
 @media (max-width:960px){
-  .app{grid-template-columns:1fr}
+  .app{grid-template-columns:1fr; grid-template-rows:auto 1fr}
+  .subabas{flex-wrap:wrap; overflow:visible}
+  .kanban{scroll-snap-type:x mandatory; scroll-padding-left:2px}
+  .kcol{flex-basis:min(86vw,340px); scroll-snap-align:start}
   .trilho{position:static; height:auto}
   .leads, .bloco-leads .leads{max-height:0; padding-bottom:0; overflow:hidden}
   .trilho.aberto .leads{max-height:50vh; padding-bottom:16px; overflow-y:auto}
@@ -711,11 +714,12 @@ function segmentacao(){
 }
 
 function ligHtml(x){
-  return `<div class="lig"><div class="t"><span><b>${quando(x.inicio)}</b> <span class="obs">${x.completada?`· ${tempo(x.falado)} de conversa`:"· não completada"}${x.agente?` · ${esc(x.agente)}`:""}</span></span>
+  const manual = String(x.id).startsWith("manual-");
+  return `<div class="lig"><div class="t"><span><b>${manual ? dataCurta(diaSP(x.inicio)) : quando(x.inicio)}</b> <span class="obs">${manual ? "" : x.completada?`· ${tempo(x.falado)} de conversa`:"· não completada"}${x.agente?` · ${esc(x.agente)}`:""}</span></span>
       <span>${x.qualificacao?pill(x.qualificacao,x.sucesso?"--verde":"--cinza"):""}</span></div>
     <div class="obs">${esc(x.rotulo||"")}${x.telefone?` · <span class="mono">${esc(x.telefone)}</span>`:""}${x.desligamento?` · ${esc(x.desligamento)}`:""}</div>
     ${x.nota?`<p>${esc(x.nota)}</p>`:""}
-    ${x.audio?`<audio controls preload="none" src="${esc(x.audio)}"></audio>`:x.completada?`<p class="obs">Gravação ainda não baixada.</p>`:""}
+    ${x.audio?`<audio controls preload="none" src="${esc(x.audio)}"></audio>`:x.completada && !manual?`<p class="obs">Gravação ainda não baixada.</p>`:""}
     ${x.resumo?`<p><b>Resumo:</b> ${esc(x.resumo)}</p>`:""}
     ${x.conversa?conversaHtml(x.conversa):""}</div>`;
 }
