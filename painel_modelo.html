@@ -300,7 +300,7 @@ const SIT = {
 };
 const SITP = {no_site:"--verde", parcial:"--ambar", fora:"--vermelho", nao_conferido:"--cinza"};
 /* Ordem de abordagem das contas */
-const ONDA = {s1:"Semana 1", s2:"Semana 2", validar:"Validar dados antes", base:"Base, sem estudo individual"};
+const ONDA = {c1:"Campanha em andamento", s1:"Semana 1", s2:"Semana 2", validar:"Validar dados antes", base:"Base, sem estudo individual"};
 const brl = v => "R$ "+Math.round(v).toLocaleString("pt-BR");
 const CONF = {alta:"--verde", media:"--ambar", baixa:"--vermelho"};
 const P = DB.playbook, K = DB.catalogo, C = DB.contas;
@@ -359,7 +359,7 @@ function entrada(c){
   const ids = (P.segmentos[c.segmento]?.ofertas||[]).map(o=>o.solucao);
   const prod = (c.analise?.produto_de_entrada||c.combo||"").toLowerCase();
   const id = (prod && ids.find(k=>P.solucoes[k].chaves.some(x=>prod.includes(x)))) || ids[0];
-  return {id, ...(P.solucoes[id]||{nome:"", referencia:"", composicao:[]})};
+  return {id, ...(P.solucoes[id]||{nome:(c.combo||"").replace(/^[CP]\d\s/,""), referencia:"", composicao:[]})};
 }
 /* A pesquisa às vezes traz o telefone com uma observação junto; para discar, vale só o número */
 const soNumero = t => (String(t||"").match(/(?:\+55\s?)?\(?\d{2}\)?\s?\d{4,5}[-\s]?\d{4}|0800[\s-]?\d{3}[\s-]?\d{4}/)||[""])[0];
@@ -381,7 +381,7 @@ const ETAPAS = {
 /* A antiga etapa "enviar a proposta pedida" foi unida à de apresentar a proposta personalizada */
 const unida = k => k==="enviar" ? "apresentar" : k;
 const etapaDe = c => unida(MOV[c.id]?.etapa || c.chamadas.find(x=>x.etapa)?.etapa || "tentar");
-const contatoDe = c => (c.analise?.decisores||[]).filter(d=>/informado pela Esparta/.test(d.cargo)).map(d=>d.nome).join(" e ");
+const contatoDe = c => c.contato || (c.analise?.decisores||[]).filter(d=>/informado pela Esparta/.test(d.cargo)).map(d=>d.nome).join(" e ");
 
 /* Inteligência: o que já foi abordado e em que pé está, o que falta abordar, com qual técnica e qual oferta */
 const contar = (lista, f) => { const m = new Map(); for (const x of lista){ const k = f(x); m.set(k, (m.get(k)||0)+1) } return [...m].sort((a,b)=>b[1]-a[1]) };
@@ -554,6 +554,7 @@ function analise(c){
     const tel = telefone(c), campo = (t,v) => v ? `<div><dt>${t}</dt><dd>${v}</dd></div>` : "";
     return `<div class="duas">
     <div class="folha"><h3>Contato</h3><dl class="ficha">
+      ${campo("Falar com", esc(c.contato||""))}
       ${campo("Telefone", tel ? telLink(tel) : `<span class="vazio">não encontrado</span>`)}
       ${campo("E-mail", c.email ? `<a class="mono" href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : "")}
       ${campo("Site", c.site ? link(c.site, dominio(c.site)) : "")}
@@ -776,8 +777,10 @@ function kanban(){
   const LIMITE = 25, movidas = Object.keys(MOV).length;
   const lista = C.filter(c=>!kbSeg || c.segmento===kbSeg), ordemOnda = Object.keys(ONDA);
   const vez = c => ordemOnda.indexOf(c.onda)+1 || 9;
-  const ordem = (a,b) => vez(a)-vez(b) || nota(b)-nota(a) || a.empresa.localeCompare(b.empresa);
   const porConta = new Map(listaTarefas().filter(t=>t.conta && t.sit!=="feita").map(t=>[t.conta.id, t]));
+  /* Dentro da coluna, primeiro quem tem o próximo passo mais cedo */
+  const prazoDe = c => porConta.get(c.id)?.prazo || "9";
+  const ordem = (a,b) => prazoDe(a).localeCompare(prazoDe(b)) || vez(a)-vez(b) || nota(b)-nota(a) || a.empresa.localeCompare(b.empresa);
   const cartao = (c, cor) => { const k = colunaDe(c), ini = entradaNaEtapa(c), t = porConta.get(c.id), dias = ini && k!=="nova" ? Math.max(0, diasEntre(diaSP(ini), HOJE)) : null;
     return `<article class="kcard" style="--c:var(${cor})" ${CLIENTE?"":'draggable="true"'} data-kb="${c.id}" data-ir="lead/${c.id}" tabindex="0" title="${esc(c.chamadas[0]?.nota||"")}">
       <b>${esc(c.empresa)}</b><small>${esc(entrada(c).nome)} · ${esc(c.segmento)}${c.revenda?" · revenda":""}</small>
