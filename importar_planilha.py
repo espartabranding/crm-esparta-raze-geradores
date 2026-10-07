@@ -3,6 +3,7 @@
 Lê as abas "Abordagens — Não hospitalares", "Abordagens — Clínicas" e "Painel de status" e:
 - põe as contas da planilha em contas.json, com identificador x1, x2... e a onda "c1" (campanha em andamento);
 - grava em tentativas.json o resultado do contato de cada uma, com a etapa do kanban e o prazo do próximo passo.
+  O contato é registrado na segunda-feira da semana da planilha.
 
 Regra do prazo (pedida em 07/10): o que estava para "à tarde" ou para o próprio dia da planilha vai para o dia
 útil seguinte; "ligar novamente" sem data vai para o dia útil seguinte nas contas de prioridade A e para o
@@ -90,6 +91,8 @@ def importar(planilha: Path) -> None:
     posicao = re.search(r"(\d{2})/(\d{2})/(\d{4})", str(livro["Painel de status"]["A2"].value))
     hoje = date(int(posicao[3]), int(posicao[2]), int(posicao[1]))
     amanha, depois = _util(hoje), _util(hoje, 2)
+    # Os contatos são registrados na segunda-feira da semana da planilha; a posição da planilha só serve para os prazos.
+    contato_em = hoje - timedelta(days=hoje.weekday())
     fichas = {}
     for nome in ("Abordagens — Não hospitalares", "Abordagens — Clínicas"):
         for linha in _linhas(livro[nome]):
@@ -118,7 +121,7 @@ def importar(planilha: Path) -> None:
             "telefone": "" if invalido else telefone, "site": fonte if fonte.startswith("http") and "datasus" not in fonte else "",
             "email": email, "contato": contato, "porte": "Grande porte" if grande else "a confirmar",
             "perfil": [f"{tipo} em {st['Bairro']}, Rio de Janeiro." + (f" {ficha['Endereço']}." if ficha.get("Endereço") else "")],
-            "sinal": " ".join(x for x in (f"Prioridade {ficha['Prioridade']} na planilha de {hoje:%d/%m}." if ficha.get("Prioridade") else "", st["Observações"],
+            "sinal": " ".join(x for x in (f"Prioridade {ficha['Prioridade']} na planilha." if ficha.get("Prioridade") else "", st["Observações"],
                                             f"Outros telefones: {outros}." if outros else "") if x),
             "fontes": [{"t": urlparse(fonte).hostname.removeprefix("www."), "u": fonte}] if fonte.startswith("http") else [],
             "proximo": st["Próxima ação"] or "Não abordada", "combo": plano[0], "combo_secundario": "",
@@ -151,7 +154,7 @@ def importar(planilha: Path) -> None:
             partes.append(f"Próximo passo: {acao[0].lower() + acao[1:]}, em {prazo:%d/%m} ({DIAS[prazo.weekday()]}).")
         if st["Observações"]:
             partes.append(st["Observações"])
-        registros.append({"conta": id_conta, "quando": datetime(hoje.year, hoje.month, hoje.day, 15, 0).isoformat() + "+00:00", "qualificacao": qualificacao,
+        registros.append({"conta": id_conta, "quando": datetime(contato_em.year, contato_em.month, contato_em.day, 15, 0).isoformat() + "+00:00", "qualificacao": qualificacao,
                           "nota": " ".join(partes), "etapa": etapa, "conversou": conversou, **({"prazo": prazo.isoformat()} if prazo else {})})
 
     # As contas da planilha entram na frente; uma conta da base com o mesmo nome ou o mesmo telefone sai, para não duplicar.

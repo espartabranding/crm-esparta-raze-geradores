@@ -948,7 +948,7 @@ document.addEventListener("mousemove", e=>{
 document.addEventListener("keydown", e=>{ if (e.key==="Enter" && e.target.matches("tr[data-ir]")) location.hash = e.target.dataset.ir.replaceAll("/",".") });
 $("busca").addEventListener("input", ()=>{ $("trilho").classList.add("aberto"); trilho() });
 $("menu").addEventListener("click", ()=>$("trilho").classList.toggle("aberto"));
-$("atualizado").textContent = (CLIENTE ? "Relatório de prospecção · Esparta Hunter · atualizado " : "Mesa de ligação · atualizado ") + quando(DB.gerado_em);
+$("atualizado").textContent = CLIENTE ? "Relatório de prospecção · Esparta Hunter" : "Mesa de ligação";
 if (CLIENTE) document.querySelectorAll('.nav [data-ir="playbook"], .nav [data-ir="catalogo"]').forEach(b=>b.remove());
 desenhar();
 </script>

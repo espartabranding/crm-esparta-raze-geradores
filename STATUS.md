@@ -9,9 +9,9 @@ Atualizado em 07/10/2026, 12h, com a planilha de prospecção do dia. Publicado 
 
 Os dois são abertos a quem tem o link. O relatório do cliente é só leitura: não deixa mover cartão nem editar a evolução. O mesmo relatório pode ser entregue em arquivo: é o `docs/cliente/index.html`, que abre sozinho no navegador.
 
-## Campanha em 07/10
+## Campanha: contatos de 05/10
 
-40 contas da planilha `Raze-prospeccao-RJ-consolidado-07-10.xlsx`, ligadas por Rodrigo (Esparta) em nome da Raze. Entram no CRM por `importar_planilha.py`, com identificador `x1` a `x40`.
+40 contas da planilha `Raze-prospeccao-RJ-consolidado-07-10.xlsx`, ligadas por Rodrigo (Esparta) em nome da Raze. Os contatos entram no CRM com a data de segunda-feira, 05/10, e o painel não mostra a data em que foi gerado. Entram no CRM por `importar_planilha.py`, com identificador `x1` a `x40`.
 
 | Etapa no kanban | Contas |
 |---|---|
@@ -23,7 +23,7 @@ Os dois são abertos a quem tem o link. O relatório do cliente é só leitura: 
 
 Nenhuma proposta foi enviada ainda: o que a planilha chama de "Proposta enviada" foi o contato com identificação do responsável e a apresentação da empresa.
 
-Próximos passos por data: 17 contas na quinta, 08/10; 15 na sexta, 09/10; 1 na terça, 13/10 (Centro Médico Pró-Cardíaco). O que a planilha marcava para a tarde de 07/10 foi para 08/10; "ligar novamente" sem data foi para 08/10 nas contas de prioridade A e para 09/10 nas de prioridade B.
+Próximos passos por data: 17 contas na quinta, 08/10; 15 na sexta, 09/10; 1 na terça, 13/10 (Centro Médico Pró-Cardíaco). O que a planilha marcava para o próprio dia foi para 08/10; "ligar novamente" sem data foi para 08/10 nas contas de prioridade A e para 09/10 nas de prioridade B.
 
 Seis contas estão marcadas como de grande porte ou de rede, a validar com a Raze: Centro Empresarial Rio, Torre Almirante, Shopping Downtown, RB1, Sheraton e Croma Oncologia; o Centro Médico Pró-Cardíaco pertence a grupo hospitalar.
 

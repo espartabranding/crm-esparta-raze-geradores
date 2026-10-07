@@ -4,7 +4,6 @@ import json
 import re
 import sqlite3
 import unicodedata
-from datetime import UTC, datetime
 from pathlib import Path
 
 import conversa
@@ -174,7 +173,6 @@ def montar(db: sqlite3.Connection, plano: dict, catalogo: dict, playbook: dict) 
         "playbook": playbook,
         "contas": contas,
         "avulsas": avulsas,
-        "gerado_em": datetime.now(UTC).isoformat(),
     }
 
 
