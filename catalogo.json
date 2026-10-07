@@ -1,0 +1,88 @@
+{
+  "fonte": "https://www.razegeradores.com.br/portfolio/",
+  "consultado_em": "07/10/2026",
+  "contato": "WhatsApp +55 21 97005-5314 · contato@razegeradores.com.br · de segunda a sexta",
+  "pagamento": "A confirmar com a Raze. O Diagnóstico de prontidão tem preço definido e é abatido no contrato caso ele seja fechado; os planos são contratos recorrentes.",
+  "familias": [
+    {
+      "nome": "Porta de entrada",
+      "resumo": "Todo contrato começa pelo Diagnóstico de prontidão: serviço técnico pago, com preço definido e abatido no contrato caso ele seja fechado. O site não publica o valor.",
+      "itens": [
+        {"nome": "Diagnóstico de Prontidão", "preco": "preço definido, abatido no contrato; valor a confirmar com a Raze"},
+        {"nome": "Inspeção de gerador, QTA e subestação", "preco": "incluso no Diagnóstico"},
+        {"nome": "Ensaio de partida cronometrado", "preco": "incluso no Diagnóstico"},
+        {"nome": "Verificação de abrangência real", "preco": "incluso no Diagnóstico"},
+        {"nome": "Laudo com ART e registro fotográfico", "preco": "incluso no Diagnóstico"},
+        {"nome": "Classificação de risco e reunião de leitura acessível", "preco": "incluso no Diagnóstico"}
+      ]
+    },
+    {
+      "nome": "Planos por segmento",
+      "resumo": "Quatro planos de contrato recorrente, com manutenção preventiva contratada, ensaio e documentação inclusos. O site não publica preço; cadência de visitas e prazos de SLA estão a confirmar. O plano Comercial é sob demanda, e nenhum plano cita postos de combustível.",
+      "itens": [
+        {"nome": "Prontidão Residencial (condomínios)", "preco": "a confirmar com a Raze"},
+        {"nome": "Prontidão Hospitalar (saúde)", "preco": "a confirmar com a Raze"},
+        {"nome": "Prontidão Industrial (indústria e cadeia fria)", "preco": "a confirmar com a Raze"},
+        {"nome": "Prontidão Comercial (comércio de médio e grande porte, sob demanda)", "preco": "a confirmar com a Raze"},
+        {"nome": "Manutenção preventiva contratada", "preco": "incluso no plano"}
+      ]
+    },
+    {
+      "nome": "Laudos e conformidade",
+      "resumo": "Documentos técnicos assinados por engenheiro registrado no CREA-RJ. Entram nos planos ou são contratados à parte. O que se aplica a cada unidade é confirmado pelo engenheiro no Diagnóstico.",
+      "itens": [
+        {"nome": "Laudo de autovistoria predial e de abrangência", "preco": "incluso no plano Residencial e no Comercial; avulso a confirmar com a Raze"},
+        {"nome": "Conformidade RDC 50 para estabelecimentos de saúde", "preco": "incluso no plano Hospitalar; avulso a confirmar com a Raze"},
+        {"nome": "Prontuário de Instalações Elétricas — NR-10", "preco": "a confirmar com a Raze"},
+        {"nome": "ART por serviço executado", "preco": "incluso no plano"}
+      ]
+    },
+    {
+      "nome": "Ensaios e relatórios",
+      "resumo": "A prova medida: carga real aplicada ao gerador, tempo de partida, autonomia e comparação de cada medição com a anterior.",
+      "itens": [
+        {"nome": "Ensaios de desempenho sob carga (banco de cargas)", "preco": "incluso no plano; avulso a confirmar com a Raze"},
+        {"nome": "Partida cronometrada e autonomia medida", "preco": "incluso no plano"},
+        {"nome": "Relatório técnico e histórico de tendência", "preco": "incluso no plano"},
+        {"nome": "Dossiê de assembleia (apoio à decisão)", "preco": "incluso no plano Residencial"}
+      ]
+    },
+    {
+      "nome": "Emergência e corretiva",
+      "resumo": "Atendimento de emergência com prazo em contrato e correção do que o ensaio aponta. Os prazos de SLA e o valor da penalidade ainda não foram informados pela Raze: o agente não cita número.",
+      "itens": [
+        {"nome": "SLA de emergência e apoio à decisão (dossiê de assembleia)", "preco": "incluso no plano; prazos a confirmar com a Raze"},
+        {"nome": "Manutenção corretiva e retrofit de QTA", "preco": "a confirmar com a Raze"}
+      ]
+    }
+  ],
+  "servicos": "Engenharia de manutenção preventiva e prontidão de sistemas de energia de emergência (grupo gerador, QTA, subestação e nobreak), sob um único responsável técnico, com registro CREA-RJ 2013106539. Método de sete etapas: abrangência, inspeção do conjunto, banco de cargas, partida cronometrada, autonomia medida, tendência registrada, ART e laudos. Atende a cidade do Rio de Janeiro e a região metropolitana. A Raze não vende nem aluga gerador.",
+  "situacoes": {
+    "no_site": "No portfólio",
+    "parcial": "Sob demanda",
+    "fora": "Fora do portfólio",
+    "nao_conferido": "Não conferido"
+  },
+  "regras": [
+    {"contem": "diagnostico de prontidao", "situacao": "no_site", "nota": "Porta de entrada de todo contrato. Preço definido e abatido no contrato; valor a confirmar com a Raze."},
+    {"contem": "ensaios de desempenho", "situacao": "no_site", "nota": "Ensaio com banco de cargas: carga real, não em vazio. Incluso nos planos; avulso a confirmar. Nenhuma lei fixa periodicidade para este ensaio."},
+    {"contem": "manutencao preventiva", "situacao": "no_site", "nota": "Base dos quatro planos. Cadência de visitas por plano a confirmar com a Raze."},
+    {"contem": "corretiva e retrofit", "situacao": "parcial", "nota": "Correção do que o diagnóstico ou o ensaio apontam e retrofit do quadro de transferência. Escopo e preço definidos caso a caso."},
+    {"contem": "autovistoria", "situacao": "no_site", "nota": "Laudo com ART. Na capital, intervalo máximo de 5 anos (LC 126/2013). No RJ, o documento do Corpo de Bombeiros é o Certificado de Aprovação do CBMERJ."},
+    {"contem": "rdc 50", "situacao": "no_site", "nota": "Para estabelecimentos de saúde: registro auditável do que o sistema de emergência sustenta. O engenheiro confirma no local o que se aplica."},
+    {"contem": "prontuario", "situacao": "no_site", "nota": "Prontuário de Instalações Elétricas da NR-10. Não citar corte de carga nem prazo na ligação: a regra muda em 01/06/2027."},
+    {"contem": "relatorio tecnico", "situacao": "no_site", "nota": "Cada medição comparada à anterior: a degradação aparece antes da falha. Incluso nos planos."},
+    {"contem": "sla de emergencia", "situacao": "no_site", "nota": "Atendimento de emergência com prazo em contrato e dossiê de assembleia. Prazos e penalidade a confirmar: não citar número."},
+    {"contem": "prontidao residencial", "situacao": "no_site", "nota": "Plano para condomínios. Preço e cadência a confirmar com a Raze."},
+    {"contem": "prontidao hospitalar", "situacao": "no_site", "nota": "Plano para estabelecimentos de saúde. Preço e cadência a confirmar com a Raze."},
+    {"contem": "prontidao industrial", "situacao": "no_site", "nota": "Plano para indústria e cadeia fria. Preço e cadência a confirmar com a Raze."},
+    {"contem": "prontidao comercial", "situacao": "parcial", "nota": "Plano sob demanda, para comércio de médio e grande porte. Aplicação a postos de combustível a confirmar com a Raze."},
+    {"contem": "nobreak", "situacao": "parcial", "nota": "O nobreak entra na inspeção do conjunto e no plano Hospitalar. Atendimento isolado de nobreak a confirmar com a Raze."},
+    {"contem": "subestacao", "situacao": "parcial", "nota": "A subestação entra na inspeção do conjunto. Manutenção isolada de subestação a confirmar com a Raze."},
+    {"contem": "locacao", "situacao": "fora", "nota": "A Raze não aluga gerador."},
+    {"contem": "aluguel", "situacao": "fora", "nota": "A Raze não aluga gerador."},
+    {"contem": "venda de gerador", "situacao": "fora", "nota": "A Raze não vende gerador: atua na engenharia de quem já tem o sistema instalado."},
+    {"contem": "evento", "situacao": "fora", "nota": "A Raze não atende eventos nem fornecimento temporário de energia."},
+    {"contem": "residencia", "situacao": "fora", "nota": "A Raze não atende residências. Condomínio residencial é atendido pelo plano Prontidão Residencial."}
+  ]
+}

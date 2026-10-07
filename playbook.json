@@ -1,0 +1,847 @@
+{
+  "cliente": "Raze Geradores",
+  "tipo_de_venda": "consultiva",
+  "objetivo": {
+    "recepcao": "Esteira 1, com a recepção, a portaria ou a administração: sair com o nome de quem responde pelo sistema de energia de emergência (gerador, quadro de transferência, subestação e nobreak), um contato direto e o melhor horário para falar com essa pessoa.",
+    "principal": "Esteira 2, com o contato obtido: apresentar a proposta, confirmar como o sistema é testado e documentado hoje e combinar o Diagnóstico de prontidão, serviço técnico com preço definido e abatido no contrato caso ele seja fechado.",
+    "plano_b": "Se o Diagnóstico não for combinado: sair com o contato direto, a data que move a decisão (autovistoria, Certificado de Aprovação, inspeção, assembleia ou fechamento do orçamento) e permissão para enviar o escopo do Diagnóstico de prontidão."
+  },
+  "a_confirmar": [
+    "Preço do Diagnóstico de prontidão. O site informa apenas que o preço é definido e abatido no contrato; o agente envia o valor por escrito e não o diz na ligação.",
+    "Preço ou faixa de preço dos planos (Residencial, Hospitalar, Industrial e Comercial) e dos serviços avulsos (laudo de autovistoria, conformidade RDC 50, prontuário NR-10, ensaio com banco de cargas, retrofit de QTA).",
+    "Cadência real de visitas e prazos de SLA por plano, e o valor da penalidade. Enquanto não houver número, o agente não cita prazo de atendimento.",
+    "Prazo entre o aceite e a execução do Diagnóstico de prontidão, e prazo de entrega do laudo.",
+    "Nome do responsável técnico (o site traz o registro CREA-RJ 2013106539) e quem, na Raze, recebe as oportunidades e conduz a reunião de leitura do laudo.",
+    "Razão social, CNPJ e endereço da Raze, para o agente informar quando perguntarem.",
+    "Quais dos 22 municípios da região metropolitana a Raze atende de fato. A lista usada hoje é o teto, não a confirmação.",
+    "Porte mínimo de conta por segmento (o site só diz “médio e grande porte” para comércio).",
+    "Qual plano a Raze oferece a posto de combustível e a hotel. Nenhum dos quatro planos do site cita esses segmentos; o playbook usa o Prontidão Comercial como hipótese.",
+    "Carteira atual, segmentos já atendidos e casos que podem ser citados como referência. Enquanto não houver, o agente não cita cliente nem caso.",
+    "Quais serviços são feitos com equipe própria e quais são subcontratados (banco de cargas, subestação, nobreak).",
+    "Prazo de responsabilidade civil a comunicar.",
+    "Ticket, margem e capacidade de absorção de contratos: quantos Diagnósticos de prontidão a Raze executa por semana.",
+    "Vigência da Portaria IVISA-Rio 002/2020 (gerador em supermercado). Sem confirmação do IVISA-Rio, a norma fica fora das falas.",
+    "Calendário real de decisão dos clientes. Assembleia de orçamento em novembro e dezembro e orçamento de saúde entre setembro e novembro são hipóteses.",
+    "Prioridade entre os quatro planos e entre os segmentos da campanha.",
+    "Condição para administradoras e síndicos profissionais: há proposta por carteira, preço por lote de prédios ou prédio piloto?",
+    "A Raze participa de assembleia de condomínio para apresentar o dossiê? A estratégia prevê; o site não confirma.",
+    "O checklist de conformidade elétrica RDC 50 em PDF existe e pode ser enviado a estabelecimentos de saúde antes ou depois da ligação?",
+    "A Raze atende conta sem gerador instalado (projeto ou especificação), ou a oferta só existe para quem já tem o sistema?",
+    "A Raze atende sistemas de qualquer fabricante e potência, inclusive subestação em média tensão?",
+    "Forma de pagamento e de faturamento do Diagnóstico e dos planos (mensalidade, boleto, contrato de 12 meses).",
+    "Que as caixas rodrigoazevedo@, comercial@ e administrativo@razegeradores.com.br existem e qual delas assina os e-mails da campanha.",
+    "De onde vieram os telefones da lista. O agente precisa responder a verdade quando perguntarem.",
+    "O posicionamento usado na abertura (“engenharia de prontidão de sistemas de energia de emergência”) foi redigido pela Esparta a partir do site. Confirmar se a Raze se apresenta assim.",
+    "Quem são os concorrentes que a Raze encontra na rua. O agente não cita nem comenta concorrente."
+  ],
+  "geral": {
+    "regras": [
+      "As falas são um guia. Mantenha o tom profissional e propositivo: cumprimente, diga o que propõe e por quê, e faça um pedido claro. Sem gíria, sem diminutivo e sem pedir desculpa por ligar.",
+      "A Raze não vende nem aluga gerador. O que se propõe é medir e documentar a prontidão do sistema que o cliente já tem: gerador, quadro de transferência, subestação e nobreak.",
+      "Venda o resultado, não a visita. Fale do elevador que continua funcionando, da área crítica que não fica sem energia, da câmara fria que mantém a temperatura. Ensaio, laudo e ART são o meio e a prova.",
+      "A primeira ligação vende o próximo passo. Com a recepção, o objetivo é o nome e o canal de quem responde pelo gerador. Com quem decide, é o Diagnóstico de prontidão.",
+      "O Diagnóstico de prontidão é serviço técnico pago, com preço definido e abatido no contrato caso ele seja fechado. Não o apresente como visita de cortesia nem como orçamento sem custo.",
+      "Nunca prometa transferência de risco ou de responsabilidade legal, nem resultado absoluto. Laudo e ART são prova de diligência: documentam que a verificação foi feita por engenheiro habilitado. A responsabilidade do síndico ou do gestor continua sendo dele.",
+      "Não cite lei, norma ou prazo legal além do que está escrito no roteiro do segmento. Nenhuma lei fixa periodicidade para ensaio com banco de cargas. Na dúvida, diga que o engenheiro da Raze confirma no Diagnóstico o que se aplica àquela unidade.",
+      "No Rio de Janeiro, o documento do Corpo de Bombeiros é o Certificado de Aprovação do CBMERJ. Use sempre esse nome.",
+      "Falta de energia recente, autuação ou notícia sobre o cliente servem para priorizar a conta, nunca para abrir a conversa. Se o cliente mencionar o episódio, escute e pergunte; não o traga você.",
+      "Antes de falar da solução, faça o cliente dizer como o sistema é testado hoje e o que recebe por escrito. Depois ligue a proposta ao que ele disse.",
+      "Não diga preço, prazo de atendimento, nome de cliente nem número de mercado. O valor do Diagnóstico segue por escrito, na proposta.",
+      "Não critique o zelador, a equipe interna nem o prestador atual. A partida semanal e a manutenção de rotina são úteis; o que a Raze acrescenta é a medição sob carga e o registro.",
+      "Uma pergunta por vez. Escute a resposta inteira, não fale por cima e faça uma pergunta sobre o que a pessoa acabou de dizer.",
+      "Se a pessoa hesitar, diga que percebeu e ofereça parar. Um “não” claro vale mais que um “talvez”.",
+      "Depois de um “não” claro, agradeça, registre o motivo e encerre. Se pedirem para não ligar mais, confirme que vai retirar o número.",
+      "Combine sempre uma data para o próximo passo e cumpra no horário."
+    ],
+    "objecoes": [
+      {
+        "objecao": "O gerador liga toda semana.",
+        "por_tras": "Entende a partida semanal como prova de que o sistema está pronto.",
+        "resposta": "A partida semanal é uma boa prática e deve continuar. Ela mostra que o motor liga. O que ela não mostra é se o quadro de transferência comuta, se o gerador sustenta a carga real e por quantas horas. Há registro de algum ensaio feito sob carga?",
+        "proximo_passo": "Se não houver registro, propor o Diagnóstico de prontidão.",
+        "tipo": "bloqueio",
+        "nao_fazer": "Não desqualifique o zelador nem a rotina atual."
+      },
+      {
+        "objecao": "Já temos contrato de manutenção.",
+        "por_tras": "Está atendido e não quer o trabalho de trocar de prestador.",
+        "resposta": "É natural que haja contrato. A proposta não começa pela substituição: o Diagnóstico de prontidão mede o sistema como ele está hoje e entrega o laudo. O contrato atual inclui ensaio sob carga e autonomia medida, com registro?",
+        "proximo_passo": "Perguntar a vigência do contrato e o que ele entrega por escrito.",
+        "tipo": "bloqueio",
+        "nao_fazer": "Não critique o prestador atual."
+      },
+      {
+        "objecao": "Manda por e-mail.",
+        "por_tras": "Quer encerrar a ligação, ou prefere mesmo ler.",
+        "resposta": "Envio, sim. Para que o material seja específico: o que o gerador precisa manter ligado na falta de energia, e quando foi o último ensaio sob carga?",
+        "proximo_passo": "Pegar o e-mail direto, enviar o escopo do Diagnóstico no mesmo dia e marcar o retorno com dia e hora.",
+        "tipo": "adiamento",
+        "nao_fazer": "Não desligue sem saber o que mandar e quando retornar."
+      },
+      {
+        "objecao": "Agora não é prioridade.",
+        "por_tras": "Sem data que pressione. É questão de tempo, não recusa.",
+        "resposta": "Entendido, a proposta não exige decisão imediata. Qual é a próxima data relevante para o sistema: a autovistoria, o Certificado de Aprovação, uma inspeção ou o fechamento do orçamento?",
+        "proximo_passo": "Registrar a data e agendar a ligação com antecedência.",
+        "tipo": "adiamento",
+        "nao_fazer": "Não crie urgência que o cliente não declarou."
+      },
+      {
+        "objecao": "Não tenho tempo agora.",
+        "por_tras": "Momento ruim.",
+        "resposta": "Compreendo. Qual o melhor horário para retornar amanhã, pela manhã ou após o almoço?",
+        "proximo_passo": "Agendar e ligar no horário exato.",
+        "tipo": "adiamento",
+        "nao_fazer": "Não tente prolongar a ligação."
+      },
+      {
+        "objecao": "Não sou eu que cuido disso.",
+        "por_tras": "Pessoa errada, mas sabe quem é a certa.",
+        "resposta": "Agradeço a informação. Quem responde pelo gerador e pelo sistema de energia de emergência? Peço o nome e o melhor canal para apresentar a proposta.",
+        "proximo_passo": "Registrar nome, cargo e contato; citar quem indicou na próxima ligação.",
+        "tipo": "redirecionamento",
+        "nao_fazer": "Não apresente a solução para essa pessoa."
+      },
+      {
+        "objecao": "O diagnóstico é pago? Outras empresas fazem a visita sem cobrar.",
+        "por_tras": "Compara o Diagnóstico com uma visita comercial.",
+        "resposta": "É pago, sim, porque é um serviço de engenharia e não uma visita comercial: inspeção do conjunto, ensaio de partida cronometrado, laudo com ART e reunião de leitura. O preço é definido antes e abatido no contrato, caso ele seja fechado. O laudo fica com a empresa em qualquer cenário.",
+        "proximo_passo": "Enviar o escopo e o valor por escrito e marcar o retorno.",
+        "tipo": "preço",
+        "nao_fazer": "Não ofereça isenção nem desconto: não há condição confirmada."
+      },
+      {
+        "objecao": "Está caro. O prestador atual cobra menos.",
+        "por_tras": "Compara preço por visita, sem comparar o que é medido e entregue.",
+        "resposta": "O preço pesa, de fato. Qual é a base de comparação: o que a outra proposta mede em campo e o que entrega por escrito? Com esse escopo em mãos, a comparação fica na mesma base.",
+        "proximo_passo": "Pedir o escopo atual e enviar o da Raze para comparação.",
+        "tipo": "preço",
+        "nao_fazer": "Não ofereça desconto nem diga que o concorrente é ruim."
+      },
+      {
+        "objecao": "A decisão é da matriz, da rede ou da administradora.",
+        "por_tras": "Decisão fora da unidade, ou só uma forma de encerrar.",
+        "resposta": "Entendido. Quem responde pelo sistema de energia de emergência nessa instância? Peço o nome e o canal, e menciono que a indicação partiu de você.",
+        "proximo_passo": "Registrar o contato indicado e ligar citando a indicação.",
+        "tipo": "redirecionamento",
+        "nao_fazer": "Não discuta a política da empresa."
+      },
+      {
+        "objecao": "Com o laudo, a responsabilidade passa a ser de vocês?",
+        "por_tras": "Quer saber se o laudo o protege.",
+        "resposta": "Não, e é importante dizer com clareza. A responsabilidade pela edificação e pela operação continua com quem responde por ela. O laudo com ART vincula um engenheiro registrado ao serviço executado e documenta que a verificação foi feita por profissional habilitado: é a prova de que a gestão fez o que devia.",
+        "proximo_passo": "Seguir para o pedido do Diagnóstico.",
+        "tipo": "dúvida",
+        "nao_fazer": "Não prometa transferência de risco nem de responsabilidade."
+      },
+      {
+        "objecao": "Vocês garantem que o gerador não falha?",
+        "por_tras": "Procura uma garantia absoluta.",
+        "resposta": "Nenhuma empresa séria garante isso. O que a Raze entrega é a medição: em quantos segundos o sistema assume, que carga sustenta e por quantas horas, com o registro de cada ensaio para comparar com o anterior. A degradação aparece antes da falha, e a decisão passa a ser tomada com número.",
+        "proximo_passo": "Seguir para o pedido do Diagnóstico.",
+        "tipo": "dúvida",
+        "nao_fazer": "Não prometa resultado absoluto."
+      }
+    ],
+    "nao_atendeu": {
+      "caixa_postal": "Bom dia, [Nome]. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta para medir e documentar a prontidão do gerador de [Empresa]. Retorno amanhã pela manhã.",
+      "whatsapp": "Bom dia, [Nome]. Aqui é [Seu nome], da Raze Geradores. Conforme combinado por telefone, segue o escopo do Diagnóstico de prontidão. Para ajustar a proposta: o que o gerador de [Empresa] precisa manter ligado na falta de energia?",
+      "email": "Assunto: Diagnóstico de prontidão do sistema de energia de emergência de [Empresa]\n\n[Nome], a Raze Geradores é uma empresa de engenharia do Rio de Janeiro dedicada à prontidão de sistemas de energia de emergência: gerador, quadro de transferência, subestação e nobreak, sob um único responsável técnico.\n\nNossa proposta para [Empresa] começa pelo Diagnóstico de prontidão: inspeção do conjunto, ensaio de partida cronometrado, verificação do que o gerador de fato alimenta e classificação de risco, com laudo, ART e reunião de leitura. É um serviço técnico com preço definido, abatido no contrato caso ele seja fechado.\n\nHá registro do último ensaio do gerador feito sob carga? Com essa informação, envio o escopo e o valor no mesmo dia."
+    },
+    "cadencia": [
+      "Até 8 contatos por conta em três semanas, somando telefone, e-mail e WhatsApp.",
+      "Varie o horário entre as tentativas. Os dados brasileiros não mostram um horário melhor dentro do expediente; o atendimento só cai depois das 18h.",
+      "No máximo três chamadas não atendidas por dia para o mesmo número.",
+      "Se a recepção passou um nome, a ligação seguinte já pede essa pessoa pelo nome e cita quem indicou.",
+      "E-mail depois da segunda tentativa sem conversa. WhatsApp só com permissão dada por telefone ou em número que a empresa divulga para contato comercial.",
+      "Conta com data conhecida (autovistoria, Certificado de Aprovação, inspeção, assembleia, orçamento) recebe o retorno agendado com antecedência em relação a essa data.",
+      "Depois de uma recusa clara, pausar a conta por pelo menos um mês. Depois de oito contatos sem conversa, pausar por 30 dias."
+    ],
+    "tabulacoes": [
+      {
+        "nome": "Pediu proposta",
+        "quando": "Pediu a proposta do Diagnóstico de prontidão ou de um plano e informou o que o gerador alimenta e quem cuida do sistema hoje.",
+        "proxima_acao": "Passar à Raze no mesmo dia para envio do escopo e do valor; ligar em 2 dias úteis.",
+        "sucesso": true
+      },
+      {
+        "nome": "Levantamento combinado",
+        "quando": "Aceitou o Diagnóstico de prontidão ou a conversa com o engenheiro da Raze, com data marcada.",
+        "proxima_acao": "Passar à Raze com data, contato e o que foi dito; confirmar na véspera.",
+        "sucesso": true
+      },
+      {
+        "nome": "Compra prevista com data",
+        "quando": "Informou a data que move a decisão: vencimento da autovistoria ou do Certificado de Aprovação, inspeção, assembleia, fechamento do orçamento ou fim do contrato atual.",
+        "proxima_acao": "Agendar ligação com antecedência em relação à data informada.",
+        "sucesso": true
+      },
+      {
+        "nome": "Recepção passou informação",
+        "quando": "Saiu com nome, cargo, canal ou horário de quem responde pelo gerador.",
+        "proxima_acao": "Ligar no horário indicado, pedindo a pessoa pelo nome.",
+        "sucesso": false
+      },
+      {
+        "nome": "Recepção bloqueou",
+        "quando": "Não transferiu nem passou informação.",
+        "proxima_acao": "Tentar em outro horário; na segunda vez, pedir o e-mail da administração ou da manutenção.",
+        "sucesso": false
+      },
+      {
+        "nome": "Indicou outro contato",
+        "quando": "Mandou falar com outra pessoa ou empresa: administradora, síndico profissional, matriz, manutenção terceirizada.",
+        "proxima_acao": "Ligar para o indicado citando quem indicou.",
+        "sucesso": false
+      },
+      {
+        "nome": "Retornar em data combinada",
+        "quando": "Pediu para ligar em outro dia ou horário.",
+        "proxima_acao": "Ligar no horário exato.",
+        "sucesso": false
+      },
+      {
+        "nome": "Enviar material",
+        "quando": "Pediu e-mail sem dizer como o sistema é testado hoje.",
+        "proxima_acao": "Enviar o escopo do Diagnóstico no mesmo dia e ligar em 2 dias úteis.",
+        "sucesso": false
+      },
+      {
+        "nome": "Só orçamento",
+        "quando": "Sabe o que quer e pediu preço de um serviço específico: laudo de autovistoria, ensaio com banco de cargas, prontuário NR-10, conformidade RDC 50 ou retrofit de QTA.",
+        "proxima_acao": "Passar o pedido à Raze no mesmo dia, com o serviço, o equipamento e o prazo.",
+        "sucesso": true
+      },
+      {
+        "nome": "Sem interesse: fornecedor atual",
+        "quando": "Recusou por estar atendido por outro prestador ou pela equipe interna.",
+        "proxima_acao": "Pausar; retomar em 90 dias ou no vencimento do contrato.",
+        "sucesso": false
+      },
+      {
+        "nome": "Sem interesse: compra pela matriz",
+        "quando": "A contratação é decidida pela matriz, pela rede, pela bandeira ou pela administradora, e não localmente.",
+        "proxima_acao": "Pedir o contato de quem decide nessa instância; senão, encerrar.",
+        "sucesso": false
+      },
+      {
+        "nome": "Sem interesse: sem demanda",
+        "quando": "Não tem gerador instalado, ou não vê problema nem data que justifique a conversa.",
+        "proxima_acao": "Pausar por 90 dias. Sem gerador, encerrar a conta.",
+        "sucesso": false
+      },
+      {
+        "nome": "Produto fora do catálogo",
+        "quando": "Queria algo que a Raze não faz: locação ou venda de gerador, evento, residência. Anotar o que pediu.",
+        "proxima_acao": "Informar que a Raze não atua nessa frente e registrar o pedido para a Raze.",
+        "sucesso": false
+      },
+      {
+        "nome": "Pessoa saiu da empresa",
+        "quando": "O contato não trabalha mais lá, ou o síndico mudou.",
+        "proxima_acao": "Perguntar quem assumiu e atualizar o contato.",
+        "sucesso": false
+      },
+      {
+        "nome": "Não atendeu / caixa postal",
+        "quando": "Sem conversa.",
+        "proxima_acao": "Nova tentativa em outro horário.",
+        "sucesso": false
+      },
+      {
+        "nome": "Número errado",
+        "quando": "Telefone não é da empresa ou do condomínio.",
+        "proxima_acao": "Corrigir o telefone na lista.",
+        "sucesso": false
+      },
+      {
+        "nome": "Não ligar mais",
+        "quando": "Pediu para retirar o número.",
+        "proxima_acao": "Retirar da campanha. Não ligar de novo.",
+        "sucesso": false
+      }
+    ],
+    "criterio_de_oportunidade": [
+      "Nome e cargo de quem responde pelo sistema de energia de emergência",
+      "Contato direto (e-mail ou telefone)",
+      "Gerador instalado e o que ele alimenta, nas palavras do cliente",
+      "Como o sistema é testado hoje e se há registro de ensaio sob carga",
+      "Data que move a decisão (autovistoria, Certificado de Aprovação, inspeção, assembleia ou orçamento)",
+      "Prestador atual de manutenção, se informado",
+      "Aceite do Diagnóstico de prontidão ou pedido de proposta, com data do próximo passo"
+    ],
+    "registrar": [
+      "Com quem falou (nome e cargo)",
+      "Se há gerador instalado e o que ele mantém ligado (elevadores, bombas, áreas críticas, câmara fria, caixas)",
+      "Como o sistema é testado hoje e o que o cliente recebe por escrito",
+      "Quem faz a manutenção hoje (equipe interna, zelador ou prestador) e a vigência do contrato",
+      "Data da autovistoria, do Certificado de Aprovação, da inspeção, da assembleia ou do orçamento",
+      "Solução apresentada",
+      "Pedidos fora do portfólio (locação, venda, evento, residência)",
+      "Objeção principal",
+      "Próximo passo e data"
+    ],
+    "recepcao": {
+      "com_nome": "Bom dia. Gostaria de falar com [Nome], por favor. Aqui é [Seu nome], da Raze Geradores. O assunto é o sistema de energia de emergência.",
+      "colher": [
+        "Nome de quem responde pelo gerador e pelo sistema de energia de emergência",
+        "Telefone direto, e-mail ou WhatsApp dessa pessoa",
+        "Melhor horário para falar com ela",
+        "Se há gerador instalado e se a manutenção é feita por equipe interna ou por um prestador"
+      ],
+      "nao_fazer": "Não apresente a solução, não esconda o motivo e não finja que a pessoa está esperando a ligação."
+    },
+    "triagem": {
+      "perguntas": [
+        "Há gerador instalado, e o que ele precisa manter ligado na falta de energia?",
+        "A necessidade neste momento é um serviço específico, como um laudo ou um ensaio, ou a prioridade é saber se o sistema está pronto?"
+      ],
+      "orcamento": "Se já sabe o que quer e só precisa de preço (laudo de autovistoria, ensaio com banco de cargas, prontuário NR-10, conformidade RDC 50, retrofit de QTA): registre o serviço, o equipamento e o prazo, e combine o envio da proposta pela Raze. Não diga valor.",
+      "levantamento": "Se descreve uma dúvida ou um problema (não sabe se o gerador assume a carga, não tem registro de ensaio, tem data de vistoria ou de inspeção, troca de gestão): siga o roteiro e combine o Diagnóstico de prontidão. Se não há gerador instalado, não há oferta: a Raze não vende nem aluga equipamento."
+    },
+    "ramos": [
+      {
+        "situacao": "O cliente retorna a ligação",
+        "fala": "Agradeço o retorno. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Liguei para apresentar uma proposta a quem responde pelo gerador. É com você?",
+        "depois": "Seguir do passo 3 do roteiro."
+      },
+      {
+        "situacao": "Número errado ou a pessoa saiu da empresa",
+        "fala": "Agradeço a informação. Quem responde por essa área atualmente?",
+        "depois": "Registrar o novo nome, ou marcar número errado."
+      },
+      {
+        "situacao": "“Fale com fulano”",
+        "fala": "Agradeço a indicação. Qual a função dele e o melhor horário para contato? Posso mencionar que a indicação partiu de você?",
+        "depois": "Na próxima ligação, pedir a pessoa pelo nome e citar quem indicou."
+      },
+      {
+        "situacao": "“Como conseguiu meu número?”",
+        "fala": "É o telefone de contato divulgado pela empresa. Se preferir não receber novas ligações, retiro o número agora.",
+        "depois": "Se pedir para retirar, marcar “Não ligar mais”. Origem dos telefones a confirmar com a Raze."
+      },
+      {
+        "situacao": "“Me liga depois”, sem data",
+        "fala": "Combinado. Amanhã pela manhã ou quinta-feira à tarde: qual horário é melhor?",
+        "depois": "Agendar e ligar no horário exato."
+      },
+      {
+        "situacao": "“Temos contrato com um prestador”",
+        "fala": "Entendido. Qual a vigência do contrato? E o que ele entrega por escrito: há ensaio sob carga e autonomia medida, com registro?",
+        "depois": "Registrar o vencimento e o que o contrato não cobre."
+      },
+      {
+        "situacao": "Pedem locação, venda de gerador ou atendimento a evento ou residência",
+        "fala": "A Raze não vende nem aluga gerador: atua na engenharia de quem já tem o sistema instalado. Há um gerador na operação hoje? Se houver, a proposta é medir e documentar a prontidão dele.",
+        "depois": "Sem gerador instalado, marcar “Produto fora do catálogo” e anotar o que foi pedido."
+      },
+      {
+        "situacao": "Pedem um serviço específico (laudo, ensaio, prontuário)",
+        "fala": "Registro o pedido e a Raze envia a proposta. Para dimensionar corretamente: qual exigência ou prazo esse serviço precisa atender? E há registro do último ensaio do gerador sob carga?",
+        "depois": "Tabular “Só orçamento” e passar à Raze no mesmo dia. Não dizer valor."
+      },
+      {
+        "situacao": "O cliente conta que o gerador falhou ou que houve autuação",
+        "fala": "Agradeço por compartilhar. O que aconteceu exatamente, e o que foi feito desde então?",
+        "depois": "Escutar, registrar com as palavras do cliente e propor o Diagnóstico. Não prometer que a falha não se repete."
+      },
+      {
+        "situacao": "A pessoa hesita ou fica em silêncio",
+        "fala": "Percebo que este pode não ser o melhor momento. Prefere que eu retorne em outro horário, ou o assunto não é prioridade agora?",
+        "depois": "Respeitar a resposta."
+      }
+    ]
+  },
+  "segmentos": {
+    "Condomínios": {
+      "procurar": "Síndico ou síndica. Se o prédio tem síndico profissional ou administradora, registre o nome e a empresa: são o canal de decisão. Zelador e portaria informam, não decidem; trate-os como aliados.",
+      "alvo": "localizar quem responde pelo gerador do condomínio",
+      "colher": [
+        "Nome do síndico e se é morador ou síndico profissional",
+        "Telefone direto, e-mail ou WhatsApp do síndico",
+        "Melhor horário para falar com ele",
+        "Nome da administradora do condomínio",
+        "Se o prédio tem gerador e quem faz a manutenção hoje"
+      ],
+      "central": "Bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta para quem responde pelo gerador do condomínio. Com quem trato do assunto: o síndico ou a administradora?",
+      "abertura": "[Nome], bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta objetiva sobre o gerador do condomínio. Apresento em um minuto e você avalia se vale avançar.",
+      "problema": "Em condomínios, o gerador costuma ser ligado toda semana, sem carga. Essa partida mostra que o motor liga; não mostra se o quadro de transferência comuta, se o gerador sustenta elevadores e bombas, nem por quantas horas. A Raze propõe medir esses pontos, com ensaio sob carga, partida cronometrada e autonomia verificada, e entregar ao síndico o laudo com ART de engenheiro registrado no CREA-RJ. O condomínio tem o registro do último ensaio do gerador feito sob carga?",
+      "perguntas": [
+        "O que o gerador precisa manter ligado na falta de energia: elevadores, bombas, portões, iluminação?",
+        "Quem faz a manutenção hoje, e o que o condomínio recebe por escrito depois de cada visita?",
+        "Quando foi a última autovistoria do prédio, e quando vence a próxima?",
+        "A contratação de um serviço técnico pontual é decisão do síndico, ou passa pelo conselho e pela assembleia?"
+      ],
+      "ofertas": [
+        {
+          "solucao": "residencial",
+          "fala": "O plano Prontidão Residencial coloca gerador, quadro de transferência e subestação sob um único responsável técnico: visitas preventivas, ensaio sob carga e atendimento de emergência com prazo em contrato. A documentação vem dentro do contrato, e o síndico leva à assembleia um dossiê que qualquer condômino entende."
+        },
+        {
+          "solucao": "diagnostico",
+          "fala": "O ponto de partida é o Diagnóstico de prontidão: inspeção do conjunto, ensaio de partida cronometrado e verificação do que o gerador de fato alimenta. O condomínio recebe o laudo com ART, a classificação de risco e uma reunião de leitura em linguagem acessível."
+        },
+        {
+          "solucao": "autovistoria",
+          "fala": "Na cidade do Rio, a vistoria técnica do prédio tem intervalo máximo de cinco anos e inclui as instalações elétricas. A Raze elabora o laudo de autovistoria com ART, cobrindo o sistema elétrico e o de emergência."
+        }
+      ],
+      "sondar": [
+        "Pressurização de escada ou elevador de emergência ligados ao gerador",
+        "Subestação própria do prédio",
+        "Nobreak da portaria, do CFTV ou do controle de acesso",
+        "Vencimento do Certificado de Aprovação do CBMERJ",
+        "Apresentação do laudo pelo engenheiro em assembleia"
+      ],
+      "objecoes": [
+        {
+          "objecao": "O zelador liga o gerador toda semana.",
+          "resposta": "É uma boa prática, e deve continuar. A partida sem carga mostra que o motor liga. O Diagnóstico mede o que ela não alcança: se o quadro comuta, se o gerador sustenta elevadores e bombas e por quanto tempo. O zelador acompanha o ensaio e passa a ter o número em mãos."
+        },
+        {
+          "objecao": "Isso precisa passar pela assembleia.",
+          "resposta": "Entendido. O contrato anual costuma mesmo entrar no orçamento aprovado em assembleia. O Diagnóstico é um serviço pontual: cabe na alçada do síndico ou também depende de aprovação? Feito antes, o laudo é o documento que o síndico apresenta à assembleia."
+        },
+        {
+          "objecao": "O conselho pede três orçamentos.",
+          "resposta": "Faz sentido. Envio o escopo detalhado do Diagnóstico, com o que é medido em campo e o que é entregue por escrito, para que o conselho compare as propostas na mesma base."
+        }
+      ],
+      "pedido": "Proponho o seguinte: começar pelo Diagnóstico de prontidão do sistema do condomínio. É um serviço técnico, com preço definido e abatido no contrato caso ele seja fechado. Envio hoje o escopo e o valor por escrito e retorno na quinta-feira para definirmos a data. Qual o melhor e-mail para o envio?",
+      "plano_b": "Entendido. Quando é a próxima assembleia, e quando vence a autovistoria do prédio? Retorno antes dessa data, com o escopo do Diagnóstico preparado. Qual o melhor contato direto para falar com você?",
+      "tecnica": {
+        "nome": "Proposição de problema com pergunta neutra",
+        "como": "Reconhecer a partida semanal como boa prática e mostrar o que ela não mede. A pergunta que abre é o registro do último ensaio sob carga. O Diagnóstico cabe na alçada do síndico; o dossiê é o que ele leva à assembleia. Prova de diligência, nunca transferência de responsabilidade."
+      }
+    },
+    "Administradoras de condomínios": {
+      "procurar": "Gestor técnico ou de manutenção, gerente de condomínios ou diretor de operações da administradora. Em empresa de síndico profissional, o sócio ou o próprio síndico. É um canal: a conversa trata da carteira de prédios, não de um prédio só.",
+      "alvo": "localizar quem responde pela área técnica ou pela gestão da carteira de condomínios",
+      "colher": [
+        "Nome de quem responde pela área técnica ou pela gestão dos condomínios",
+        "Telefone direto, e-mail ou WhatsApp dessa pessoa",
+        "Melhor horário para falar com ela",
+        "Quantos condomínios a empresa administra e em quais bairros",
+        "Se a contratação de manutenção é indicada pela administradora ou decidida por cada síndico"
+      ],
+      "central": "Bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta para os condomínios da carteira que têm gerador. Com quem trato do assunto: a área técnica ou a gerência de condomínios?",
+      "abertura": "[Nome], bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta objetiva para os condomínios da carteira que têm gerador. Apresento em um minuto e você avalia se vale avançar.",
+      "problema": "Quem administra vários condomínios responde, na prática, por vários geradores, cada um com um prestador e um padrão de registro diferente. Quando o síndico ou o conselho pergunta se o gerador sustenta elevadores e bombas, a resposta costuma depender da palavra do técnico. A Raze propõe um padrão único para a carteira: ensaio sob carga, partida cronometrada e autonomia medida, com um dossiê por prédio. Como a administradora acompanha hoje a situação dos geradores da carteira?",
+      "perguntas": [
+        "Quantos condomínios da carteira têm gerador, aproximadamente?",
+        "A manutenção desses geradores é contratada por indicação da administradora ou por decisão de cada síndico?",
+        "Como chega à administradora o registro das manutenções, e há ensaio sob carga em algum dos prédios?",
+        "Quais prédios têm autovistoria ou assembleia de orçamento nos próximos meses?"
+      ],
+      "ofertas": [
+        {
+          "solucao": "diagnostico",
+          "fala": "A proposta é começar por um prédio da carteira, escolhido pela administradora: o Diagnóstico de prontidão mede o sistema e entrega o laudo com ART, a classificação de risco e a reunião de leitura. A administradora avalia o padrão de entrega antes de levá-lo a outros síndicos."
+        },
+        {
+          "solucao": "residencial",
+          "fala": "Nos prédios que seguirem para contrato, o plano Prontidão Residencial mantém gerador, quadro de transferência e subestação sob um único responsável técnico, com o mesmo padrão de relatório em toda a carteira e um dossiê por prédio, pronto para a assembleia de cada um."
+        },
+        {
+          "solucao": "autovistoria",
+          "fala": "Para os prédios com vistoria técnica a vencer, a Raze elabora o laudo de autovistoria com ART, cobrindo o sistema elétrico e o de emergência."
+        }
+      ],
+      "sondar": [
+        "Condição comercial para um lote de prédios",
+        "Apresentação do laudo pelo engenheiro em assembleia",
+        "Prédios com subestação própria",
+        "Prédios com pressurização de escada ou elevador de emergência",
+        "Condomínios comerciais ou mistos na carteira"
+      ],
+      "objecoes": [
+        {
+          "objecao": "Cada síndico decide o prestador do seu prédio.",
+          "resposta": "Entendido, e a proposta respeita essa autonomia. Qual prédio da carteira tem autovistoria ou assembleia mais próxima? Proponho começar por ele, com a apresentação ao síndico feita em conjunto com a administradora."
+        },
+        {
+          "objecao": "Já indicamos uma empresa de manutenção.",
+          "resposta": "É natural que haja uma indicação. O Diagnóstico não substitui a manutenção: mede o sistema sob carga e documenta o resultado. O relatório que a administradora recebe hoje traz tempo de partida e autonomia medidos?"
+        },
+        {
+          "objecao": "A administradora não se envolve em contratação técnica.",
+          "resposta": "Compreendo. Nesse caso, peço a indicação dos síndicos com vistoria ou assembleia mais próxima, e apresento a proposta diretamente a eles, mencionando a administradora apenas se você autorizar."
+        }
+      ],
+      "pedido": "Proponho o seguinte: escolher um prédio da carteira, de preferência o que tem a autovistoria ou a assembleia mais próxima, e realizar nele o Diagnóstico de prontidão. É um serviço técnico, com preço definido e abatido no contrato caso ele seja fechado. Envio hoje o escopo e o valor por escrito e retorno na quinta-feira para definirmos o prédio. Qual o melhor e-mail para o envio?",
+      "plano_b": "Entendido. Quais prédios da carteira têm autovistoria ou assembleia nos próximos meses? Retorno antes dessas datas. Qual o melhor contato direto para falar com você?",
+      "tecnica": {
+        "nome": "Entrada por prédio piloto",
+        "como": "Tratar a administradora como canal, não como conta: a dor é a falta de um padrão de registro na carteira. Pedir um único prédio para o Diagnóstico e deixar a expansão para depois do laudo. Sem prometer condição por lote, que ainda não está confirmada."
+      }
+    },
+    "Saúde": {
+      "procurar": "Qualidade ou Acreditação, engenharia clínica ou manutenção hospitalar. Na falta dessas áreas, a diretoria administrativa. Evite começar por Compras.",
+      "alvo": "localizar quem responde pela energia de emergência das áreas críticas",
+      "colher": [
+        "Nome de quem responde pela Qualidade e pela engenharia clínica ou manutenção",
+        "Telefone direto, e-mail ou WhatsApp dessas pessoas",
+        "Melhor horário para falar com elas",
+        "Se a unidade tem centro cirúrgico, UTI, hemodiálise, imagem ou laboratório",
+        "Se a manutenção do gerador é interna ou contratada"
+      ],
+      "central": "Bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta sobre o registro de ensaios do gerador da unidade. Com quem trato do assunto: a Qualidade ou a engenharia clínica?",
+      "abertura": "[Nome], bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta objetiva sobre a energia de emergência das áreas críticas da unidade. Apresento em um minuto e você avalia se vale avançar.",
+      "problema": "Em estabelecimentos de saúde, inspeções e auditorias pedem registro do sistema de emergência: em quantos segundos o gerador assume as áreas críticas e por quantas horas sustenta a operação. Em muitas unidades, essa resposta depende da memória do técnico. A Raze propõe medir e documentar: ensaio sob carga, partida cronometrada e autonomia verificada, com histórico auditável a cada intervenção. A unidade tem hoje o registro do último ensaio sob carga e da autonomia medida?",
+      "perguntas": [
+        "Quais áreas críticas dependem do gerador: centro cirúrgico, UTI, hemodiálise, imagem, laboratório?",
+        "Como são registrados hoje os testes do gerador e do quadro de transferência, e quem guarda esse histórico?",
+        "Há inspeção sanitária, auditoria de acreditação ou obra de ampliação prevista para os próximos meses?",
+        "Quem participa da decisão de contratar um serviço técnico como esse: Qualidade, engenharia, diretoria administrativa?"
+      ],
+      "ofertas": [
+        {
+          "solucao": "hospitalar",
+          "fala": "O plano Prontidão Hospitalar coloca gerador, quadro de transferência e nobreak sob um único responsável técnico, com ensaio com banco de cargas, autonomia verificada e histórico auditável a cada intervenção. A Qualidade passa a ter a evidência pronta para a inspeção e para a acreditação, e um canal direto com o responsável técnico."
+        },
+        {
+          "solucao": "diagnostico",
+          "fala": "O ponto de partida é o Diagnóstico de prontidão: inspeção do conjunto, ensaio de partida cronometrado e verificação do que o gerador de fato alimenta nas áreas críticas. A unidade recebe o laudo com ART, a classificação de risco e a reunião de leitura."
+        },
+        {
+          "solucao": "rdc50",
+          "fala": "Para a frente regulatória, a Raze verifica o sistema de emergência frente às classes de comutação e autonomia da RDC 50 e entrega o registro auditável do que foi medido. O engenheiro confirma no local o que se aplica a cada área."
+        }
+      ],
+      "sondar": [
+        "Nobreak das áreas com equipamentos de suporte à vida",
+        "Subestação própria da unidade",
+        "Prontuário de Instalações Elétricas (NR-10)",
+        "Outras unidades da rede na região metropolitana",
+        "Checklist de conformidade elétrica para a Qualidade"
+      ],
+      "objecoes": [
+        {
+          "objecao": "Já temos contrato de manutenção.",
+          "resposta": "É esperado que haja. A questão que a proposta endereça é o registro: há hoje o resultado do último ensaio sob carga e da autonomia medida? Se a resposta exigir busca, o Diagnóstico organiza essa evidência sem interferir no contrato atual."
+        },
+        {
+          "objecao": "Isso é com a manutenção, não com a Qualidade.",
+          "resposta": "Entendido. A execução envolve a manutenção, e o registro interessa à Qualidade na inspeção e na auditoria. Quem responde pela manutenção? Proponho apresentar a proposta aos dois, em conjunto."
+        },
+        {
+          "objecao": "Passamos na última inspeção.",
+          "resposta": "Ótimo. A proposta não parte de um problema na inspeção: parte do registro. Para a próxima, o histórico de ensaios sob carga está organizado e disponível?"
+        }
+      ],
+      "pedido": "Proponho o seguinte: começar pelo Diagnóstico de prontidão do sistema de emergência da unidade. É um serviço técnico, com preço definido e abatido no contrato caso ele seja fechado, e o laudo fica como evidência para a inspeção e a auditoria. Envio hoje o escopo e o valor por escrito e retorno na quinta-feira para definirmos a data com a engenharia. Qual o melhor e-mail para o envio?",
+      "plano_b": "Entendido. Quando está prevista a próxima inspeção ou auditoria, e quando a unidade fecha o orçamento do próximo ano? Retorno antes dessa data. Qual o seu e-mail direto?",
+      "tecnica": {
+        "nome": "Entrada pela Qualidade, com pergunta de registro",
+        "como": "Abrir pelo registro que a inspeção e a auditoria pedem, não pela manutenção. A pergunta que qualifica é se há registro do último ensaio sob carga e da autonomia medida. Mapear quem participa da decisão e evitar Compras na primeira conversa."
+      }
+    },
+    "Supermercados e cadeia fria": {
+      "procurar": "Gerente de manutenção ou de utilidades; na falta, gerente de operações ou de loja. Em rede, a manutenção ou a engenharia corporativa. Evite começar por Compras ou Suprimentos.",
+      "alvo": "localizar quem responde pela manutenção do gerador e da refrigeração",
+      "colher": [
+        "Nome de quem responde pela manutenção ou pelas utilidades",
+        "Telefone direto, e-mail ou WhatsApp dessa pessoa",
+        "Melhor horário para falar com ela",
+        "Se a operação tem câmara fria e gerador instalado",
+        "Se a manutenção é decidida na unidade ou pela rede"
+      ],
+      "central": "Bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta para quem responde pelo gerador e pelas câmaras frias da operação. Com quem trato do assunto: a manutenção ou a gerência de operações?",
+      "abertura": "[Nome], bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta objetiva sobre o gerador que sustenta a refrigeração da operação. Apresento em um minuto e você avalia se vale avançar.",
+      "problema": "Em operações com câmara fria, é comum o gerador ter sido dimensionado para a carga de anos atrás, sem considerar a partida dos compressores. No teste sem carga ele liga normalmente; a dúvida é se assume a refrigeração inteira e por quantas horas mantém a temperatura. A Raze propõe medir: carga real contra capacidade instalada, partida sob carga e autonomia da câmara fria. Quando foi a última vez que o gerador assumiu a refrigeração completa em um ensaio?",
+      "perguntas": [
+        "O que o gerador sustenta hoje: câmaras frias, balcões refrigerados, caixas, iluminação?",
+        "Houve aumento de carga desde a instalação do gerador, como câmara nova ou ampliação?",
+        "Qual é o custo de uma hora de operação parada ou de perda de perecíveis?",
+        "Quando a empresa fecha o orçamento de manutenção do próximo ano, e quem aprova?"
+      ],
+      "ofertas": [
+        {
+          "solucao": "industrial",
+          "fala": "O plano Prontidão Industrial compara a carga real com a capacidade do gerador, testa a partida sob carga e verifica a autonomia da câmara fria, com ensaio com banco de cargas e relatório de indicadores. A manutenção passa a ter o número que justifica o orçamento e o registro que a auditoria pede."
+        },
+        {
+          "solucao": "diagnostico",
+          "fala": "O ponto de partida é o Diagnóstico de prontidão: inspeção do conjunto, ensaio de partida cronometrado e verificação do que o gerador de fato alimenta. A operação recebe o laudo com ART e a classificação de risco, com reunião de leitura."
+        },
+        {
+          "solucao": "comercial",
+          "fala": "Para lojas sem estrutura própria de manutenção, o plano Prontidão Comercial acompanha gerador e quadro de transferência com visita preventiva, ensaio de partida e atendimento de emergência com resposta definida em contrato."
+        }
+      ],
+      "sondar": [
+        "Subestação própria e Prontuário de Instalações Elétricas (NR-10)",
+        "Nobreak dos caixas e dos servidores",
+        "Retrofit do quadro de transferência",
+        "Outras lojas ou centros de distribuição na região metropolitana",
+        "Laudo de autovistoria do prédio"
+      ],
+      "objecoes": [
+        {
+          "objecao": "Nossa manutenção interna cuida disso.",
+          "resposta": "Ótimo, isso facilita o trabalho. A equipe interna mantém o equipamento; o ensaio com banco de cargas é complementar: carga real aplicada em degraus, com tensão, frequência, corrente e temperatura registradas em cada patamar. A equipe dispõe hoje de banco de cargas para esse ensaio?"
+        },
+        {
+          "objecao": "Chamamos alguém quando dá problema.",
+          "resposta": "Entendido. Nesse modelo, o atendimento começa depois que a refrigeração já ficou sem energia. A proposta é saber antes o que o gerador sustenta. Qual é o custo de uma hora de câmara fria sem energia?"
+        },
+        {
+          "objecao": "O gerador é novo.",
+          "resposta": "Bom ponto de partida. Equipamento novo também precisa do registro inicial: partida, carga assumida e autonomia medidas. É a referência com a qual os ensaios seguintes serão comparados. Esse registro foi feito na entrega?"
+        }
+      ],
+      "pedido": "Proponho o seguinte: começar pelo Diagnóstico de prontidão, com a verificação do que o gerador de fato sustenta na refrigeração. É um serviço técnico, com preço definido e abatido no contrato caso ele seja fechado. Envio hoje o escopo e o valor por escrito e retorno na quinta-feira para definirmos a data. Qual o melhor e-mail para o envio?",
+      "plano_b": "Entendido. Quando a empresa fecha o orçamento de manutenção do próximo ano, e há parada programada prevista? Retorno antes dessa data, com o escopo preparado. Qual o seu e-mail direto?",
+      "tecnica": {
+        "nome": "Pergunta de impacto em valor",
+        "como": "Venda aritmética, sem apelo emocional: dimensionamento contra a carga atual e o custo da hora parada, dito pelo próprio cliente. Falar com a manutenção antes de Compras. Não citar norma de vigilância sanitária: a vigência da portaria municipal não está confirmada."
+      }
+    },
+    "Comércio e centros comerciais": {
+      "procurar": "Gerente de operações ou de facilities; em centro comercial ou galeria, a administração do empreendimento; em comércio de menor porte, o sócio ou proprietário.",
+      "alvo": "localizar quem responde pelo gerador e pela manutenção predial",
+      "colher": [
+        "Nome de quem responde pela operação ou pela manutenção predial",
+        "Telefone direto, e-mail ou WhatsApp dessa pessoa",
+        "Melhor horário para falar com ela",
+        "Se o gerador é do empreendimento ou de cada loja",
+        "Quem faz a manutenção hoje"
+      ],
+      "central": "Bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta para quem responde pelo gerador e pela manutenção predial. Com quem trato do assunto: a gerência de operações ou a administração?",
+      "abertura": "[Nome], bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta objetiva sobre o gerador do empreendimento. Apresento em um minuto e você avalia se vale avançar.",
+      "problema": "Em lojas e centros comerciais, o gerador existe para manter a operação aberta: caixas, elevadores, escadas rolantes, climatização e sistemas de segurança. O teste de rotina mostra que o motor liga; não mostra o que ele sustenta com o empreendimento em funcionamento, nem por quanto tempo. A Raze propõe medir e documentar esses pontos, com laudo e ART. Como o empreendimento verifica hoje o que o gerador mantém ligado?",
+      "perguntas": [
+        "O que o gerador precisa manter em funcionamento: caixas, elevadores, escadas rolantes, climatização, sistemas de incêndio?",
+        "Quem faz a manutenção hoje, e o que o empreendimento recebe por escrito depois de cada visita?",
+        "Quando vencem a autovistoria do prédio e o Certificado de Aprovação do CBMERJ?",
+        "Há exigência de seguradora, de locatário ou da administração sobre o sistema de emergência?"
+      ],
+      "ofertas": [
+        {
+          "solucao": "comercial",
+          "fala": "O plano Prontidão Comercial acompanha gerador e quadro de transferência com visita preventiva, ensaio de partida e atendimento de emergência com resposta definida em contrato. A operação passa a ter o registro de cada verificação e a documentação técnica do sistema em dia."
+        },
+        {
+          "solucao": "diagnostico",
+          "fala": "O ponto de partida é o Diagnóstico de prontidão: inspeção do conjunto, ensaio de partida cronometrado e verificação do que o gerador de fato alimenta. O empreendimento recebe o laudo com ART, a classificação de risco e a reunião de leitura."
+        },
+        {
+          "solucao": "autovistoria",
+          "fala": "Para o prédio, a Raze elabora o laudo de autovistoria com ART, cobrindo o sistema elétrico e o de emergência. Na cidade do Rio, a vistoria técnica tem intervalo máximo de cinco anos."
+        }
+      ],
+      "sondar": [
+        "Subestação própria e Prontuário de Instalações Elétricas (NR-10)",
+        "Nobreak dos caixas, dos servidores e do CFTV",
+        "Retrofit do quadro de transferência",
+        "Outras unidades da rede na região metropolitana",
+        "Câmara fria ou praça de alimentação ligadas ao gerador"
+      ],
+      "objecoes": [
+        {
+          "objecao": "Chamamos alguém quando dá problema.",
+          "resposta": "Entendido. Nesse modelo, o atendimento começa depois que a operação já parou. A proposta é saber antes o que o gerador sustenta. O que acontece com a operação quando a energia falta em horário de movimento?"
+        },
+        {
+          "objecao": "O gerador é do condomínio ou do shopping.",
+          "resposta": "Agradeço a informação. Quem responde pela administração do empreendimento? Peço o nome e o canal para apresentar a proposta a quem cuida do gerador."
+        },
+        {
+          "objecao": "Quase não falta energia aqui.",
+          "resposta": "É um bom cenário. Justamente por operar pouco, o gerador tem menos oportunidades de mostrar como responde com carga. Há registro de algum ensaio sob carga?"
+        }
+      ],
+      "pedido": "Proponho o seguinte: começar pelo Diagnóstico de prontidão do sistema do empreendimento. É um serviço técnico, com preço definido e abatido no contrato caso ele seja fechado. Envio hoje o escopo e o valor por escrito e retorno na quinta-feira para definirmos a data. Qual o melhor e-mail para o envio?",
+      "plano_b": "Entendido. Quando vencem a autovistoria e o Certificado de Aprovação, e quando a empresa fecha o orçamento do próximo ano? Retorno antes dessa data. Qual o melhor contato direto para falar com você?",
+      "tecnica": {
+        "nome": "Proposição de problema com data de conformidade",
+        "como": "Abrir pelo que o gerador precisa manter em funcionamento e perguntar como isso é verificado. As datas da autovistoria e do Certificado de Aprovação dão o prazo da conversa. Confirmar cedo se o gerador é da loja ou do empreendimento."
+      }
+    },
+    "Postos de combustível": {
+      "procurar": "Proprietário ou sócio; em posto de rede, o gerente operacional ou a área de manutenção da rede. Em posto independente, quem atende costuma estar próximo de quem decide.",
+      "alvo": "localizar quem decide a manutenção do gerador do posto",
+      "colher": [
+        "Nome de quem decide a manutenção (proprietário, sócio ou gerente)",
+        "Telefone direto, e-mail ou WhatsApp dessa pessoa",
+        "Melhor horário para falar com ela",
+        "Se o posto tem gerador instalado",
+        "Se o posto é independente ou de rede, e quantas unidades há"
+      ],
+      "central": "Bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta para quem responde pelo gerador do posto. Com quem trato do assunto: o proprietário ou a gerência?",
+      "abertura": "[Nome], bom dia. Aqui é [Seu nome], da Raze Geradores, engenharia de prontidão de sistemas de energia de emergência. Tenho uma proposta objetiva sobre o gerador do posto. Apresento em um minuto e você avalia se vale avançar.",
+      "problema": "Em posto de combustível, sem energia a bomba não abastece e o caixa não registra: a venda daquele período não se recupera. Onde há gerador, o teste de rotina mostra que ele liga; não mostra se assume bombas, caixa e loja de conveniência ao mesmo tempo, nem por quantas horas. A Raze propõe medir esses pontos e documentá-los, com laudo e ART. O gerador do posto já foi testado assumindo a operação inteira?",
+      "perguntas": [
+        "O posto tem gerador, e o que ele mantém em funcionamento: bombas, caixa, loja de conveniência, iluminação?",
+        "Quem faz a manutenção do gerador hoje, e com que frequência?",
+        "Quanto representa, em vendas, uma hora de posto sem energia?",
+        "A decisão é do posto ou passa pela rede?"
+      ],
+      "ofertas": [
+        {
+          "solucao": "comercial",
+          "fala": "O plano Prontidão Comercial acompanha gerador e quadro de transferência com visita preventiva, ensaio de partida e atendimento de emergência com resposta definida em contrato. O posto passa a ter o registro de cada verificação e sabe o que o gerador sustenta."
+        },
+        {
+          "solucao": "diagnostico",
+          "fala": "O ponto de partida é o Diagnóstico de prontidão: inspeção do conjunto, ensaio de partida cronometrado e verificação do que o gerador de fato alimenta. O posto recebe o laudo com ART e a classificação de risco, com reunião de leitura."
+        }
+      ],
+      "sondar": [
+        "Nobreak da automação e do caixa",
+        "Câmara fria ou refrigeração da loja de conveniência",
+        "Outros postos da rede na região metropolitana",
+        "Documentação das instalações elétricas do posto",
+        "Posto sem gerador com interesse em instalar (a Raze não vende equipamento)"
+      ],
+      "objecoes": [
+        {
+          "objecao": "O posto não tem gerador.",
+          "resposta": "Agradeço a informação. A Raze não vende nem aluga gerador: atua na engenharia de quem já tem o sistema instalado. Outras unidades da rede têm gerador?"
+        },
+        {
+          "objecao": "Quase não falta energia aqui.",
+          "resposta": "É um bom cenário. Justamente por operar pouco, o gerador tem menos oportunidades de mostrar como responde com carga. Quanto representa, em vendas, uma hora de posto parado?"
+        },
+        {
+          "objecao": "A bandeira ou a rede cuida disso.",
+          "resposta": "Entendido. Quem responde pela manutenção na rede? Peço o nome e o canal, e menciono que a indicação partiu de você."
+        }
+      ],
+      "pedido": "Proponho o seguinte: começar pelo Diagnóstico de prontidão do gerador do posto. É um serviço técnico, com preço definido e abatido no contrato caso ele seja fechado. Envio hoje o escopo e o valor por escrito e retorno na quinta-feira para definirmos a data. Qual o melhor e-mail ou WhatsApp para o envio?",
+      "plano_b": "Entendido. Quando o posto costuma rever os contratos de manutenção? Retorno antes dessa data. Qual o melhor contato direto para falar com você?",
+      "tecnica": {
+        "nome": "Receita da hora parada",
+        "como": "A conversa é de venda perdida, nunca de norma: não há obrigação legal de gerador em posto. Confirmar primeiro se há gerador instalado; sem gerador, não há oferta. O plano indicado é hipótese até a Raze confirmar."
+      }
+    }
+  },
+  "solucoes": {
+    "diagnostico": {
+      "nome": "Diagnóstico de prontidão",
+      "resolve": "O gestor passa a saber, com número medido, o que o sistema de emergência de fato sustenta: se o gerador assume a carga, em quantos segundos e o que fica ligado. Sai com o laudo, a classificação de risco e a leitura em linguagem acessível.",
+      "composicao": [
+        "Inspeção de gerador, quadro de transferência (QTA) e subestação",
+        "Ensaio de partida cronometrado",
+        "Verificação de abrangência real: o que o gerador de fato alimenta",
+        "Laudo com ART e registro fotográfico",
+        "Classificação de risco",
+        "Reunião de leitura acessível"
+      ],
+      "referencia": "Preço definido e abatido no contrato caso ele seja fechado; valor a confirmar com a Raze. É a porta de entrada de todo contrato.",
+      "chaves": [
+        "diagnóstico"
+      ]
+    },
+    "residencial": {
+      "nome": "Prontidão Residencial",
+      "resolve": "O síndico tem o sistema do prédio verificado sob carga por um único responsável técnico e a documentação que comprova que cuidou, pronta para apresentar à assembleia.",
+      "composicao": [
+        "Visita preventiva recorrente e ensaio sob carga",
+        "ART e laudos, incluindo o de autovistoria",
+        "Gerador, QTA e subestação sob um só responsável",
+        "SLA de emergência com prazo e penalidade",
+        "Dossiê de assembleia"
+      ],
+      "referencia": "Contrato recorrente para condomínios; preço, cadência de visitas e prazos de SLA a confirmar com a Raze.",
+      "chaves": [
+        "residencial"
+      ]
+    },
+    "hospitalar": {
+      "nome": "Prontidão Hospitalar",
+      "resolve": "A unidade tem o sistema de emergência das áreas críticas ensaiado e com histórico auditável, pronto para a inspeção sanitária e para a auditoria de acreditação.",
+      "composicao": [
+        "Banco de cargas duas vezes ao ano e autonomia verificada",
+        "Conformidade RDC 50 com registro auditável",
+        "Gerador, QTA e nobreak sob um só responsável",
+        "Canal direto com o responsável técnico"
+      ],
+      "referencia": "Contrato recorrente para estabelecimentos de saúde; preço, cadência de visitas e prazos de SLA a confirmar com a Raze.",
+      "chaves": [
+        "hospitalar"
+      ]
+    },
+    "industrial": {
+      "nome": "Prontidão Industrial",
+      "resolve": "A operação sabe se o gerador está dimensionado para a carga atual, inclusive a partida dos motores, e por quantas horas sustenta a câmara fria, com o relatório do custo evitado.",
+      "composicao": [
+        "Análise de dimensionamento: carga real contra capacidade",
+        "Teste de partida do motor sob carga",
+        "Banco de cargas duas vezes ao ano e autonomia da câmara fria",
+        "SLA com penalidade atrelada ao tempo de parada",
+        "Relatório com indicadores e histórico de tendência"
+      ],
+      "referencia": "Contrato recorrente para indústria e cadeia fria; preço, cadência de visitas e prazos de SLA a confirmar com a Raze.",
+      "chaves": [
+        "industrial"
+      ]
+    },
+    "comercial": {
+      "nome": "Prontidão Comercial",
+      "resolve": "A loja ou o empreendimento tem gerador e quadro de transferência acompanhados, com registro de cada verificação e atendimento de emergência com resposta definida em contrato.",
+      "composicao": [
+        "Visita preventiva trimestral e ensaio de partida",
+        "ART anual e laudo de autovistoria",
+        "Gerador e QTA acompanhados",
+        "Emergência com resposta definida"
+      ],
+      "referencia": "Plano sob demanda, para comércio de médio e grande porte; preço e prazo de resposta a confirmar com a Raze. Aplicação a postos de combustível é hipótese a confirmar.",
+      "chaves": [
+        "comercial"
+      ]
+    },
+    "autovistoria": {
+      "nome": "Laudo de autovistoria",
+      "resolve": "O prédio cumpre a vistoria técnica periódica com laudo de engenheiro habilitado, cobrindo o sistema elétrico e o de emergência.",
+      "composicao": [
+        "Vistoria técnica das instalações elétricas e do sistema de emergência",
+        "Laudo técnico com ART"
+      ],
+      "referencia": "Serviço avulso ou incluso nos planos Residencial e Comercial; preço a confirmar com a Raze. Na capital, intervalo máximo de 5 anos (LC 126/2013).",
+      "chaves": [
+        "autovistoria"
+      ]
+    },
+    "rdc50": {
+      "nome": "Conformidade RDC 50",
+      "resolve": "A unidade de saúde tem o registro auditável do que o sistema de emergência sustenta, frente às classes de comutação e autonomia da RDC 50, para apresentar à inspeção.",
+      "composicao": [
+        "Verificação da partida automática e da autonomia nas áreas críticas",
+        "Registro auditável da conformidade RDC 50",
+        "Laudo com ART"
+      ],
+      "referencia": "Serviço avulso ou incluso no plano Hospitalar; preço a confirmar com a Raze. O que se aplica a cada área é confirmado pelo engenheiro no local.",
+      "chaves": [
+        "rdc"
+      ]
+    }
+  },
+  "posicionamento": "Engenharia de prontidão de sistemas de energia de emergência.",
+  "esteiras": [
+    {
+      "id": 1,
+      "nome": "Abordagem inicial",
+      "objetivo": "Localizar quem responde pelo sistema de energia de emergência (gerador, quadro de transferência, subestação e nobreak) e apresentar a Raze como engenharia de prontidão, com uma proposta para a empresa ou o condomínio.",
+      "sair_com": [
+        "Nome e cargo de quem responde pelo sistema de energia de emergência",
+        "Telefone direto, e-mail ou WhatsApp",
+        "Melhor horário para falar",
+        "Se há gerador instalado"
+      ],
+      "passa_quando": "A conta passa para a esteira 2 quando há um contato identificado ou um pedido de proposta."
+    },
+    {
+      "id": 2,
+      "nome": "Proposta personalizada",
+      "objetivo": "Apresentar ao contato obtido a proposta personalizada para a operação dele e combinar o Diagnóstico de prontidão, que é a porta de entrada de todo contrato.",
+      "sair_com": [
+        "Como o sistema é testado hoje, confirmado pelo contato",
+        "O que o gerador precisa manter ligado",
+        "Data que move a decisão (autovistoria, Certificado de Aprovação, inspeção, assembleia ou orçamento)",
+        "Aceite do Diagnóstico de prontidão ou data do próximo passo"
+      ],
+      "passa_quando": "A conta se encerra com o Diagnóstico de prontidão combinado, com a proposta recusada ou sem resposta depois da cadência."
+    }
+  ]
+}

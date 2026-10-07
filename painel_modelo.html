@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesa de Ligação Raze Geradores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#14213D; --tinta-2:#55607A; --papel:#F4F5F9; --folha:#FFFFFF; --linha:#DFE2EC; --suave:#ECEEF5;
+  --trilho:#101A33; --trilho-2:#8E9AB8; --trilho-linha:#243154; --trilho-ativo:#1E2C52; --trilho-faixa:#2B50FF; --trilho-borda:#34468A;
+  --cobalto:#2B50FF; --marca:#FFE873; --verde:#12855F; --ambar:#B86E00; --vermelho:#C0392B; --cinza:#8A93A8;
+  --display:"Montserrat","Segoe UI",system-ui,sans-serif;
+  --texto:"Montserrat","Segoe UI",system-ui,sans-serif;
+  --fala:"Montserrat","Segoe UI",system-ui,sans-serif;
+  --mono:"Montserrat","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --tinta:#E8EBF5; --tinta-2:#9AA4BF; --papel:#0D1426; --folha:#151E36; --linha:#26314F; --suave:#1B2540;
+    --trilho:#080E1D; --trilho-linha:#1A2440; --trilho-ativo:#172244;
+    --cobalto:#8FA4FF; --marca:#5A4A00; --verde:#3CC79A; --ambar:#F0B040; --vermelho:#F07E70; --cinza:#7C87A3; color-scheme:dark }
+}
+:root[data-theme="dark"]{ --tinta:#E8EBF5; --tinta-2:#9AA4BF; --papel:#0D1426; --folha:#151E36; --linha:#26314F; --suave:#1B2540;
+    --trilho:#080E1D; --trilho-linha:#1A2440; --trilho-ativo:#172244;
+    --cobalto:#8FA4FF; --marca:#5A4A00; --verde:#3CC79A; --ambar:#F0B040; --vermelho:#F07E70; --cinza:#7C87A3; color-scheme:dark }
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; background:var(--papel); color:var(--tinta); font:400 15px/1.55 var(--texto)}
+button,input,select{font:inherit; color:inherit}
+a{color:var(--cobalto)}
+:focus-visible{outline:2px solid var(--cobalto); outline-offset:2px}
+h1,h2,h3,p{margin:0}
+b,strong,th{font-weight:500}
+
+.app{display:grid; grid-template-columns:308px minmax(0,1fr); min-height:100%}
+
+/* Trilho lateral: uma aba por lead */
+.trilho{background:var(--trilho); color:#E8EBF5; position:sticky; top:env(safe-area-inset-top,0px); height:100vh; display:flex; flex-direction:column; min-width:0}
+.marca{padding:22px 20px 14px}
+.marca b{font:600 22px/1 var(--display); letter-spacing:-.02em; display:block; margin-bottom:8px}
+.marca span{font-size:12.5px; color:var(--trilho-2)}
+/* Dois blocos com moldura: o menu do painel em cima e a lista de leads embaixo, em tom mais fundo e com faixa de título */
+.bloco-painel{margin:0 12px 16px; border:1px solid var(--trilho-borda); border-radius:14px; background:rgba(255,255,255,.045); overflow:hidden}
+.nav{display:flex; flex-direction:column; gap:2px; padding:8px}
+.bloco-leads{flex:1; min-height:0; display:flex; flex-direction:column; margin:0 12px 12px; border:1px solid var(--trilho-borda); border-radius:14px; background:rgba(0,0,0,.26); overflow:hidden}
+.bloco-painel .rotulo, .bloco-leads .rotulo{background:var(--trilho-faixa); color:#fff; padding:9px 14px; font-weight:500}
+.bloco-leads .busca{padding:12px 10px 8px}
+.bloco-leads .leads{padding:0 6px 10px}
+.aba{display:flex; align-items:center; gap:10px; width:100%; background:none; border:0; border-radius:8px; padding:8px 10px; text-align:left; cursor:pointer; color:#E8EBF5}
+.aba:hover{background:var(--trilho-ativo)}
+.aba[aria-current="page"]{background:var(--trilho-ativo); box-shadow:inset 3px 0 0 var(--marca)}
+.nav .aba{font-weight:500; font-size:14px}
+.busca{padding:12px 14px 8px}
+.busca input{width:100%; background:var(--trilho-ativo); border:1px solid var(--trilho-linha); border-radius:8px; padding:8px 11px; color:#E8EBF5; font-size:13.5px}
+.busca input::placeholder{color:var(--trilho-2)}
+.rotulo{font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--trilho-2); padding:6px 20px 4px; display:flex; justify-content:space-between}
+.leads{overflow-y:auto; padding:0 10px 16px; flex:1; scrollbar-width:thin; scrollbar-color:var(--trilho-linha) transparent}
+.leads .aba{align-items:flex-start; padding:7px 10px}
+.pt{width:9px; height:9px; border-radius:50%; background:var(--c); flex:none; margin-top:6px}
+.aba .n{font-weight:500; font-size:13.5px; line-height:1.3; display:block}
+.aba .s{font-size:12px; color:var(--trilho-2); display:block}
+.aba .f{margin-left:auto; font:400 12px var(--mono); color:var(--trilho-2); padding-top:2px}
+
+/* Área principal */
+.main{min-width:0; padding:34px clamp(18px,4vw,52px) 80px}
+.cab{display:flex; justify-content:space-between; gap:24px; align-items:flex-end; flex-wrap:wrap; margin-bottom:22px}
+.olho{font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--tinta-2); margin-bottom:6px}
+h1{font:600 clamp(30px,4.4vw,52px)/1 var(--display); letter-spacing:-.03em}
+h2{font:600 21px/1.2 var(--display); letter-spacing:-.01em; margin-bottom:4px}
+h3{font:500 12px/1.3 var(--texto); letter-spacing:.06em; text-transform:uppercase; color:var(--tinta-2); margin-bottom:10px}
+.sub{color:var(--tinta-2); margin-bottom:18px; max-width:70ch}
+.meta{display:flex; gap:8px 18px; flex-wrap:wrap; color:var(--tinta-2); font-size:14px; margin-top:10px; align-items:center}
+.meta a,.mono{font-family:var(--mono); font-size:13.5px}
+.pill{display:inline-flex; align-items:center; gap:7px; padding:4px 11px; border-radius:20px; background:var(--folha); border:1px solid var(--linha); font-size:13px; font-weight:500; white-space:nowrap; color:var(--tinta)}
+.pill::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--c)}
+.nota{text-align:right}
+.nota b{font:600 54px/.9 var(--display); letter-spacing:-.04em; display:block}
+.nota span{font-size:12.5px; color:var(--tinta-2)}
+
+.subabas{display:flex; gap:4px; border-bottom:1px solid var(--linha); margin-bottom:26px; overflow-x:auto}
+.subabas button{background:none; border:0; border-bottom:3px solid transparent; padding:10px 14px; cursor:pointer; font-weight:500; color:var(--tinta-2); white-space:nowrap}
+.subabas button[aria-selected="true"]{color:var(--tinta); border-color:var(--cobalto)}
+
+.folha{background:var(--folha); border:1px solid var(--linha); border-radius:14px; padding:22px}
+.duas{display:grid; grid-template-columns:minmax(0,1fr) 330px; gap:22px; align-items:start}
+.grade{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; align-items:start}
+.pilha{display:flex; flex-direction:column; gap:18px; min-width:0}
+.fixa{position:sticky; top:18px}
+.ficha{margin:0; display:grid; gap:14px}
+.ficha dt{font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--tinta-2)}
+.ficha dd{margin:2px 0 0; font-weight:400; overflow-wrap:anywhere}
+.ficha dd small{display:block; font-weight:400; color:var(--tinta-2); font-size:13px}
+.ficha dd small.forte{color:var(--tinta); margin-bottom:6px}
+
+/* Roteiro: a linha do tempo da ligação */
+.roteiro{position:relative; padding-left:34px}
+.roteiro::before{content:""; position:absolute; left:10px; top:8px; bottom:8px; width:2px; background:var(--linha)}
+.etapa{position:relative; padding-bottom:28px}
+.etapa:last-child{padding-bottom:0}
+.etapa::before{content:attr(data-n); position:absolute; left:-34px; top:0; width:22px; height:22px; border-radius:50%; background:var(--tinta); color:var(--papel); font:400 12px/22px var(--mono); text-align:center}
+.etapa h2{font-size:17px; margin-bottom:10px}
+/* O que o agente diz em voz alta vem marcado como com caneta marca-texto */
+.fala{font:400 18px/1.7 var(--fala); margin:0 0 8px; max-width:62ch}
+.fala span{background:linear-gradient(transparent 58%,var(--marca) 58%); box-decoration-break:clone; -webkit-box-decoration-break:clone; padding:0 2px}
+.obs{font-size:13.5px; color:var(--tinta-2); max-width:66ch}
+.lista{margin:0; padding-left:20px; max-width:66ch}
+.lista li{margin-bottom:7px}
+.lista.falada li{font:400 17px/1.6 var(--fala)}
+.tag{display:inline-block; font:400 11px var(--mono); letter-spacing:.02em; padding:1px 7px; border-radius:4px; background:var(--suave); color:var(--tinta-2); vertical-align:2px; margin-left:6px; text-transform:none}
+.tag.dest{background:var(--cobalto); color:var(--folha)}
+.oferta{border-top:1px solid var(--linha); padding:14px 0}
+.oferta:first-of-type{border-top:0; padding-top:0}
+.oferta .t{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:baseline; margin-bottom:6px}
+.oferta .t b{font-weight:500}
+.preco{font:400 13px var(--mono); color:var(--tinta-2)}
+iframe.proposta{display:block; width:100%; height:82vh; margin-top:18px; border:1px solid var(--linha); border-radius:14px; background:#fff}
+a.chip{text-decoration:none; color:inherit}
+.acoes{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; align-items:flex-start}
+.acoes .bt{display:inline-flex; align-items:center; min-height:42px; padding:0 18px; border-radius:10px; border:1px solid var(--linha); background:var(--folha); color:var(--tinta); font:500 14.5px var(--texto); text-decoration:none; cursor:pointer; list-style:none}
+.acoes .bt.pri{background:var(--cobalto); border-color:var(--cobalto); color:var(--folha)}
+.acoes summary::-webkit-details-marker{display:none}
+.acoes details{position:relative}
+.acoes details div{position:absolute; z-index:20; top:calc(100% + 6px); left:0; min-width:100%; background:var(--folha); border:1px solid var(--linha); border-radius:10px; padding:6px; box-shadow:0 10px 30px rgba(10,16,32,.14)}
+.acoes details div a{display:block; padding:10px 12px; border-radius:7px; color:var(--tinta); text-decoration:none; font-weight:500; white-space:nowrap}
+.acoes details div a:hover{background:var(--fundo, rgba(127,127,127,.12))}
+.acoes details div small{display:block; font-weight:400; color:var(--tinta-2)}
+.obj{border-top:1px solid var(--linha); padding:14px 0}
+.obj:first-child{border-top:0; padding-top:0}
+.obj:last-child{padding-bottom:0}
+.obj>b{display:block; font-weight:500; margin-bottom:2px}
+.obj .fala{font-size:17px; margin-top:8px}
+details{margin-top:12px}
+summary{cursor:pointer; font-weight:500; font-size:14px; color:var(--cobalto)}
+details>div{margin-top:14px}
+.chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{font-size:13px; padding:4px 10px; border-radius:20px; border:1px solid var(--linha); background:var(--folha)}
+.chip.ok{border-color:var(--verde); color:var(--verde); font-weight:500}
+
+/* Análise */
+.lide{font:400 20px/1.55 var(--fala); max-width:60ch}
+.fato{display:grid; grid-template-columns:86px 1fr; gap:12px; padding:11px 0; border-top:1px solid var(--linha)}
+.fato:first-of-type{border-top:0; padding-top:0}
+.fato time{font:400 12.5px var(--mono); color:var(--tinta-2); padding-top:2px}
+.barras{display:grid; grid-template-columns:minmax(110px,auto) 1fr 22px; gap:7px 12px; align-items:center; font-size:13.5px}
+.barras i{display:block; height:8px; border-radius:4px; background:var(--suave); overflow:hidden}
+.barras i::after{content:""; display:block; height:100%; width:var(--w); background:var(--cobalto)}
+.barras b{text-align:right; font:400 13px var(--mono)}
+.aviso{border-left:3px solid var(--ambar); padding:2px 0 2px 14px}
+.vazio{color:var(--tinta-2); font-weight:400}
+
+/* Histórico */
+.lig{border-top:1px solid var(--linha); padding:16px 0}
+.lig:first-of-type{border-top:0; padding-top:0}
+.lig:last-child{padding-bottom:0}
+.lig .t{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:baseline}
+.lig audio{width:100%; margin-top:10px; height:38px}
+.lig p{margin-top:8px}
+
+.transc p{margin:0 0 8px; max-width:70ch}
+.transc p.cliente{color:var(--tinta-2)}
+.transc .mono{color:var(--tinta-2); font-size:12px}
+.aval>p{margin-top:10px; max-width:70ch}
+.duv{text-decoration:underline dotted var(--ambar); text-underline-offset:3px; cursor:help}
+
+/* Gráficos */
+.grade.larga{grid-template-columns:repeat(auto-fit,minmax(min(100%,430px),1fr))}
+.graf{width:100%; height:auto; display:block; overflow:visible}
+.graf text{font:400 12px var(--texto); fill:var(--tinta-2)}
+.graf text.forte{fill:var(--tinta); font-weight:500}
+.graf .ponto{cursor:pointer}
+.legenda{display:flex; gap:18px; flex-wrap:wrap; font-size:13px; color:var(--tinta-2); margin-top:10px}
+.legenda span::before{content:""; display:inline-block; width:18px; height:0; border-top:2px var(--e,solid) var(--c); vertical-align:middle; margin-right:7px}
+.rank{display:grid; grid-template-columns:minmax(120px,42%) 1fr 30px; gap:10px; align-items:center; padding:5px 6px; border-radius:6px; font-size:13.5px; cursor:pointer; width:100%; background:none; border:0; text-align:left}
+.rank:hover{background:var(--suave)}
+.rank i{display:block; height:10px; border-radius:0 4px 4px 0; background:var(--c); width:var(--w)}
+.rank b{text-align:right; font:400 13px var(--mono)}
+.rank.eu span{font-weight:500}
+.calor td,.calor th{text-align:center; padding:9px 6px}
+.calor td:first-child,.calor th:first-child{text-align:left}
+.calor td.cel{font:400 13px var(--mono); border-bottom:2px solid var(--folha); border-left:2px solid var(--folha)}
+.faixas{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px}
+.faixas .folha>b{font:600 40px/1 var(--display); letter-spacing:-.03em}
+.faixas button{display:block; background:none; border:0; padding:3px 0; cursor:pointer; text-align:left; color:var(--cobalto); font-size:14px}
+#dica{position:fixed; z-index:50; pointer-events:none; background:var(--tinta); color:var(--papel); font-size:12.5px; line-height:1.4; padding:6px 9px; border-radius:6px; max-width:260px; display:none}
+
+/* Esteiras */
+/* Uma cor por etapa do kanban: vai no rótulo do cabeçalho, no filete da coluna e na borda dos cartões */
+:root{--f-nova:#5F6B85; --f-tentar:#2B50FF; --f-retornar:#7A3FD1; --f-canal:#0B7F96; --f-apresentar:#C2570A; --f-aguardando:#B0288F; --f-ganha:#12855F; --f-encerrada:#C0392B}
+.kcol header{background:var(--c); color:#fff; border-radius:11px 11px 0 0; margin-bottom:10px}
+.kcol header h3, .kcol header small{color:#fff}
+.kcol header .kn{background:rgba(255,255,255,.24); color:#fff}
+.kfase{font-weight:500; font-size:14px; line-height:1.3}
+.kanban{display:flex; gap:12px; overflow-x:auto; align-items:flex-start; padding-bottom:14px}
+.kcol{flex:0 0 288px; background:var(--suave); border:1px solid var(--linha); border-top:3px solid var(--c); border-radius:14px; display:flex; flex-direction:column}
+.kcol header{padding:12px 16px 12px}
+.kcol h3{margin:0; display:flex; justify-content:space-between; align-items:center; gap:8px; text-transform:none; letter-spacing:0; font-size:13px; color:var(--tinta)}
+.kn{background:var(--linha); border-radius:20px; padding:1px 8px; font:400 12px var(--mono); color:var(--tinta-2); vertical-align:middle}
+.kcol header small{display:block; margin-top:6px; font:400 12.5px var(--mono); opacity:.9}
+.kcards{display:flex; flex-direction:column; gap:8px; padding:4px 10px 12px; min-height:64px; border-radius:0 0 14px 14px}
+.kcol.alvo .kcards{background:color-mix(in srgb, var(--c) 14%, transparent)}
+.kcard{background:var(--folha); border:1px solid var(--linha); border-left:3px solid var(--c); border-radius:12px; padding:10px 12px; font-size:13px; cursor:pointer; transition:transform .12s, box-shadow .12s}
+.kcard:hover{transform:translateY(-1px); box-shadow:0 8px 20px rgba(28,36,52,.10)}
+.kcard[draggable="true"]{cursor:grab}
+.kcard b{display:block; font-weight:500; line-height:1.25}
+.kcard small{display:block; color:var(--tinta-2); font-size:12px}
+.krel{border-top:1px solid var(--linha); margin-top:8px; padding-top:8px; cursor:default}
+.krel summary{cursor:pointer; font-size:11.5px; font-weight:500; letter-spacing:.04em; text-transform:uppercase; color:var(--tinta-2)}
+.krel textarea{display:block; width:100%; box-sizing:border-box; margin-top:8px; padding:8px 9px; border:1px solid var(--linha); border-radius:8px; background:transparent; color:inherit; font:400 12.5px/1.5 var(--texto); resize:vertical}
+.krel textarea:focus{outline:2px solid var(--cobalto); outline-offset:-1px}
+.kv{display:flex; justify-content:space-between; align-items:baseline; gap:8px; margin-top:8px}
+.kv span{font-weight:500; font-variant-numeric:tabular-nums}
+.kf{display:flex; justify-content:space-between; align-items:center; gap:8px; border-top:1px solid var(--linha); margin-top:8px; padding-top:8px; font-size:11.5px; color:var(--tinta-2)}
+.kvazio{border:1px dashed var(--cinza); border-radius:8px; padding:18px 8px; text-align:center; font-size:12px; color:var(--tinta-2); margin:0}
+.chips button.chip, .faixa-et .chip, .kcards .chip, .selos .chip, .form-t .chip{cursor:pointer}
+.selo{display:inline-flex; align-items:center; height:22px; padding:0 8px; border-radius:20px; font-size:11.5px; font-weight:500; color:var(--c); background:color-mix(in srgb, var(--c) 14%, var(--folha)); white-space:nowrap}
+.bateria{display:flex; height:24px; overflow:hidden; border-radius:6px}
+.bateria span{min-width:3px; background:var(--c)}
+.tar{display:grid; grid-template-columns:22px minmax(0,1fr) auto; gap:4px 12px; padding:12px 0; border-top:1px solid var(--linha); align-items:start}
+.tar:first-child{border-top:0; padding-top:0}
+.tar:last-child{padding-bottom:0}
+.tar b{font-weight:500}
+.tar.feita b{text-decoration:line-through; color:var(--tinta-2)}
+.tar .selos{display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end; align-items:center}
+.marca-t{width:20px; height:20px; margin-top:2px; border-radius:6px; border:2px solid var(--cinza); background:none; cursor:pointer; padding:0}
+.marca-t[aria-pressed="true"]{background:var(--verde); border-color:var(--verde)}
+.form-t{display:flex; gap:8px; flex-wrap:wrap}
+.form-t input,.form-t select{background:var(--folha); border:1px solid var(--linha); border-radius:8px; padding:7px 10px}
+.form-t input[name="titulo"]{flex:1 1 260px}
+@media (max-width:700px){ .tar{grid-template-columns:22px minmax(0,1fr)} .tar .selos{grid-column:2; justify-content:flex-start} }
+.faixa-et{display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; background:var(--suave); border-radius:10px; padding:10px 14px; margin-bottom:20px; font-size:14px}
+.sep-et{font:500 12px/1.3 var(--texto); letter-spacing:.06em; text-transform:uppercase; color:var(--cobalto); margin:0 0 16px -34px; padding-top:4px}
+.etapa + .sep-et{margin-top:6px; padding-top:20px; border-top:1px solid var(--linha)}
+
+/* Visão geral */
+.numeros{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; background:var(--linha); border:1px solid var(--linha); border-radius:14px; overflow:hidden; margin-bottom:26px}
+.numeros div{background:var(--folha); padding:18px 20px}
+.numeros b{font:600 30px/1 var(--display); letter-spacing:-.02em; display:block}
+.numeros span{font-size:13px; color:var(--tinta-2)}
+.faixa{display:grid; grid-template-columns:150px 1fr 28px; gap:12px; align-items:center; margin-bottom:9px; font-size:14px}
+.faixa i{display:block; height:12px; border-radius:6px; background:var(--suave); overflow:hidden}
+.faixa i::after{content:""; display:block; height:100%; width:var(--w); background:var(--c)}
+.faixa b{text-align:right; font:400 14px var(--mono)}
+table{width:100%; border-collapse:collapse}
+.rol{overflow-x:auto}
+th,td{text-align:left; padding:11px 10px; border-bottom:1px solid var(--linha); vertical-align:middle}
+th{font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--tinta-2); font-weight:500; white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tr.vai{cursor:pointer}
+tr.vai:hover{background:var(--suave)}
+td.num,th.num{text-align:right; font-family:var(--mono); font-size:13.5px}
+td small{display:block; color:var(--tinta-2); font-size:13px}
+.catitem{display:flex; justify-content:space-between; gap:14px; padding:7px 0; border-top:1px solid var(--linha); font-size:14px}
+.catitem b{font:400 13px var(--mono); white-space:nowrap}
+section{margin-bottom:38px}
+
+.menu{display:none}
+@media (max-width:960px){
+  .app{grid-template-columns:1fr}
+  .trilho{position:static; height:auto}
+  .leads, .bloco-leads .leads{max-height:0; padding-bottom:0; overflow:hidden}
+  .trilho.aberto .leads{max-height:50vh; padding-bottom:16px; overflow-y:auto}
+  .menu{display:block; margin:0 14px 12px; background:var(--trilho-ativo); border:1px solid var(--trilho-linha); color:#E8EBF5; border-radius:8px; padding:8px 12px; font-weight:500; cursor:pointer}
+  .duas{grid-template-columns:1fr}
+  .fixa{position:static}
+  .nota{text-align:left}
+  .ocultar{display:none}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="trilho" id="trilho">
+    <div class="marca"><b>Raze Geradores</b><span id="atualizado"></span></div>
+    <div class="bloco-painel">
+    <div class="rotulo"><span>Painel</span></div>
+    <nav class="nav" aria-label="Seções">
+      <button class="aba" data-ir="kanban">Kanban</button>
+    </nav>
+    </div>
+    <div class="bloco-leads">
+      <div class="rotulo"><span>Leads</span><span id="conta"></span></div>
+      <div class="busca"><input id="busca" type="search" placeholder="Buscar lead ou segmento" aria-label="Buscar lead"></div>
+      <button class="menu" id="menu">Mostrar leads</button>
+      <nav class="leads" id="leads" aria-label="Leads"></nav>
+    </div>
+  </aside>
+  <main class="main" id="main"></main>
+  <div id="dica" role="tooltip"></div>
+</div>
+
+<script>
+const DB = __DADOS__;
+const FIT = ["Carga que não pode cair","Exigência de norma ou documento","Porte e complexidade","Acesso ao decisor"];
+const SIT = {
+  conversou:{t:"Conversou", c:"--verde"},
+  tentativa:{t:"Não conversou", c:"--ambar"},
+  pendente:{t:"Não abordada", c:"--cinza"},
+};
+const SITP = {no_site:"--verde", parcial:"--ambar", fora:"--vermelho", nao_conferido:"--cinza"};
+/* Ordem de abordagem das contas */
+const ONDA = {s1:"Semana 1", s2:"Semana 2", validar:"Validar dados antes", base:"Base, sem estudo individual"};
+const brl = v => "R$ "+Math.round(v).toLocaleString("pt-BR");
+const CONF = {alta:"--verde", media:"--ambar", baixa:"--vermelho"};
+const P = DB.playbook, K = DB.catalogo, C = DB.contas;
+/* No relatório do cliente ficam o CRM, as esteiras e os dados das empresas; o material de roteiro não aparece */
+const CLIENTE = DB.modo === "cliente";
+const $ = id => document.getElementById(id);
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const nota = c => c.fit.reduce((a,b)=>a+b,0);
+const quando = iso => iso ? new Date(iso).toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}) : "";
+const tempo = s => { s=Math.round(s||0); const m=Math.floor(s/60); return m>=60 ? `${Math.floor(m/60)}h ${String(m%60).padStart(2,"0")}min` : `${m}:${String(s%60).padStart(2,"0")}` };
+const pill = (t,c) => `<span class="pill" style="--c:var(${c})">${esc(t)}</span>`;
+const fala = t => `<p class="fala"><span>${esc(t)}</span></p>`;
+const ul = (a,cls="") => `<ul class="lista ${cls}">${a.map(x=>`<li>${x}</li>`).join("")}</ul>`;
+const link = (u,t) => /^https?:\/\//.test(u||"") ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(t)}</a>` : esc(t);
+const dominio = u => { try { return new URL(u).hostname.replace(/^www\./,"") } catch { return u } };
+const conf = a => pill("confiança "+String(a.confianca).replace("media","média"), CONF[a.confianca]||"--cinza");
+
+/* Etapas mudadas no kanban, guardadas neste navegador até entrarem no tentativas.json */
+let MOV = {};
+try { if (!CLIENTE) MOV = JSON.parse(localStorage.getItem("raze-kanban")) || {} } catch {}
+for (const id of Object.keys(MOV)) if (!C.some(c=>c.id===id)) delete MOV[id];
+const guardarMov = () => { try { localStorage.setItem("raze-kanban", JSON.stringify(MOV)) } catch {} };
+function situar(c){
+  const ok = c.chamadas.filter(x=>x.completada);
+  c.falado = ok.reduce((a,x)=>a+x.falado,0);
+  c.sit = ok.length ? "conversou" : (c.chamadas.length || MOV[c.id]) ? "tentativa" : "pendente";
+}
+C.forEach(situar);
+const todas = [...C.flatMap(c=>c.chamadas), ...DB.avulsas];
+const atendidas = todas.filter(x=>x.completada);
+const ordemSit = Object.keys(SIT);
+const ordenadasPorFit = [...C].sort((a,b)=>nota(b)-nota(a) || a.empresa.localeCompare(b.empresa));
+const ordenadas = [...C].sort((a,b)=>ordemSit.indexOf(a.sit)-ordemSit.indexOf(b.sit) || nota(b)-nota(a) || a.empresa.localeCompare(b.empresa));
+
+/* Cada lead tem endereço próprio (#lead/c1) e pode abrir em outra aba do navegador */
+function rota(){
+  const [v,id,sub] = location.hash.slice(1).split(/[./]/);
+  const inicial = "analise";
+  if (v==="lead" && C.some(c=>c.id===id)) return {v, id, sub:["analise","historico"].includes(sub) ? sub : inicial};
+  const telas = ["kanban"];
+  return {v:telas.includes(v)?v:"kanban"};
+}
+
+function trilho(){
+  const r = rota(), q = $("busca").value.trim().toLowerCase();
+  const vis = ordenadas.filter(c=>!q || (c.empresa+" "+c.segmento+" "+c.cidade+(c.revenda?" revenda":"")).toLowerCase().includes(q));
+  $("conta").textContent = vis.length;
+  $("leads").innerHTML = vis.map(c=>`<button class="aba" data-ir="lead/${c.id}" ${r.id===c.id?'aria-current="page"':""} title="${SIT[c.sit].t}">
+    <i class="pt" style="--c:var(${SIT[c.sit].c})"></i><span><span class="n">${esc(c.empresa)}</span><span class="s">${esc(c.segmento)}${c.revenda?" · revenda":""}</span></span><span class="f">${nota(c)}</span></button>`).join("")
+    || `<div class="rotulo">Nenhum lead encontrado</div>`;
+  document.querySelectorAll(".nav .aba").forEach(b=>{ if (b.dataset.ir===r.v) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current") });
+}
+
+/* Solução de entrada: a do segmento que usa o produto apontado na análise da empresa; senão, a primeira do roteiro */
+function entrada(c){
+  const ids = (P.segmentos[c.segmento]?.ofertas||[]).map(o=>o.solucao);
+  const prod = (c.analise?.produto_de_entrada||c.combo||"").toLowerCase();
+  const id = (prod && ids.find(k=>P.solucoes[k].chaves.some(x=>prod.includes(x)))) || ids[0];
+  return {id, ...(P.solucoes[id]||{nome:"", referencia:"", composicao:[]})};
+}
+/* A pesquisa às vezes traz o telefone com uma observação junto; para discar, vale só o número */
+const soNumero = t => (String(t||"").match(/(?:\+55\s?)?\(?\d{2}\)?\s?\d{4,5}[-\s]?\d{4}|0800[\s-]?\d{3}[\s-]?\d{4}/)||[""])[0];
+function telefone(c){
+  return soNumero(c.analise?.contato_publico?.telefone) || soNumero(c.telefone) || c.chamadas.find(x=>x.telefone)?.telefone || "";
+}
+const telLink = t => `<a class="mono" href="tel:${esc(t.replace(/[^\d+]/g,""))}">${esc(t)}</a>`;
+
+/* Esteiras: 1 localiza o responsável; 2 apresenta a proposta objetiva ao contato obtido */
+const ETAPAS = {
+  tentar:{e:1, t:"Ligar e localizar o responsável"},
+  retornar:{e:1, t:"Retorno combinado"},
+  canal:{e:1, t:"Abordar por canais de apoio"},
+  apresentar:{e:2, t:"Apresentar a proposta personalizada"},
+  aguardando:{e:2, t:"Proposta enviada, aguardando retorno"},
+  ganha:{e:0, t:"Proposta aceita"},
+  encerrada:{e:0, t:"Encerradas nesta rodada"},
+};
+/* A antiga etapa "enviar a proposta pedida" foi unida à de apresentar a proposta personalizada */
+const unida = k => k==="enviar" ? "apresentar" : k;
+const etapaDe = c => unida(MOV[c.id]?.etapa || c.chamadas.find(x=>x.etapa)?.etapa || "tentar");
+const contatoDe = c => (c.analise?.decisores||[]).filter(d=>/informado pela Esparta/.test(d.cargo)).map(d=>d.nome).join(" e ");
+
+/* Inteligência: o que já foi abordado e em que pé está, o que falta abordar, com qual técnica e qual oferta */
+const contar = (lista, f) => { const m = new Map(); for (const x of lista){ const k = f(x); m.set(k, (m.get(k)||0)+1) } return [...m].sort((a,b)=>b[1]-a[1]) };
+const ehCelular = c => /^(55)?\d{2}9\d{8}$/.test(telefone(c).replace(/\D/g,""));
+const complementarDe = c => (c.combo_secundario||"").replace(/^[CP]\d\s/,"");
+const preparo = c => c.analise?.motivo_da_ligacao ? "Proposta própria da conta, com fato da empresa" : c.onda==="validar" ? "Confirmar os dados da empresa e seguir o roteiro da frente" : "Roteiro da frente";
+function inteligencia(){
+  const feitas = C.filter(c=>c.sit!=="pendente"), fila = C.filter(c=>c.sit==="pendente");
+  const ordemEt = Object.keys(ETAPAS), ordemOnda = Object.keys(ONDA);
+  const porEt = [...feitas].sort((a,b)=>ETAPAS[etapaDe(b)].e-ETAPAS[etapaDe(a)].e || ordemEt.indexOf(etapaDe(a))-ordemEt.indexOf(etapaDe(b)) || a.empresa.localeCompare(b.empresa));
+  const estudadas = fila.filter(c=>c.onda!=="base").sort((a,b)=>ordemOnda.indexOf(a.onda)-ordemOnda.indexOf(b.onda) || nota(b)-nota(a) || a.empresa.localeCompare(b.empresa));
+  const base = fila.filter(c=>c.onda==="base").sort((a,b)=>a.segmento.localeCompare(b.segmento) || nota(b)-nota(a) || a.empresa.localeCompare(b.empresa));
+  const valor = l => l.reduce((s,c)=>s+(c.valor_referencia||0),0);
+  const barra = (t,n,max,cor) => `<div class="faixa" style="--c:var(${cor}); --w:${n/max*100}%; grid-template-columns:minmax(150px,46%) 1fr 34px"><span>${esc(t)}</span><i></i><b>${n}</b></div>`;
+  const etapas = ordemEt.map(k=>[k, feitas.filter(c=>etapaDe(c)===k).length]).filter(x=>x[1]);
+  const resultados = contar(feitas, c=>c.chamadas[0]?.qualificacao || "Sem qualificação");
+  const frentes = contar(fila, c=>c.segmento).map(([s,n])=>{ const l = fila.filter(c=>c.segmento===s); return {s, n, l, t:P.segmentos[s]?.tecnica, ofertas:contar(l, c=>entrada(c).nome), comp:contar(l.filter(complementarDe), complementarDe)} });
+  const ofertas = contar(fila, c=>entrada(c).id).map(([id,n])=>({o:P.solucoes[id], n, l:fila.filter(c=>entrada(c).id===id)})).filter(x=>x.o);
+  const corEt = k => ETAPAS[k].e===2 ? "--verde" : ETAPAS[k].e===1 ? "--cobalto" : "--cinza";
+  const linhaFila = c => `<tr class="vai" data-ir="lead/${c.id}" tabindex="0"><td><b>${esc(c.empresa)}</b><small>${esc(c.segmento)}, ${esc(c.cidade)}</small></td>
+      <td>${esc(ONDA[c.onda]||"")}<small>${ehCelular(c)?"Celular":"Fixo"}</small></td>
+      ${CLIENTE?"":`<td class="ocultar">${esc(preparo(c))}</td>`}
+      <td>${esc(entrada(c).nome)}<small>${esc(complementarDe(c))}</small></td>
+      </tr>`;
+  const cabFila = `<thead><tr><th>Conta</th><th>Quando e canal</th>${CLIENTE?"":`<th class="ocultar">Preparo</th>`}<th>Plano de entrada e complementar</th></tr></thead>`;
+  return `
+  <div class="cab"><div><div class="olho">Inteligência da campanha · Rio de Janeiro e região metropolitana</div><h1>${feitas.length} abordadas, ${fila.length} a abordar</h1>
+    <p class="meta">O que já foi abordado e em que pé está, o que falta abordar, ${CLIENTE?"":"com qual técnica "}e qual oferta entra em cada abordagem.</p></div></div>
+  <div class="numeros">${[[C.length,"contas na carteira"],[feitas.length,"já abordadas"],[C.filter(c=>c.sit==="conversou").length,"com conversa"],[feitas.filter(c=>ETAPAS[etapaDe(c)].e===2).length,"na esteira 2, com proposta"],[fila.length,"ainda não abordadas"],[estudadas.length,"na fila prioritária"]].map(([n,t])=>`<div><b>${n}</b><span>${t}</span></div>`).join("")}</div>
+
+  <section><h2>1. O que já foi abordado</h2><p class="sub">Cada conta com o resultado do último contato, a etapa em que está e o próximo passo. As contas com proposta em andamento vêm primeiro.</p>
+    <div class="folha rol"><table><thead><tr><th>Conta</th><th>Resultado do último contato</th><th>Onde está</th><th class="ocultar">Próximo passo</th></tr></thead><tbody>
+    ${porEt.map(c=>{ const k=etapaDe(c), u=c.chamadas[0]; return `<tr class="vai" data-ir="lead/${c.id}/historico" tabindex="0"><td><b>${esc(c.empresa)}</b><small>${esc(c.segmento)}${contatoDe(c)?` · contato: ${esc(contatoDe(c))}`:""}</small></td>
+      <td>${pill(u?.qualificacao||"Sem qualificação", c.sit==="conversou"?"--verde":"--ambar")}<small>${quando(u?.inicio)} · ${c.chamadas.length} ${c.chamadas.length>1?"contatos":"contato"}</small></td>
+      <td>${pill(ETAPAS[k].e?`Esteira ${ETAPAS[k].e}`:"Fora da rodada", corEt(k))}<small>${esc(ETAPAS[k].t)}</small></td>
+      <td class="ocultar">${esc(u?.nota||"")}</td></tr>` }).join("") || `<tr><td colspan="4" class="vazio">Nenhuma conta abordada ainda.</td></tr>`}</tbody></table></div></section>
+
+  <section><h2>2. Status a partir da abordagem</h2><p class="sub">Como as ${feitas.length} contas abordadas se distribuem pelas etapas e pelo resultado do último contato.</p>
+    <div class="grade">
+      <div class="folha"><h3>Por etapa</h3>${etapas.map(([k,n])=>barra(ETAPAS[k].t,n,feitas.length,corEt(k))).join("") || `<p class="vazio">Sem contas abordadas.</p>`}</div>
+      <div class="folha"><h3>Por resultado do último contato</h3>${resultados.map(([k,n])=>barra(k,n,resultados[0][1],"--cobalto")).join("") || `<p class="vazio">Sem contas abordadas.</p>`}</div>
+    </div></section>
+
+  <section><h2>3. O que falta abordar${CLIENTE?"":", e com qual técnica"}</h2><p class="sub">As ${fila.length} contas não abordadas, por frente. ${estudadas.length} têm estudo individual e ordem de abordagem; ${base.length} vêm da base de 300 e seguem o roteiro da frente.</p>
+    <div class="folha rol"><table><thead><tr><th>Frente</th><th class="num">Contas</th><th class="num ocultar">Estudadas</th>${CLIENTE?"":"<th>Técnica de abordagem</th>"}<th>Oferta de entrada</th><th class="ocultar">Complementar</th></tr></thead><tbody>
+    ${frentes.map(g=>`<tr><td><b>${esc(g.s)}</b></td><td class="num">${g.n}</td><td class="num ocultar">${g.l.filter(c=>c.onda!=="base").length}</td>
+      ${CLIENTE?"":`<td>${g.t?`<b>${esc(g.t.nome)}</b><small>${esc(g.t.como)}</small>`:`<span class="vazio">roteiro do segmento</span>`}</td>`}
+      <td>${g.ofertas.map(([o,n])=>`${esc(o)} <span class="mono">${n}</span>`).join("<br>")}</td>
+      <td class="ocultar">${g.comp.slice(0,2).map(([o,n])=>`${esc(o)} <span class="mono">${n}</span>`).join("<br>")}</td></tr>`).join("")}</tbody></table></div>
+    ${CLIENTE?"":`<p class="obs" style="margin-top:12px">Canal: no celular, a ligação tende a cair em quem decide, e a abordagem começa pela apresentação ao responsável. No fixo, começa pela recepção, e o objetivo é sair com o nome e o horário de quem decide.</p>`}
+  </section>
+
+  <section><h2>4. Fila de abordagem: a oferta de cada conta</h2><p class="sub">As contas estudadas, na ordem em que devem ser abordadas, com o plano de entrada e o complementar.</p>
+    <div class="folha rol"><table>${cabFila}<tbody>${estudadas.map(linhaFila).join("") || `<tr><td colspan="4" class="vazio">Todas as contas prioritárias já foram abordadas.</td></tr>`}</tbody></table></div>
+    ${base.length?`<details><summary>Ver as ${base.length} contas da base, sem estudo individual</summary><div class="folha rol"><table>${cabFila}<tbody>${base.map(linhaFila).join("")}</tbody></table></div></details>`:""}
+  </section>
+
+  <section><h2>5. As ofertas</h2><p class="sub">Os planos que entram nas abordagens, com o que cada um inclui e quantas contas da fila entram por ele.</p>
+    <div class="grade">${ofertas.map(x=>`<div class="folha"><h2>${esc(x.o.nome)}</h2><p style="margin:6px 0 12px">${esc(x.o.resolve)}</p><div class="chips">${x.o.composicao.map(i=>`<span class="chip">${esc(i)}</span>`).join("")}</div><p class="preco" style="margin-top:12px">${esc(x.o.referencia)}</p>
+      <p class="obs" style="margin-top:10px"><b>${x.n}</b> ${x.n>1?"contas a abordar por esta oferta":"conta a abordar por esta oferta"}${valor(x.l)?` · ${brl(valor(x.l))} de referência nas estudadas`:""}</p></div>`).join("")}</div></section>`;
+}
+
+
+const objHtml = o => `<div class="obj"><b>“${esc(o.objecao)}”${o.tipo?`<span class="tag">${esc(o.tipo)}</span>`:""}</b>${o.por_tras?`<div class="obs">${esc(o.por_tras)}</div>`:""}${fala(o.resposta)}${o.nao_fazer?`<div class="obs">${esc(o.nao_fazer)}</div>`:""}${o.proximo_passo?`<div class="obs">Depois: ${esc(o.proximo_passo)}</div>`:""}</div>`;
+const ramoHtml = o => `<div class="obj"><b>${esc(o.situacao)}</b>${fala(o.fala)}<div class="obs">Depois: ${esc(o.depois)}</div></div>`;
+
+function playbook(){
+  const G = P.geral;
+  return `
+  <div class="cab"><div><div class="olho">Como a equipe liga</div><h1>Playbook</h1></div></div>
+  <section><h2>O que conta como ligação boa</h2><p class="sub">A primeira ligação vende o próximo passo, não a solução. O objetivo depende de quem atende.</p>
+    <div class="grade">
+      <div class="folha"><h3>Atendeu a recepção</h3><p>${esc(P.objetivo.recepcao)}</p></div>
+      <div class="folha"><h3>Atendeu quem decide</h3><p>${esc(P.objetivo.principal)}</p></div>
+      <div class="folha"><h3>Se não der</h3><p>${esc(P.objetivo.plano_b)}</p></div>
+    </div></section>
+  <section class="grade">
+    <div class="folha"><h3>Na recepção, saia com</h3>${ul(G.recepcao.colher.map(esc))}<p class="obs" style="margin:12px 0 6px">Se já tem o nome de quem decide, peça pelo nome:</p>${fala(G.recepcao.com_nome)}<p class="obs">${esc(G.recepcao.nao_fazer)}</p></div>
+    <div class="folha"><h3>Triagem: só preço ou problema a resolver</h3>${ul(G.triagem.perguntas.map(esc),"falada")}<p class="obs" style="margin-top:10px">${esc(G.triagem.orcamento)}</p><p class="obs" style="margin-top:6px">${esc(G.triagem.levantamento)}</p></div>
+  </section>
+  <section class="duas">
+    <div class="pilha">
+      <div class="folha"><h3>Objeções gerais</h3>${G.objecoes.map(objHtml).join("")}</div>
+      <div class="folha"><h3>Situações fora do roteiro</h3>${G.ramos.map(ramoHtml).join("")}</div>
+      <div class="folha"><h3>Quando não atende</h3>
+        <div class="obs">Caixa postal</div>${fala(G.nao_atendeu.caixa_postal)}
+        <div class="obs" style="margin-top:14px">WhatsApp, só com permissão</div>${fala(G.nao_atendeu.whatsapp)}
+        <div class="obs" style="margin-top:14px">E-mail</div><p class="fala" style="white-space:pre-line"><span>${esc(G.nao_atendeu.email)}</span></p></div>
+    </div>
+    <div class="pilha">
+      <div class="folha"><h3>Regras do agente</h3>${ul(G.regras.map(esc))}</div>
+      <div class="folha"><h3>Cadência de tentativas</h3>${ul(G.cadencia.map(esc))}</div>
+      <div class="folha"><h3>Registrar em toda ligação</h3>${ul(G.registrar.map(esc))}</div>
+      <div class="folha"><h3>Para virar oportunidade</h3>${ul(G.criterio_de_oportunidade.map(esc))}</div>
+    </div>
+  </section>
+  <section><h2>Qualificações a criar no Callix</h2><p class="sub">O agente marca uma ao desligar. Sem elas, o painel não mede resultado nem produto de interesse.</p>
+    <div class="folha rol"><table><thead><tr><th>Qualificação</th><th>Quando marcar</th><th>O que fazer em seguida</th></tr></thead><tbody>${G.tabulacoes.map(t=>`<tr><td><b>${esc(t.nome)}</b>${t.sucesso?`<small style="color:var(--verde)">conta como sucesso</small>`:""}</td><td>${esc(t.quando)}</td><td>${esc(t.proxima_acao||"")}</td></tr>`).join("")}</tbody></table></div></section>
+  <section><h2>A confirmar com a Raze</h2><p class="sub">Nada disto entra na fala do agente até ser confirmado.</p><div class="folha"><div class="aviso">${ul(P.a_confirmar.map(esc))}</div></div></section>`;
+}
+
+function catalogo(){
+  const m = new Map();
+  for (const c of C) for (const o of c.ofertas){
+    const k = o.nome.replace(/ \(.*\)$/,""), e = m.get(k) || {n:0, situacao:o.situacao, nota:o.nota};
+    e.n++; m.set(k, e);
+  }
+  const ordem = ["fora","parcial","nao_conferido","no_site"];
+  return `
+  <div class="cab"><div><div class="olho">O que pode ser ofertado</div><h1>Soluções e catálogo</h1>
+    <p class="meta">Fonte: ${link(K.fonte,"site da Raze")}, consultado em ${new Date(K.consultado_em+"T12:00").toLocaleDateString("pt-BR")}. Preços de varejo.</p></div></div>
+  <section><h2>Soluções</h2><p class="sub">O que a equipe apresenta ao cliente. Cada solução é montada com serviços do portfólio da Raze.</p>
+    <div class="grade">${Object.values(P.solucoes).map(o=>`<div class="folha"><h2>${esc(o.nome)}</h2><p style="margin:6px 0 12px">${esc(o.resolve)}</p><div class="chips">${o.composicao.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div><p class="preco" style="margin-top:12px">${esc(o.referencia)}</p></div>`).join("")}</div></section>
+  <section><h2>Itens do catálogo</h2><p class="sub">${esc(K.servicos)} ${esc(K.pagamento)}</p>
+    <div class="grade">${K.familias.map(f=>`<div class="folha"><h2>${esc(f.nome)}</h2><p class="obs" style="margin-bottom:12px">${esc(f.resumo)}</p>${f.itens.map(i=>`<div class="catitem"><span>${esc(i.nome)}</span><b>${esc(i.preco)}</b></div>`).join("")}</div>`).join("")}</div></section>
+  <section><h2>Produtos sugeridos no plano de contas</h2><p class="sub">Os serviços sugeridos para as contas da carteira. A coluna "No portfólio" mostra se a Raze oferece cada um.</p>
+    <div class="folha rol"><table><thead><tr><th>Serviço</th><th class="num">Contas</th><th>No portfólio</th><th class="ocultar">Observação</th></tr></thead><tbody>
+    ${[...m].sort((a,b)=>ordem.indexOf(a[1].situacao)-ordem.indexOf(b[1].situacao) || b[1].n-a[1].n).map(([k,e])=>`<tr><td><b>${esc(k)}</b></td><td class="num">${e.n}</td><td>${pill(K.situacoes[e.situacao],SITP[e.situacao])}</td><td class="ocultar">${esc(e.nota)}</td></tr>`).join("")}</tbody></table></div></section>`;
+}
+
+function ligacao(c){
+  const r = P.segmentos[c.segmento], a = c.analise, e = entrada(c), et = etapaDe(c);
+  if (!r) return `<p class="vazio">Sem roteiro para este segmento.</p>`;
+  const ofertas = [...r.ofertas].sort((x,y)=>(y.solucao===e.id)-(x.solucao===e.id)).map(o=>({...P.solucoes[o.solucao], fala:o.fala}));
+  const perguntas = [...(a?.perguntas_especificas||[]).map(p=>esc(p)+`<span class="tag dest">desta conta</span>`), ...r.perguntas.map(esc)];
+  const fatos = (a?.fatos_recentes||[]).slice(0,2);
+  const tel = telefone(c);
+  // Só vale pedir pelo nome quem tem cargo de compra, TI ou operação; diretoria e presidência ficam como referência
+  const nomes = (a?.decisores||[]).filter(d=>/informado pela Esparta|\b(ti|cio|compras|suprimentos|infraestrutura|opera[cç]|industrial|administrativ)/i.test(d.cargo) && !/não é o/i.test(d.cargo));
+  return `<div class="duas">
+    <div class="folha"><div class="faixa-et">${pill(ETAPAS[et].e ? `Esteira ${ETAPAS[et].e}: ${P.esteiras[ETAPAS[et].e-1].nome}` : "Fora da rodada", ETAPAS[et].e===2?"--verde":ETAPAS[et].e===1?"--cobalto":"--cinza")}<span><b>Próximo passo:</b> ${esc(ETAPAS[et].t)}${c.chamadas[0]?.nota?`. ${esc(c.chamadas[0].nota)}`:""}</span></div>
+      <p class="obs" style="margin-bottom:20px">As falas marcadas são um guia. Mantenha o tom profissional e propositivo.</p><div class="roteiro">
+      <p class="sep-et">Esteira 1 · Abordagem inicial: ${esc(r.alvo || "localizar o responsável por Operações e Tecnologia")}</p>
+      <div class="etapa" data-n="1"><h2>Na recepção</h2>${fala(nomes.length ? `Bom dia. Gostaria de falar com ${nomes[0].nome.split(" ").slice(0,2).join(" ")}, por favor. Aqui é [Seu nome], da Raze Geradores.`  : r.central)}
+        ${nomes.length?`<details><summary>Se não passarem a ligação</summary><div>${fala(r.central)}</div></details>`:""}
+        <p class="obs" style="margin-top:10px">Saia com: ${(r.colher || P.geral.recepcao.colher).map(x=>esc(x[0].toLowerCase()+x.slice(1))).join("; ")}. ${esc(P.geral.recepcao.nao_fazer)}</p></div>
+      <div class="etapa" data-n="2"><h2>Apresentação ao responsável</h2>${fala(r.abertura)}</div>
+      <p class="sep-et">Esteira 2 · Proposta objetiva para o contato obtido</p>
+      <div class="etapa" data-n="3"><h2>Proposta para a empresa${a?.motivo_da_ligacao?`<span class="tag dest">desta conta</span>`:""}</h2>${fala(a?.motivo_da_ligacao || r.problema)}
+        ${a?.motivo_da_ligacao?`<details><summary>Versão padrão do segmento</summary><div>${fala(r.problema)}</div></details>`:""}
+        <p class="obs" style="margin-top:10px">Outra entrada possível: ${esc(c.gancho)}</p></div>
+      <div class="etapa" data-n="4"><h2>Perguntas</h2>${ul(perguntas,"falada")}<p class="obs">Uma por vez. Escute a resposta inteira e pergunte sobre o que a pessoa acabou de dizer.</p>
+        <details><summary>Se só quiser preço</summary><div><p class="obs">${esc(P.geral.triagem.orcamento)}</p></div></details></div>
+      <div class="etapa" data-n="5"><h2>A solução a apresentar</h2><p class="obs" style="margin-bottom:14px">Ligue a solução ao problema que o cliente acabou de contar. O produto entra só como o meio.</p>
+        ${ofertas.map((o,i)=>`<div class="oferta"><div class="t"><b>${esc(o.nome)}${i===0?`<span class="tag dest">entrar por aqui</span>`:""}</b></div><p class="obs" style="margin-bottom:8px">${esc(o.resolve)}</p>${fala(o.fala)}
+          <div class="chips" style="margin-top:6px">${o.composicao.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div><p class="preco" style="margin-top:8px">${esc(o.referencia)}</p></div>`).join("")}
+        <p class="obs" style="margin-top:6px">Pergunte se também precisam, sem prometer: ${r.sondar.map(esc).join("; ")}.</p></div>
+      <div class="etapa" data-n="6"><h2>Se ouvir uma objeção</h2>${r.objecoes.map(objHtml).join("")}
+        <details><summary>Objeções gerais (${P.geral.objecoes.length})</summary><div>${P.geral.objecoes.map(objHtml).join("")}</div></details>
+        <details><summary>Situações fora do roteiro (${P.geral.ramos.length})</summary><div>${P.geral.ramos.map(ramoHtml).join("")}</div></details></div>
+      <div class="etapa" data-n="7"><h2>Pedido</h2>${fala(r.pedido)}<p class="obs" style="margin:12px 0 6px">Se não der:</p>${fala(r.plano_b)}</div>
+      <div class="etapa" data-n="8"><h2>Ao desligar, marque no Callix</h2><div class="chips">${P.geral.tabulacoes.map(t=>`<span class="chip ${t.sucesso?"ok":""}" title="${esc(t.quando+" Depois: "+(t.proxima_acao||""))}">${esc(t.nome)}</span>`).join("")}</div></div>
+    </div></div>
+    <aside class="folha fixa"><h3>Antes de discar</h3><dl class="ficha">
+      <div><dt>Telefone</dt><dd>${tel?telLink(tel):`<span class="vazio">não encontrado</span>`}</dd></div>
+      <div><dt>Quem procurar</dt><dd>${esc(a?.quem_procurar || r.procurar)}${(a?.decisores||[]).slice(0,3).map(d=>`<small>${esc(d.nome)}, ${esc(d.cargo)}</small>`).join("")}</dd></div>
+      <div><dt>Entrar por</dt><dd>${esc(e.nome)}<small>${esc(e.referencia)}</small>${c.quantidade_estimada?`<small>Estimativa do estudo: ${c.quantidade_estimada} ${c.quantidade_estimada>1?"unidades":"unidade"}, ${brl(c.valor_referencia)} de referência.</small>`:""}</dd></div>
+      ${fatos.length?`<div><dt>O que saber</dt><dd>${fatos.map(f=>`<small class="forte">${esc(f.fato)} <span class="mono" style="color:var(--tinta-2)">${esc(f.data||"")}</span></small>`).join("")}</dd></div>`:""}
+      ${(a?.ressalvas||[]).length?`<div><dt>Atenção</dt><dd><small class="forte">${esc(a.ressalvas[0])}</small></dd></div>`:""}
+      <div><dt>Objetivo</dt><dd><small class="forte">${esc(P.objetivo.recepcao)}</small><small class="forte">${esc(P.objetivo.principal)}</small></dd></div>
+    </dl></aside>
+  </div>`;
+}
+
+function analise(c){
+  const a = c.analise;
+  const bi = "";
+  /* Conta ainda sem pesquisa individual: a ficha mostra o contato e o que veio da lista de prospecção */
+  if (!a){
+    const tel = telefone(c), campo = (t,v) => v ? `<div><dt>${t}</dt><dd>${v}</dd></div>` : "";
+    return `<div class="duas">
+    <div class="folha"><h3>Contato</h3><dl class="ficha">
+      ${campo("Telefone", tel ? telLink(tel) : `<span class="vazio">não encontrado</span>`)}
+      ${campo("E-mail", c.email ? `<a class="mono" href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : "")}
+      ${campo("Site", c.site ? link(c.site, dominio(c.site)) : "")}
+      ${campo("Onde fica", esc([c.bairro, c.cidade].filter(Boolean).join(", ")))}
+      ${campo("CNPJ", c.cnpj ? `<span class="mono">${esc(c.cnpj)}</span>` : "")}
+      ${campo("Fontes", (c.fontes||[]).map(f=>link(f.u, f.t)).join(" · "))}
+    </dl></div>
+    <div class="folha"><h3>A empresa</h3><p>${c.perfil.map(esc).join(" ")}</p>
+      <dl class="ficha" style="margin-top:14px">
+      ${campo("Segmento", esc(c.segmento))}
+      ${campo("Porte", esc(c.porte))}
+      ${campo("Plano de entrada", esc(entrada(c).nome))}
+      ${campo("Por que abordar", esc(c.angulo))}
+      ${campo("Pergunta de abertura", esc(c.gancho))}
+      </dl><p class="obs" style="margin-top:12px">${esc(c.sinal)}</p></div></div>`;
+  }
+  const ct = a.contato_publico || {};
+  const contatos = [ct.telefone&&esc(ct.telefone),ct.email&&`<span class="mono">${esc(ct.email)}</span>`, ct.site&&link(ct.site,dominio(ct.site)), ct.linkedin&&link(ct.linkedin,"LinkedIn")].filter(Boolean);
+  return `<div class="duas">
+    <div class="pilha">
+      <div class="folha"><h3>Quem é</h3><p class="lide">${esc(a.resumo)}</p>
+        ${a.identidade_confirmada===false?`<p class="aviso obs" style="margin-top:14px">A identidade da empresa não foi confirmada. Confira antes de ligar.</p>`:""}</div>
+      <div class="folha"><h3>Fatos recentes</h3>${(a.fatos_recentes||[]).length ? a.fatos_recentes.map(f=>`<div class="fato"><time>${esc(f.data||"s/ data")}</time><div>${esc(f.fato)} ${f.fonte?`<span class="obs">· ${link(f.fonte,dominio(f.fonte))}</span>`:""}</div></div>`).join("") : `<p class="vazio">Nenhum fato recente encontrado em fonte pública.</p>`}</div>
+      <div class="folha"><h3>O que ela provavelmente precisa<span class="tag">hipótese</span></h3><p>${esc(a.necessidade_provavel)}</p>
+        <div class="chips" style="margin-top:14px"><span class="chip ok">${esc(entrada(c).nome)}</span>${[a.produto_de_entrada,...(a.complementares||[])].map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></div>
+      ${(a.ressalvas||[]).length?`<div class="folha"><h3>Ressalvas</h3><div class="aviso">${ul(a.ressalvas.map(esc))}</div></div>`:""}
+      ${(a.fontes||[]).length?`<div class="folha"><h3>Fontes</h3>${ul(a.fontes.map(f=>link(f.u,f.t)))}</div>`:""}
+    </div>
+    <div class="pilha">
+      <div class="folha"><h3>Ficha</h3><dl class="ficha">
+        <div><dt>Confiança da análise</dt><dd>${conf(a)}</dd></div>
+        <div><dt>Porte</dt><dd>${a.porte?esc(a.porte):`<span class="vazio">não encontrado</span>`}</dd></div>
+        <div><dt>Onde opera</dt><dd>${a.onde_opera?esc(a.onde_opera):`<span class="vazio">não encontrado</span>`}</dd></div>
+        <div><dt>Contato público</dt><dd>${contatos.join("<br>") || `<span class="vazio">não encontrado</span>`}</dd></div>
+        <div><dt>Quem decide</dt><dd>${(a.decisores||[]).length ? a.decisores.map(d=>`${esc(d.nome)}<small>${esc(d.cargo)}${d.fonte?` · ${link(d.fonte,dominio(d.fonte))}`:""}</small>`).join("") : `<span class="vazio">nenhum nome publicado</span>`}</dd></div>
+      </dl></div>
+      ${bi}
+    </div>
+  </div>`;
+}
+
+const TIPO = {decisor:"falou com quem decide", recepcao:"só recepção", caixa_postal:"caixa postal", retorno:"retorno do cliente", numero_errado:"número errado", outro:"sem conversa"};
+const CRM = {falou_com:"Falou com", quem_decide:"Quem decide", problema_declarado:"Problema declarado", solucao_apresentada:"Solução apresentada", quantidade_e_prazo:"Quantidade e prazo", pedido_fora_do_catalogo:"Pedido fora do catálogo", fornecedor_atual:"Fornecedor atual", objecao_principal:"Objeção principal", proximo_passo:"Próximo passo"};
+const corNota = n => n==null ? "--cinza" : n>=70 ? "--verde" : n>=40 ? "--ambar" : "--vermelho";
+const mmss = s => `${String(Math.floor(s/60)).padStart(2,"0")}:${String(Math.floor(s%60)).padStart(2,"0")}`;
+
+function conversaHtml(v){
+  const m = v.metricas, a = v.analise;
+  const medidas = `<div class="chips" style="margin-top:12px">
+    <span class="chip" title="Em ligação fria, perto de 55% é o saudável">agente falou ${m.fala_agente_pct}% do tempo</span>
+    <span class="chip">maior fala do agente: ${m.maior_monologo_agente}s</span>
+    <span class="chip">maior fala do cliente: ${m.maior_fala_cliente}s</span>
+    <span class="chip">${m.perguntas} perguntas, ${m.perguntas_abertas} abertas</span></div>`;
+  const transcricao = `<details><summary>Transcrição${v.origem==="callix"?" (Callix)":" (feita nesta máquina)"}</summary><div class="transc"><p class="obs">Palavras com pontilhado são as que o transcritor ouviu sem certeza.</p>${v.turnos.map(t=>`<p class="${t.quem}"><span class="mono">${mmss(t.ini)}</span> <b>${t.quem==="agente"?"Agente":"Cliente"}</b> ${esc(t.marcado||t.texto).replace(/⟦(.*?)⟧/g,'<u class="duv" title="O transcritor não teve certeza desta palavra. Confira no áudio.">$1</u>')}</p>`).join("")}</div></details>`;
+  if (!a) return medidas + `<p class="obs" style="margin-top:8px">Ligação curta demais para avaliar.</p>` + transcricao;
+  const crm = Object.entries(CRM).filter(([k])=>a.crm?.[k]).map(([k,t])=>`<div><dt>${t}</dt><dd>${esc(a.crm[k])}</dd></div>`).join("");
+  return `<div class="aval">
+    <div class="t" style="margin-top:14px"><span>${pill(a.nota_pct==null?"sem nota":`nota ${a.nota_pct}`,corNota(a.nota_pct))} ${pill(TIPO[a.tipo]||a.tipo,"--cinza")}</span><span class="obs">Sugestão de qualificação: <b>${esc(a.tabulacao_sugerida)}</b></span></div>
+    <p>${esc(a.resumo)}</p>${medidas}
+    ${(a.promessas_fora_do_catalogo||[]).filter(Boolean).length?`<p class="aviso" style="margin-top:12px"><b>Prometido fora do catálogo:</b> ${a.promessas_fora_do_catalogo.filter(Boolean).map(esc).join("; ")}</p>`:""}
+    ${(a.melhorias||[]).length?`<h3 style="margin-top:18px">O que mudar na próxima</h3>${a.melhorias.map(x=>`<div class="obj"><b>${esc(x.o_que)}</b>${fala(x.fala_sugerida)}</div>`).join("")}`:""}
+    <details><summary>Nota por critério</summary><div><table>${a.criterios.map(c=>`<tr><td style="width:44px"><b class="mono" style="color:var(${c.nota==null?"--cinza":corNota(c.nota/3*100)})">${c.nota==null?"n/a":c.nota+"/3"}</b></td><td><b>${esc(c.nome)}</b><small>${esc(c.comentario||"")}</small>${c.trecho?`<small style="font-family:var(--fala); font-size:14px">“${esc(c.trecho)}”</small>`:""}</td></tr>`).join("")}</table></div></details>
+    ${crm?`<details><summary>Campos para o CRM</summary><div><dl class="ficha">${crm}</dl></div></details>`:""}
+    ${transcricao}</div>`;
+}
+
+/* ===== BI: gráficos em SVG. Uma cor de destaque para a conta em foco; cinza para o contexto. ===== */
+const CURTO = ["Computadores","Upgrade","Energia","CFTV","Periféricos","Rede"];
+const um = v => v.toFixed(1).replace(".",",");
+const media = a => a.reduce((s,x)=>s+x,0)/(a.length||1);
+const mediaAder = c => media(c.ader);
+const doSegmento = s => C.filter(c=>c.segmento===s);
+const perfilMedio = lista => DB.eixos.map((_,i)=>media(lista.map(c=>c.ader[i])));
+/* Faixa de prioridade: regra simples, sobre o fit do plano e a confiança da pesquisa */
+function faixa(c){
+  const a = c.analise;
+  // Conta sem pesquisa individual não chega à faixa A
+  if (!a) return nota(c)<=6 ? "C" : "B";
+  if (a?.confianca==="baixa" || a?.identidade_confirmada===false || nota(c)<=6) return "C";
+  return nota(c)>=9 ? "A" : "B";
+}
+const FAIXA = {A:"Fit 9 ou mais e empresa confirmada: preparo completo, ligar primeiro.", B:"Fit 7 ou 8: roteiro do segmento com o fato da conta.", C:"Fit até 6, pouca informação pública ou identidade não confirmada: ligar por último ou tirar da rodada. Contas sem pesquisa individual ficam em B ou C."};
+
+function radar(c){
+  const W=360, H=300, cx=W/2, cy=H/2+2, R=104, n=DB.eixos.length, seg=perfilMedio(doSegmento(c.segmento));
+  const pt = (i,v) => { const a=-Math.PI/2+i*2*Math.PI/n; return [cx+Math.cos(a)*R*v/10, cy+Math.sin(a)*R*v/10] };
+  const poli = vals => vals.map((v,i)=>pt(i,v).map(x=>x.toFixed(1)).join(",")).join(" ");
+  return `<svg class="graf" style="max-width:420px; margin:0 auto" viewBox="0 0 ${W} ${H}" role="img" aria-label="Aderência de ${esc(c.empresa)} por tipo de produto, comparada à média do segmento">
+    ${[2,4,6,8,10].map(v=>`<polygon points="${poli(Array(n).fill(v))}" fill="none" stroke="var(--linha)"/>`).join("")}
+    ${DB.eixos.map((e,i)=>{ const [x,y]=pt(i,10), [lx,ly]=pt(i,12.2); return `<line x1="${cx}" y1="${cy}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--linha)"/><text class="forte" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="${Math.abs(lx-cx)<8?"middle":lx>cx?"start":"end"}" dominant-baseline="middle">${CURTO[i]}</text>` }).join("")}
+    <polygon points="${poli(seg)}" fill="none" stroke="var(--cinza)" stroke-width="2" stroke-dasharray="5 4"/>
+    <polygon points="${poli(c.ader)}" fill="var(--cobalto)" fill-opacity=".14" stroke="var(--cobalto)" stroke-width="2" stroke-linejoin="round"/>
+    ${c.ader.map((v,i)=>{ const [x,y]=pt(i,v); return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="var(--cobalto)" stroke="var(--folha)" stroke-width="2"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="13" fill="transparent" data-tip="${esc(DB.eixos[i])}: ${v} de 10. Média do segmento: ${um(seg[i])}."/>` }).join("")}
+  </svg>
+  <div class="legenda"><span style="--c:var(--cobalto)">${esc(c.empresa)}</span><span style="--c:var(--cinza); --e:dashed">Média de ${esc(c.segmento)}</span></div>`;
+}
+
+/* Todas as contas: fit do plano (x) contra aderência média (y). foco = id em destaque; seg = segmento em destaque. */
+function dispersao(foco, seg){
+  const W=620, H=320, m={l:46,r:16,t:14,b:42};
+  const xs=C.map(nota), ys=C.map(mediaAder);
+  const x0=Math.min(...xs)-1, x1=12, y0=Math.floor(Math.min(...ys))-0.5, y1=Math.ceil(Math.max(...ys))+0.5;
+  const X = v => m.l+(v-x0)/(x1-x0)*(W-m.l-m.r), Y = v => H-m.b-(v-y0)/(y1-y0)*(H-m.t-m.b);
+  const ticksX=[]; for (let v=Math.ceil(x0); v<=x1; v++) ticksX.push(v);
+  const ticksY=[]; for (let v=Math.ceil(y0); v<=y1; v++) ticksY.push(v);
+  const emFoco = c => c.id===foco || (seg && c.segmento===seg);
+  // Contas com o mesmo par de valores caem no mesmo ponto: um pequeno desvio fixo separa as bolinhas
+  const pos = new Map(); const desvio = c => { const k=nota(c)+"|"+um(mediaAder(c)), n=pos.get(k)||0; pos.set(k,n+1); return [((n%3)-1)*11, -Math.floor(n/3)*11] };
+  const pts = [...C].sort((a,b)=>emFoco(a)-emFoco(b)).map(c=>{ const [dx,dy]=desvio(c), px=X(nota(c))+dx, py=Y(mediaAder(c))+dy, f=emFoco(c);
+    return `<g class="ponto" data-ir="lead/${c.id}/bi" data-tip="${esc(c.empresa)} · ${esc(c.segmento)}. Fit ${nota(c)}/12, aderência média ${um(mediaAder(c))}. Faixa ${faixa(c)}.">
+      <circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${c.id===foco?8:6}" fill="var(${f?"--cobalto":"--cinza"})" fill-opacity="${f?1:.55}" stroke="var(--folha)" stroke-width="2"/><circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="13" fill="transparent"/>
+      ${c.id===foco?`<text class="forte" x="${(px+(px>W*0.6?-12:12)).toFixed(1)}" y="${(py+4).toFixed(1)}" text-anchor="${px>W*0.6?"end":"start"}" paint-order="stroke" stroke="var(--folha)" stroke-width="4">${esc(c.empresa)}</text>`:""}</g>` }).join("");
+  return `<svg class="graf" style="max-width:760px" viewBox="0 0 ${W} ${H}" role="img" aria-label="Contas por fit e aderência média">
+    ${ticksY.map(v=>`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}" stroke="var(--linha)"/><text x="${m.l-8}" y="${(Y(v)+4).toFixed(1)}" text-anchor="end">${v}</text>`).join("")}
+    ${ticksX.map(v=>`<text x="${X(v).toFixed(1)}" y="${H-m.b+18}" text-anchor="middle">${v}</text>`).join("")}
+    <line x1="${m.l}" x2="${W-m.r}" y1="${H-m.b}" y2="${H-m.b}" stroke="var(--cinza)"/>
+    <text x="${(m.l+W-m.r)/2}" y="${H-6}" text-anchor="middle">Fit da conta, de 0 a 12</text>
+    <text transform="translate(13 ${(m.t+H-m.b)/2}) rotate(-90)" text-anchor="middle">Aderência média, de 0 a 10</text>
+    ${pts}</svg>`;
+}
+
+function bi(c){
+  const seg = doSegmento(c.segmento).sort((a,b)=>nota(b)-nota(a) || a.empresa.localeCompare(b.empresa));
+  const posicao = ordenadasPorFit.findIndex(x=>x.id===c.id)+1, e = entrada(c), f = faixa(c);
+  const melhor = c.ader.indexOf(Math.max(...c.ader));
+  return `<div class="numeros">${[[f,"faixa de prioridade"],[`${posicao}º`,`em fit, de ${C.length} contas`],[`${seg.findIndex(x=>x.id===c.id)+1}º`,`de ${seg.length} em ${esc(c.segmento)}`],[c.ader[melhor],`aderência a ${esc(DB.eixos[melhor])}, a mais alta`]].map(([n,t])=>`<div><b>${n}</b><span>${t}</span></div>`).join("")}</div>
+  <p class="sub">${FAIXA[f]} Solução de entrada: ${esc(e.nome)}.</p>
+  <div class="grade larga">
+    <div class="folha"><h3>Aderência por tipo de produto</h3>${radar(c)}
+      <details><summary>Ver em números</summary><div><div class="barras">${DB.eixos.map((x,i)=>`<span>${esc(x)}</span><i style="--w:${c.ader[i]*10}%"></i><b>${c.ader[i]}</b>`).join("")}</div></div></details></div>
+    <div class="folha"><h3>Onde esta conta está na carteira</h3>${dispersao(c.id)}<p class="obs" style="margin-top:8px">Cada ponto é uma conta. Quanto mais à direita e acima, melhor o encaixe. Clique num ponto para abrir a conta.</p></div>
+    <div class="folha"><h3>Por que esta conta (fit ${nota(c)} de 12)</h3><div class="barras">${FIT.map((x,i)=>`<span>${x}</span><i style="--w:${c.fit[i]/3*100}%"></i><b>${c.fit[i]}</b>`).join("")}</div><p class="obs" style="margin-top:10px">Cada critério vale de 0 a 3.</p></div>
+    <div class="folha"><h3>Contas de ${esc(c.segmento)}, por fit</h3>${seg.map(x=>`<button class="rank ${x.id===c.id?"eu":""}" data-ir="lead/${x.id}/bi" style="--c:var(${x.id===c.id?"--cobalto":"--cinza"}); --w:${nota(x)/12*100}%"><span>${esc(x.empresa)}</span><i></i><b>${nota(x)}</b></button>`).join("")}</div>
+  </div>`;
+}
+
+let segFoco = "";
+function segmentacao(){
+  const segs = [...new Set(C.map(c=>c.segmento))].map(s=>{ const l=doSegmento(s); return {s, l, fit:media(l.map(nota)), perfil:perfilMedio(l), abord:l.filter(c=>c.sit!=="pendente").length, sol:P.solucoes[P.segmentos[s]?.ofertas[0]?.solucao]?.nome||""} }).sort((a,b)=>b.l.length-a.l.length || b.fit-a.fit);
+  const porFaixa = k => C.filter(c=>faixa(c)===k).sort((a,b)=>nota(b)-nota(a));
+  return `
+  <div class="cab"><div><div class="olho">Como a carteira se divide</div><h1>Segmentação</h1></div></div>
+  <section><h2>Prioridade de ligação</h2><p class="sub">Três faixas, calculadas do fit do plano e da confiança da pesquisa de cada empresa.</p>
+    <div class="faixas">${["A","B","C"].map(k=>`<div class="folha"><h3>Faixa ${k}</h3><b>${porFaixa(k).length}</b><p class="obs" style="margin:8px 0 10px">${FAIXA[k]}</p>${porFaixa(k).map(c=>`<button data-ir="lead/${c.id}/bi">${esc(c.empresa)} <span class="mono" style="color:var(--tinta-2)">${nota(c)}</span></button>`).join("")}</div>`).join("")}</div></section>
+  <section><h2>Segmentos</h2><p class="sub">Quantas contas em cada segmento, o encaixe médio, por qual solução entrar e como está o andamento.</p>
+    <div class="folha rol"><table><thead><tr><th>Segmento</th><th class="num">Contas</th><th class="num">Fit médio</th><th>Solução de entrada</th><th class="num">Ligadas</th><th class="num">Conversou</th></tr></thead><tbody>
+    ${segs.map(g=>`<tr class="vai" data-seg="${esc(g.s)}" tabindex="0"><td><b>${esc(g.s)}</b></td><td class="num">${g.l.length}</td><td class="num">${um(g.fit)}/12</td><td>${esc(g.sol)}</td><td class="num">${g.abord}</td><td class="num">${g.l.filter(c=>c.sit==="conversou").length}</td></tr>`).join("")}</tbody></table></div></section>
+  <section><h2>Aderência por segmento e tipo de produto</h2><p class="sub">Média de 0 a 10. Quanto mais escuro, mais o segmento precisa daquele tipo de produto.</p>
+    <div class="folha rol"><table class="calor"><thead><tr><th>Segmento</th>${CURTO.map(e=>`<th>${e}</th>`).join("")}</tr></thead><tbody>
+    ${segs.map(g=>`<tr><td><b>${esc(g.s)}</b></td>${g.perfil.map((v,i)=>`<td class="cel" data-tip="${esc(g.s)}, ${esc(DB.eixos[i])}: ${um(v)} de 10 (${g.l.length} contas)" style="background:color-mix(in srgb, var(--cobalto) ${Math.round(v*9)}%, var(--folha)); color:var(${v>=6.5?"--folha":"--tinta"})">${um(v)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></section>
+  <section><h2>Mapa das contas</h2><p class="sub">Fit contra aderência média. Escolha um segmento para destacar as contas dele.</p>
+    <div class="chips" style="margin-bottom:14px"><button class="chip ${segFoco?"":"ok"}" data-seg="">Todas</button>${segs.map(g=>`<button class="chip ${segFoco===g.s?"ok":""}" data-seg="${esc(g.s)}">${esc(g.s)} (${g.l.length})</button>`).join("")}</div>
+    <div class="folha" id="mapa">${dispersao(null, segFoco)}</div></section>`;
+}
+
+function ligHtml(x){
+  return `<div class="lig"><div class="t"><span><b>${quando(x.inicio)}</b> <span class="obs">${x.completada?`· ${tempo(x.falado)} de conversa`:"· não completada"}${x.agente?` · ${esc(x.agente)}`:""}</span></span>
+      <span>${x.qualificacao?pill(x.qualificacao,x.sucesso?"--verde":"--cinza"):""}</span></div>
+    <div class="obs">${esc(x.rotulo||"")}${x.telefone?` · <span class="mono">${esc(x.telefone)}</span>`:""}${x.desligamento?` · ${esc(x.desligamento)}`:""}</div>
+    ${x.nota?`<p>${esc(x.nota)}</p>`:""}
+    ${x.audio?`<audio controls preload="none" src="${esc(x.audio)}"></audio>`:x.completada?`<p class="obs">Gravação ainda não baixada.</p>`:""}
+    ${x.resumo?`<p><b>Resumo:</b> ${esc(x.resumo)}</p>`:""}
+    ${x.conversa?conversaHtml(x.conversa):""}</div>`;
+}
+function historico(c){
+  const contato = c.chamadas.find(x=>Object.keys(x.contato).length)?.contato;
+  return `<div class="duas"><div class="folha"><h3>Ligações</h3>${c.chamadas.length ? c.chamadas.map(ligHtml).join("") : `<p class="vazio">Nenhuma ligação para esta conta ainda. Depois de ligar, rode a sincronização para trazer os dados e a gravação do Callix.</p>`}</div>
+    <aside class="folha"><h3>Contato no Callix</h3>${contato ? `<dl class="ficha">${Object.entries(contato).map(([k,v])=>`<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : `<p class="vazio">Aparece depois da primeira ligação.</p>`}</aside></div>`;
+}
+
+/* Prazos pelo dia de São Paulo, a fazer (prazo vencido), hoje, próxima */
+const diaSP = d => new Date(d).toLocaleDateString("en-CA",{timeZone:"America/Sao_Paulo"});
+const HOJE = diaSP(Date.now());
+const maisUteis = (dia, n) => { const d = new Date(dia+"T12:00:00Z"); while (n>0){ d.setUTCDate(d.getUTCDate()+1); if (d.getUTCDay()%6) n-- } return d.toISOString().slice(0,10) };
+const diasEntre = (a,b) => Math.round((new Date(b+"T12:00:00Z")-new Date(a+"T12:00:00Z"))/864e5);
+const dataCurta = dia => dia.slice(8)+"/"+dia.slice(5,7);
+const PRAZO = {atrasada:{t:"A fazer", c:"--cobalto"}, hoje:{t:"Hoje", c:"--ambar"}, proxima:{t:"Próxima", c:"--cobalto"}, semdata:{t:"Sem data", c:"--cinza"}, feita:{t:"Concluída", c:"--verde"}};
+const selo = (txt, cor) => `<span class="selo" style="--c:var(${cor})">${esc(txt)}</span>`;
+const seloPrazo = t => t.sit==="feita" ? selo("Concluída","--verde") : t.prazo ? selo((t.sit==="atrasada"?"A fazer · ":t.sit==="hoje"?"Hoje · ":"")+dataCurta(t.prazo), PRAZO[t.sit].c) : "";
+
+/* Kanban: filete com o tom da etapa (aberta azul, ganho verde, perdido vermelho), contagem e
+   cartão com os dias na etapa. Arrastar muda a etapa só neste navegador; o registro
+   definitivo continua sendo o tentativas.json, e o botão de copiar gera as linhas para ele. */
+const KB = [
+  ["nova","Não abordada","--f-nova"],
+  ["tentar","Localizar o responsável","--f-tentar"],
+  ["retornar","Retorno combinado","--f-retornar"],
+  ["canal","Abordar por canais de apoio","--f-canal"],
+  ["apresentar","Apresentar a proposta personalizada","--f-apresentar"],
+  ["aguardando","Proposta enviada","--f-aguardando"],
+  ["ganha","Proposta aceita","--f-ganha"],
+  ["encerrada","Encerrada sem negócio","--f-encerrada"],
+];
+const colunaDe = c => c.sit==="pendente" ? "nova" : etapaDe(c);
+const etapaRegistrada = c => unida(c.chamadas.find(x=>x.etapa)?.etapa) || (c.chamadas.length ? "tentar" : "nova");
+const entradaNaEtapa = c => MOV[c.id]?.quando || c.chamadas.find(x=>x.etapa)?.inicio || c.chamadas[0]?.inicio || null;
+function mover(id, col){
+  const c = C.find(x=>x.id===id);
+  if (!c || CLIENTE || colunaDe(c)===col) return;
+  if (col===etapaRegistrada(c)) delete MOV[id];
+  else if (col==="nova") return; // conta com contato registrado não volta a "não abordada"
+  else MOV[id] = {etapa:col, quando:new Date().toISOString()};
+  guardarMov(); situar(c); desenhar();
+}
+/* Relatório de cada ficha: o que levou a conta até a etapa em que está. Nasce dos registros de contato
+   (data, qualificação e anotação) e fica aberto para edição; o que a pessoa escreve fica neste navegador. */
+let REL = {};
+try { if (!CLIENTE) REL = JSON.parse(localStorage.getItem("raze-relatorios")) || {} } catch {}
+const guardarRel = () => { try { localStorage.setItem("raze-relatorios", JSON.stringify(REL)) } catch {} };
+const relRegistrado = c => [...c.chamadas].filter(x=>x.inicio && (x.nota||x.resumo||x.qualificacao)).sort((a,b)=>a.inicio.localeCompare(b.inicio))
+  .map(x=>`${dataCurta(diaSP(x.inicio))} · ${x.qualificacao||(x.completada?"Ligação atendida":"Tentativa de ligação")}${x.nota||x.resumo?"\n"+(x.nota||x.resumo):""}`).join("\n\n");
+const relatorioDe = c => REL[c.id] ?? relRegistrado(c);
+document.addEventListener("input", e=>{ const t = e.target.closest?.("[data-rel]"); if (!t) return; const c = C.find(x=>x.id===t.dataset.rel);
+  if (t.value===relRegistrado(c)) delete REL[c.id]; else REL[c.id] = t.value; guardarRel() });
+/* Enquanto se escreve no relatório, o cartão não pode ser arrastado, senão não dá para selecionar o texto */
+document.addEventListener("focusin", e=>{ if (e.target.matches?.("[data-rel]")) e.target.closest(".kcard")?.removeAttribute("draggable") });
+document.addEventListener("focusout", e=>{ if (e.target.matches?.("[data-rel]") && !CLIENTE) e.target.closest(".kcard")?.setAttribute("draggable","true") });
+let kbSeg = "", kbTudo = false;
+function kanban(){
+  const LIMITE = 25, movidas = Object.keys(MOV).length;
+  const lista = C.filter(c=>!kbSeg || c.segmento===kbSeg), ordemOnda = Object.keys(ONDA);
+  const vez = c => ordemOnda.indexOf(c.onda)+1 || 9;
+  const ordem = (a,b) => vez(a)-vez(b) || nota(b)-nota(a) || a.empresa.localeCompare(b.empresa);
+  const porConta = new Map(listaTarefas().filter(t=>t.conta && t.sit!=="feita").map(t=>[t.conta.id, t]));
+  const cartao = (c, cor) => { const k = colunaDe(c), ini = entradaNaEtapa(c), t = porConta.get(c.id), dias = ini && k!=="nova" ? Math.max(0, diasEntre(diaSP(ini), HOJE)) : null;
+    return `<article class="kcard" style="--c:var(${cor})" ${CLIENTE?"":'draggable="true"'} data-kb="${c.id}" data-ir="lead/${c.id}" tabindex="0" title="${esc(c.chamadas[0]?.nota||"")}">
+      <b>${esc(c.empresa)}</b><small>${esc(entrada(c).nome)} · ${esc(c.segmento)}${c.revenda?" · revenda":""}</small>
+      <div class="kv"><small>${dias!=null ? (dias===1?"1 dia na etapa":`${dias} dias na etapa`) : esc(ONDA[c.onda]&&c.onda!=="base"?ONDA[c.onda]:"Base de 300")}</small></div>
+      <div class="kf"><span>${esc(contatoDe(c) ? "Contato: "+contatoDe(c) : c.cidade)}</span>${t && t.sit!=="atrasada"?seloPrazo(t):""}</div>
+      ${MOV[c.id]?`<small style="color:var(--ambar); margin-top:6px">Movida neste navegador</small>`:""}
+      ${(()=>{ const txt = relatorioDe(c), linhas = Math.min(14, Math.max(3, txt.split("\n").reduce((n,l)=>n+Math.max(1, Math.ceil(l.length/30)), 0)));
+        return `<details class="krel" data-semir ${k!=="nova"?"open":""}><summary>Evolução até esta etapa</summary>
+        <textarea data-rel="${c.id}" rows="${linhas}" ${CLIENTE?"readonly":""} placeholder="O que aconteceu em cada contato e o que levou a conta a esta etapa.">${esc(txt)}</textarea></details>` })()}</article>` };
+  const coluna = ([k,t,cor]) => { const l = lista.filter(c=>colunaDe(c)===k).sort(ordem), corta = k==="nova" && !kbTudo && l.length>LIMITE;
+    return `<section class="kcol" data-col="${k}" style="--c:var(${cor})"><header><h3><span class="kfase">${t}</span><span class="kn">${l.length}</span></h3></header>
+      <div class="kcards">${(corta?l.slice(0,LIMITE):l).map(c=>cartao(c,cor)).join("") || `<p class="kvazio">Nenhuma conta aqui.</p>`}
+      ${corta?`<button class="chip" data-kbtudo>Mostrar as outras ${l.length-LIMITE}</button>`:""}</div></section>` };
+  const segs = contar(C, c=>c.segmento);
+  return `
+  <div class="cab"><div><div class="olho">CRM da campanha · uma coluna por etapa</div><h1>Kanban</h1>
+    <p class="meta">${lista.filter(c=>c.sit!=="pendente").length} contas em andamento, ${lista.filter(c=>c.sit==="pendente").length} não abordadas${kbSeg?`, em ${esc(kbSeg)}`:""}.</p></div></div>
+  <div class="chips" style="margin-bottom:14px"><button class="chip ${kbSeg?"":"ok"}" data-kbseg="">Todas (${C.length})</button>${segs.map(([s,n])=>`<button class="chip ${kbSeg===s?"ok":""}" data-kbseg="${esc(s)}">${esc(s)} (${n})</button>`).join("")}</div>
+  ${CLIENTE?"":`<div class="faixa-et"><span>Arraste um cartão para mudar a etapa. A mudança e o que for escrito em "Evolução até esta etapa" ficam só neste navegador até entrarem no <span class="mono">tentativas.json</span>.</span>
+    ${movidas?`<button class="chip ok" data-kbcopiar>Copiar ${movidas} ${movidas>1?"movimentos":"movimento"} para o tentativas.json</button><button class="chip" data-kbdesfazer>Desfazer</button>`:""}</div>`}
+  <div class="kanban">${KB.map(coluna).join("")}</div>`;
+}
+
+/* Tarefas: o próximo passo de cada conta vira tarefa com prazo, ao lado das pendências com a Raze
+   e das tarefas que a pessoa cria. Concluir e criar ficam guardados neste navegador. */
+let TAR = {feitas:{}, minhas:[]};
+try { if (!CLIENTE) TAR = {...TAR, ...JSON.parse(localStorage.getItem("raze-tarefas"))} } catch {}
+const guardarTar = () => { try { localStorage.setItem("raze-tarefas", JSON.stringify(TAR)) } catch {} };
+/* Prazo de cada etapa em dias úteis depois do contato, conforme as qualificações do playbook */
+const DIAS_ATE = {tentar:1, retornar:1, canal:1, apresentar:1, aguardando:2};
+const chave = s => { let h = 0; for (const ch of s) h = (h*31 + ch.charCodeAt(0)) >>> 0; return h.toString(36) };
+function listaTarefas(){
+  const l = [];
+  for (const c of C){
+    const k = colunaDe(c);
+    if (k==="nova"){
+      if (c.onda==="s1") l.push({id:`lig-${c.id}`, titulo:"Fazer a primeira ligação", conta:c, tipo:"Primeira ligação", prazo:null, prio:"normal", detalhe:`${entrada(c).nome}${c.analise?.quem_procurar?`. Procurar: ${c.analise.quem_procurar}`:""}`});
+      continue;
+    }
+    if (!(k in DIAS_ATE)) continue;
+    const ini = entradaNaEtapa(c), u = c.chamadas[0];
+    l.push({id:`crm-${c.id}-${k}-${ini||""}`, titulo:ETAPAS[k].t, conta:c, tipo:ETAPAS[k].e===2?"Proposta":"Abordagem", prio:ETAPAS[k].e===2?"alta":"normal",
+      prazo:(!MOV[c.id] && u?.prazo) || (ini ? maisUteis(diaSP(ini), DIAS_ATE[k]) : null), detalhe:MOV[c.id] ? "Etapa alterada no kanban." : u?.nota||""});
+  }
+  for (const x of P.a_confirmar||[]) l.push({id:`conf-${chave(x)}`, titulo:x, conta:null, tipo:"Confirmar com a Raze", prazo:null, prio:"normal", detalhe:""});
+  for (const m of TAR.minhas) l.push({...m, conta:C.find(c=>c.id===m.conta)||null, tipo:"Minha tarefa", detalhe:"", manual:true});
+  for (const t of l){ t.feita = TAR.feitas[t.id]||null; t.sit = t.feita ? "feita" : !t.prazo ? "semdata" : t.prazo<HOJE ? "atrasada" : t.prazo===HOJE ? "hoje" : "proxima" }
+  return l;
+}
+let tarTipo = "";
+function tarefas(){
+  const todas = listaTarefas(), l = todas.filter(t=>!tarTipo || t.tipo===tarTipo), ordem = Object.keys(PRAZO);
+  const n = k => l.filter(t=>t.sit===k).length;
+  const linha = t => `<div class="tar ${t.sit==="feita"?"feita":""}">${CLIENTE?"<span></span>":`<button class="marca-t" data-tarfeita="${esc(t.id)}" aria-pressed="${t.sit==="feita"}" aria-label="${t.sit==="feita"?"Reabrir":"Concluir"}: ${esc(t.titulo)}"></button>`}
+    <div><b>${esc(t.titulo)}</b>${t.conta?` <a href="#lead.${t.conta.id}" style="font-size:13.5px">${esc(t.conta.empresa)}</a>`:""}${t.detalhe?`<div class="obs">${esc(t.detalhe)}</div>`:""}</div>
+    <div class="selos">${seloPrazo(t)}${t.prio==="alta"?selo("Alta","--ambar"):""}${selo(t.tipo,"--cinza")}${t.manual&&!CLIENTE?`<button class="chip" data-tarapagar="${esc(t.id)}">Excluir</button>`:""}</div></div>`;
+  const grupo = k => { const g = l.filter(t=>t.sit===k).sort((a,b)=>(a.prazo||"9").localeCompare(b.prazo||"9") || (b.prio==="alta")-(a.prio==="alta") || a.titulo.localeCompare(b.titulo)); if (!g.length) return "";
+    const corpo = g.map(linha).join("");
+    return `<section><h2>${{atrasada:"A fazer", hoje:"Para hoje", proxima:"Próximas", semdata:"Sem data", feita:"Concluídas"}[k]} <span class="kn">${g.length}</span></h2><div class="folha">${k==="feita"||(k==="semdata"&&g.length>12)?`<details ${k==="feita"?"":"open"}><summary>${g.length} ${g.length>1?"tarefas":"tarefa"}</summary><div>${corpo}</div></details>`:corpo}</div></section>` };
+  const tipos = contar(todas, t=>t.tipo), abertas = l.filter(t=>t.sit!=="feita").length;
+  return `
+  <div class="cab"><div><div class="olho">O que fazer agora, a partir do CRM</div><h1>Tarefas</h1>
+    <p class="meta">${abertas} em aberto${tarTipo?`, em ${esc(tarTipo)}`:""}. O próximo passo de cada conta vira tarefa, com prazo contado em dias úteis depois do último contato.</p></div></div>
+  <div class="numeros">${ordem.map(k=>`<div><b>${n(k)}</b><span>${{atrasada:"a fazer", hoje:"para hoje", proxima:"próximas", semdata:"sem data", feita:"concluídas"}[k]}</span></div>`).join("")}</div>
+  ${l.length?`<div class="bateria" role="img" aria-label="Tarefas por prazo: ${ordem.map(k=>`${PRAZO[k].t} ${n(k)}`).join(", ")}">${ordem.filter(n).map(k=>`<span style="--c:var(${PRAZO[k].c}); width:${n(k)/l.length*100}%" data-tip="${PRAZO[k].t}: ${n(k)}"></span>`).join("")}</div>`:""}
+  <div class="chips" style="margin:18px 0"><button class="chip ${tarTipo?"":"ok"}" data-tartipo="">Todas (${todas.length})</button>${tipos.map(([t,q])=>`<button class="chip ${tarTipo===t?"ok":""}" data-tartipo="${esc(t)}">${esc(t)} (${q})</button>`).join("")}</div>
+  ${CLIENTE?"":`<section><div class="folha"><h3>Nova tarefa</h3><form class="form-t" id="nova-tarefa">
+      <input name="titulo" required maxlength="200" placeholder="O que precisa ser feito" aria-label="Título da tarefa">
+      <input name="conta" list="contas-t" placeholder="Conta (opcional)" aria-label="Conta"><datalist id="contas-t">${C.map(c=>`<option value="${esc(c.empresa)}">`).join("")}</datalist>
+      <input name="prazo" type="date" aria-label="Prazo"><select name="prio" aria-label="Prioridade"><option value="normal">Prioridade normal</option><option value="alta">Prioridade alta</option></select>
+      <button class="chip ok">Adicionar</button></form>
+    <p class="obs" style="margin-top:10px">Tarefas criadas e concluídas aqui ficam guardadas só neste navegador.</p></div></section>`}
+  ${ordem.map(grupo).join("") || `<p class="vazio">Nenhuma tarefa.</p>`}`;
+}
+
+document.addEventListener("click", e=>{
+  const alvo = a => e.target.closest(`[data-${a}]`);
+  let b;
+  if (b = alvo("kbseg")){ kbSeg = b.dataset.kbseg; desenhar(); return }
+  if (alvo("kbtudo")){ kbTudo = true; desenhar(); return }
+  if (alvo("kbdesfazer")){ for (const id of Object.keys(MOV)){ delete MOV[id]; situar(C.find(c=>c.id===id)) } guardarMov(); desenhar(); return }
+  if (b = alvo("kbcopiar")){
+    const linhas = Object.entries(MOV).map(([conta,m])=>({conta, quando:m.quando, qualificacao:"", nota:"Etapa alterada no kanban.", etapa:m.etapa, conversou:false}));
+    navigator.clipboard?.writeText(JSON.stringify(linhas, null, 2)).then(()=>{ b.textContent = "Copiado. Cole no fim do tentativas.json" }, ()=>{ b.textContent = "Não foi possível copiar" });
+    return;
+  }
+  if (b = alvo("tartipo")){ tarTipo = b.dataset.tartipo; desenhar(); return }
+  if (b = alvo("tarfeita")){ const id = b.dataset.tarfeita; if (TAR.feitas[id]) delete TAR.feitas[id]; else TAR.feitas[id] = new Date().toISOString(); guardarTar(); desenhar(); return }
+  if (b = alvo("tarapagar")){ TAR.minhas = TAR.minhas.filter(m=>m.id!==b.dataset.tarapagar); delete TAR.feitas[b.dataset.tarapagar]; guardarTar(); desenhar() }
+});
+document.addEventListener("submit", e=>{
+  if (e.target.id!=="nova-tarefa") return;
+  e.preventDefault();
+  const f = new FormData(e.target), titulo = String(f.get("titulo")||"").trim(), nome = String(f.get("conta")||"").trim().toLowerCase();
+  if (!titulo) return;
+  TAR.minhas.push({id:"m-"+Date.now().toString(36), titulo, conta:C.find(c=>c.empresa.toLowerCase()===nome)?.id||null, prazo:f.get("prazo")||null, prio:f.get("prio")});
+  guardarTar(); desenhar();
+});
+document.addEventListener("dragstart", e=>{ const k = e.target.closest?.("[data-kb]"); if (k) e.dataTransfer.setData("text/plain", k.dataset.kb) });
+document.addEventListener("dragover", e=>{ const col = e.target.closest?.("[data-col]"); if (col && !CLIENTE){ e.preventDefault(); col.classList.add("alvo") } });
+document.addEventListener("dragleave", e=>{ e.target.closest?.("[data-col]")?.classList.remove("alvo") });
+document.addEventListener("drop", e=>{ const col = e.target.closest?.("[data-col]"); if (!col) return; e.preventDefault(); mover(e.dataTransfer.getData("text/plain"), col.dataset.col) });
+
+/* Proposta visual da conta: a página de oferta gerada por ofertas.py, com o plano de prontidão indicado para a conta */
+const OFERTAS = location.protocol==="file:" && /\/data\/[^/]*$/.test(location.pathname) ? "../docs/ofertas/" : CLIENTE ? "../ofertas/" : "ofertas/";
+function proposta(c){
+  const p = c.proposta;
+  if (!p) return `<div class="folha"><p class="vazio">A proposta visual é gerada para as contas estudadas e para as que estão na etapa de apresentar a proposta personalizada.</p></div>`;
+  const pub = "https://espartabranding.github.io/crm-esparta-raze-geradores/ofertas/"+p.arquivo;
+  return `<div class="folha"><div class="oferta"><div class="t"><b>${esc(p.combo)}</b><span class="preco">${esc(p.resumo||"")}</span></div>
+      <div class="chips"><a class="chip" href="${OFERTAS+esc(p.arquivo)}" target="_blank" rel="noopener">Abrir a proposta em nova aba</a>${!CLIENTE && p.whats?`<a class="chip ok" href="${esc(p.whats)}" target="_blank" rel="noopener">Enviar pelo WhatsApp da conta</a>`:""}</div>
+      ${CLIENTE?"":`<p class="obs" style="margin:14px 0 6px">Mensagem que acompanha o link. Troque [Seu nome] antes de enviar.</p>${fala(p.mensagem)}<p class="obs">Link da proposta: ${link(pub,pub)}</p>`}</div></div>
+    <iframe class="proposta" src="${OFERTAS+esc(p.arquivo)}" title="Proposta visual para ${esc(c.empresa)}" loading="lazy"></iframe>`;
+}
+
+/* Em toda aba do lead: ver a proposta e baixar o arquivo para enviar (PDF ou HTML) */
+function acoesProposta(c){
+  const p = c.proposta;
+  if (!p) return "";
+  const nome = "Proposta Raze - "+c.empresa.replace(/[\/:*?"<>|]/g," ").trim();
+  return `<div class="acoes"><a class="bt" href="${OFERTAS+esc(p.arquivo)}" target="_blank" rel="noopener">Visualizar proposta</a>
+    <details><summary class="bt pri">Baixar proposta para envio</summary><div>
+      <a href="${OFERTAS+esc(p.pdf)}" download="${esc(nome)}.pdf">PDF<small>Caderno em A4 deitado, para anexar</small></a>
+      <a href="${OFERTAS+esc(p.arquivo)}" download="${esc(nome)}.html">HTML<small>Página que se ajusta ao celular</small></a></div></details></div>`;
+}
+
+function lead(r){
+  const c = C.find(x=>x.id===r.id), a = c.analise;
+  const site = a?.contato_publico?.site || c.site, tel = telefone(c);
+  const abas = [["analise","Contato e dados da empresa"],["historico",`Histórico de contatos (${c.chamadas.length})`]];
+  return `
+  <div class="cab"><div><div class="olho">${esc(c.segmento)} · ${esc(c.cidade)}${ONDA[c.onda]?` · ${ONDA[c.onda]}`:""}</div><h1>${esc(c.empresa)}</h1>
+    <div class="meta">${pill(SIT[c.sit].t,SIT[c.sit].c)}${c.revenda?`<span title="No Google Maps: ${esc(c.revenda.join(", "))}">${pill("Revenda","--ambar")}</span>`:""}${a?conf(a):""}${tel?telLink(tel):""}${site?link(site,dominio(site)):""}<a href="#lead.${c.id}.${r.sub}" target="_blank" rel="noopener" style="font-family:var(--texto)">Abrir em nova aba</a></div>${acoesProposta(c)}</div>
+    <div class="nota"><b>${nota(c)}</b><span>fit, de 12</span></div></div>
+  <div class="subabas" role="tablist">${abas.map(([k,t])=>`<button role="tab" aria-selected="${r.sub===k}" data-ir="lead/${c.id}/${k}">${t}</button>`).join("")}</div>
+  ${r.sub==="proposta" ? proposta(c) : r.sub==="analise" ? analise(c) : r.sub==="historico" ? historico(c) : r.sub==="bi" ? bi(c) : ligacao(c)}`;
+}
+
+let chaveAnterior = "";
+function desenhar(){
+  const r = rota(), chave = r.v+(r.id||"")+(r.sub||"");
+  document.querySelectorAll("audio").forEach(a=>a.pause());
+  $("main").innerHTML = r.v==="lead" ? lead(r) : r.v==="playbook" ? playbook() : r.v==="catalogo" ? catalogo() : r.v==="segmentacao" ? segmentacao() : r.v==="kanban" ? kanban() : r.v==="tarefas" ? tarefas() : inteligencia();
+  document.title = (r.v==="lead" ? C.find(c=>c.id===r.id).empresa+" — " : "") + "Raze Geradores";
+  trilho();
+  $("trilho").classList.remove("aberto");
+  if (chave!==chaveAnterior) scrollTo(0,0);
+  chaveAnterior = chave;
+}
+addEventListener("hashchange", desenhar);
+document.addEventListener("click", e=>{
+  const g = e.target.closest("[data-seg]");
+  if (g){ segFoco = g.dataset.seg; desenhar(); document.getElementById("mapa")?.scrollIntoView({block:"center"}); return }
+  if (e.target.closest("[data-semir]")) return;
+  const b = e.target.closest("[data-ir]"); if (b) location.hash = b.dataset.ir.replaceAll("/",".");
+});
+const dica = $("dica");
+document.addEventListener("mousemove", e=>{
+  const t = e.target.closest?.("[data-tip]");
+  if (!t){ dica.style.display = "none"; return }
+  dica.textContent = t.dataset.tip; dica.style.display = "block";
+  dica.style.left = Math.min(e.clientX+14, innerWidth-dica.offsetWidth-8)+"px";
+  dica.style.top = Math.max(e.clientY-dica.offsetHeight-10, 8)+"px";
+});
+document.addEventListener("keydown", e=>{ if (e.key==="Enter" && e.target.matches("tr[data-ir]")) location.hash = e.target.dataset.ir.replaceAll("/",".") });
+$("busca").addEventListener("input", ()=>{ $("trilho").classList.add("aberto"); trilho() });
+$("menu").addEventListener("click", ()=>$("trilho").classList.toggle("aberto"));
+$("atualizado").textContent = (CLIENTE ? "Relatório de prospecção · Esparta Hunter · atualizado " : "Mesa de ligação · atualizado ") + quando(DB.gerado_em);
+if (CLIENTE) document.querySelectorAll('.nav [data-ir="playbook"], .nav [data-ir="catalogo"]').forEach(b=>b.remove());
+desenhar();
+</script>
+</body>
+</html>
