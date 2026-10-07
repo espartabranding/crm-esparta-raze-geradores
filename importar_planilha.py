@@ -29,7 +29,7 @@ PADRAO = Path.home() / "Desktop" / "Raze-prospeccao-RJ-consolidado-07-10.xlsx"
 PLANOS = {
     "hospitalar": ("P2 Prontidão Hospitalar", "Saúde", [9, 9, 8, 9, 8, 5],
                    ["Diagnóstico de Prontidão", "Ensaios de desempenho sob carga", "Conformidade RDC 50 para estabelecimentos de saúde", "Manutenção preventiva contratada"]),
-    "industrial": ("P3 Prontidão Industrial", "Indústria e operação crítica", [9, 9, 8, 6, 9, 6],
+    "industrial": ("P3 Prontidão Industrial", "Indústria e cadeia fria", [9, 9, 8, 6, 9, 6],
                    ["Diagnóstico de Prontidão", "Ensaios de desempenho sob carga", "Manutenção preventiva contratada", "Relatório técnico e histórico de tendência"]),
     "comercial": ("P4 Prontidão Comercial", "Comércio e centros comerciais", [8, 7, 7, 7, 6, 5],
                   ["Diagnóstico de Prontidão", "Manutenção preventiva contratada", "Laudo de autovistoria predial e de abrangência"]),
@@ -38,7 +38,9 @@ HOTELARIA = ("hotel", "evento", "buffet", "estudio")
 
 # Status da planilha -> etapa do kanban, qualificação do Callix e se houve conversa.
 STATUS = {
-    "proposta enviada": ("aguardando", "Enviar material", True),
+    # Em 07/10 o que a planilha chama de "proposta enviada" foi o contato com identificação do responsável e a
+    # apresentação da empresa; a proposta ainda está por apresentar.
+    "proposta enviada": ("apresentar", "Enviar material", True),
     "retorno agendado": ("retornar", "Retornar em data combinada", True),
     "contato indicado": ("apresentar", "Indicou outro contato", True),
     "aguardando retorno": ("retornar", "Recepção passou informação", True),
@@ -137,9 +139,12 @@ def importar(planilha: Path) -> None:
             prazo = amanha if etapa != "tentar" or ficha.get("Prioridade", "A") == "A" else depois
         elif prazo <= hoje:
             prazo = amanha
-        partes = ["Retirada da campanha." if etapa == "encerrada" else st["Status"] + "."]
-        if contato:
-            partes.append(f"Contato: {contato}.")
+        if situacao == "proposta enviada":
+            partes = ["Contato feito e apresentação da empresa enviada." + (f" Responsável identificado: {contato}." if contato else " Responsável ainda sem nome.")]
+        else:
+            partes = ["Retirada da campanha." if etapa == "encerrada" else st["Status"] + "."]
+            if contato:
+                partes.append(f"Contato: {contato}.")
         if st["Canal e destino"]:
             partes.append(f"Canal: {st['Canal e destino']}.")
         if prazo:

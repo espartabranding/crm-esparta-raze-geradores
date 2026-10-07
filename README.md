@@ -21,6 +21,8 @@ A estrutura é a mesma do `CRM_Esparta_SempreTech`. O conteúdo da Raze vem do s
 | Arquivo | Conteúdo |
 |---|---|
 | `montar_carteira.py` | Monta a carteira a partir das listas de prospecção |
+| `incluir_lista.py` | Inclui uma lista de leads do Painel Raze como contas não abordadas |
+| `importar_planilha.py` | Traz a planilha de prospecção: contas trabalhadas, etapa e prazo de cada uma |
 | `contas.json` | As contas, com fit, aderência e plano de entrada |
 | `playbook.json` | Soluções, roteiros por segmento, objeções e qualificações (pronto; as telas que o mostram estão desligadas) |
 | `catalogo.json` | Portfólio da Raze (idem) |
