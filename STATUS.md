@@ -1,6 +1,13 @@
 # Status da campanha Raze Geradores
 
-Atualizado em 07/10/2026, 12h, com a planilha de prospecção do dia. Ainda não publicado no GitHub (incidente do GitHub em 07/10 impediu o envio); o cliente recebe o relatório em arquivo HTML.
+Atualizado em 07/10/2026, 12h, com a planilha de prospecção do dia. Publicado no GitHub Pages em 07/10.
+
+## Onde ver
+
+- Relatório do cliente: https://espartabranding.github.io/crm-esparta-raze-geradores/cliente/
+- Painel do SDR: https://espartabranding.github.io/crm-esparta-raze-geradores/
+
+Os dois são abertos a quem tem o link. O relatório do cliente é só leitura: não deixa mover cartão nem editar a evolução. O mesmo relatório pode ser entregue em arquivo: é o `docs/cliente/index.html`, que abre sozinho no navegador.
 
 ## Campanha em 07/10
 
@@ -36,7 +43,6 @@ Seis contas estão marcadas como de grande porte ou de rede, a validar com a Raz
 
 ## Pendências
 
-- Publicar: o repositório `espartabranding/crm-esparta-raze-geradores` foi criado em 07/10, mas ficou vazio por causa do incidente do GitHub; enviar (`git push -u origin main`) e ligar o GitHub Pages na pasta `docs/`.
 - Criar a campanha da Raze no Callix e preencher `.env` (token e número da campanha).
 - Confirmar com a Raze os 26 itens de `a_confirmar` do playbook, a começar pelo preço do Diagnóstico de prontidão, pelos municípios atendidos e pelo nome do responsável técnico.
 - Logotipo da Raze em branco para a barra lateral (hoje o nome vai escrito).
