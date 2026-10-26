@@ -324,90 +324,263 @@
   "conta": "x1",
   "quando": "2026-10-26T12:00:00+00:00",
   "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para gm@centroempresarialrio.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar visita, em 29/10 (quinta-feira).",
+  "nota": "2º contato por e-mail para gm@centroempresarialrio.com.br em 26/10: Diagnóstico de Prontidão (assunto «Centro Empresarial Rio: neste verão, quem vai testar o seu gerador?»), valor fixo abatido no contrato, chamada para reservar a data ainda em novembro. Próximo passo: ligar ou enviar WhatsApp para confirmar o recebimento e agendar o diagnóstico, em 28/10 (quarta-feira).",
   "etapa": "apresentar",
   "conversou": false,
-  "prazo": "2026-10-29"
+  "prazo": "2026-10-28"
  },
  {
   "conta": "x2",
   "quando": "2026-10-26T12:00:00+00:00",
   "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para administracao@torrealmirante.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar visita, em 29/10 (quinta-feira).",
+  "nota": "2º contato por e-mail para administracao@torrealmirante.com.br em 26/10: Diagnóstico de Prontidão (assunto «Torre Almirante: neste verão, quem vai testar o seu gerador?»), valor fixo abatido no contrato, chamada para reservar a data ainda em novembro. Próximo passo: ligar ou enviar WhatsApp para confirmar o recebimento e agendar o diagnóstico, em 28/10 (quarta-feira).",
   "etapa": "apresentar",
   "conversou": false,
-  "prazo": "2026-10-29"
+  "prazo": "2026-10-28"
  },
  {
   "conta": "x3",
   "quando": "2026-10-26T12:00:00+00:00",
   "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para sac@downtown.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar visita, em 29/10 (quinta-feira).",
+  "nota": "2º contato por e-mail para sac@downtown.com.br em 26/10: Diagnóstico de Prontidão (assunto «Shopping Downtown: neste verão, quem vai testar o seu gerador?»), valor fixo abatido no contrato, chamada para reservar a data ainda em novembro. SAC, com pedido de encaminhamento à administração. Próximo passo: ligar ou enviar WhatsApp para confirmar o recebimento e agendar o diagnóstico, em 28/10 (quarta-feira).",
   "etapa": "apresentar",
   "conversou": false,
-  "prazo": "2026-10-29"
+  "prazo": "2026-10-28"
  },
  {
   "conta": "x5",
   "quando": "2026-10-26T12:00:00+00:00",
   "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para reserva@vinadelmar.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar visita, em 29/10 (quinta-feira).",
+  "nota": "2º contato por e-mail para reserva@vinadelmar.com.br em 26/10: Diagnóstico de Prontidão (assunto «Viña del Mar Hotel: neste verão, quem vai testar o seu gerador?»), valor fixo abatido no contrato, chamada para reservar a data ainda em novembro. Próximo passo: ligar ou enviar WhatsApp para confirmar o recebimento e agendar o diagnóstico, em 28/10 (quarta-feira).",
   "etapa": "apresentar",
   "conversou": false,
-  "prazo": "2026-10-29"
+  "prazo": "2026-10-28"
  },
  {
   "conta": "x6",
   "quando": "2026-10-26T12:00:00+00:00",
   "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para contato@lareverence.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar visita, em 29/10 (quinta-feira).",
+  "nota": "2º contato por e-mail para contato@lareverence.com.br em 26/10: Diagnóstico de Prontidão (assunto «La Reverence: neste verão, quem vai testar o seu gerador?»), valor fixo abatido no contrato, chamada para reservar a data ainda em novembro. Próximo passo: ligar ou enviar WhatsApp para confirmar o recebimento e agendar o diagnóstico, em 28/10 (quarta-feira).",
   "etapa": "apresentar",
   "conversou": false,
-  "prazo": "2026-10-29"
+  "prazo": "2026-10-28"
  },
  {
   "conta": "x8",
   "quando": "2026-10-26T12:00:00+00:00",
   "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para studio188@studio188.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar visita, em 29/10 (quinta-feira).",
+  "nota": "2º contato por e-mail para studio188@studio188.com.br em 26/10: Diagnóstico de Prontidão (assunto «Studio 188: neste verão, quem vai testar o seu gerador?»), valor fixo abatido no contrato, chamada para reservar a data ainda em novembro. Próximo passo: ligar ou enviar WhatsApp para confirmar o recebimento e agendar o diagnóstico, em 28/10 (quarta-feira).",
   "etapa": "apresentar",
   "conversou": false,
-  "prazo": "2026-10-29"
+  "prazo": "2026-10-28"
  },
  {
   "conta": "x9",
   "quando": "2026-10-26T12:00:00+00:00",
   "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para assisteadm@memorialinfantil.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar visita, em 29/10 (quinta-feira).",
+  "nota": "2º contato por e-mail para assisteadm@memorialinfantil.com.br em 26/10: Diagnóstico de Prontidão (assunto «AMIU Botafogo: neste verão, quem vai testar o seu gerador?»), valor fixo abatido no contrato, chamada para reservar a data ainda em novembro. Próximo passo: ligar ou enviar WhatsApp para confirmar o recebimento e agendar o diagnóstico, em 28/10 (quarta-feira).",
   "etapa": "apresentar",
   "conversou": false,
-  "prazo": "2026-10-29"
+  "prazo": "2026-10-28"
  },
  {
-  "conta": "x11",
+  "conta": "w1",
   "quando": "2026-10-26T12:00:00+00:00",
-  "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para nefroclin@nefroclin.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar visita, em 29/10 (quinta-feira).",
-  "etapa": "apresentar",
-  "conversou": false,
-  "prazo": "2026-10-29"
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 15:54: mensagem comercial (razegeradores.com.br/comercio/) para (21) 97931-4846. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
  },
  {
-  "conta": "x12",
+  "conta": "w2",
   "quando": "2026-10-26T12:00:00+00:00",
-  "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para contato@placi.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar as duas visitas (Barra e Botafogo), em 29/10 (quinta-feira).",
-  "etapa": "apresentar",
-  "conversou": false,
-  "prazo": "2026-10-29"
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:12: mensagem residencial (razegeradores.com.br/condominios/) para (21) 98158-6069. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
  },
  {
-  "conta": "x13",
+  "conta": "w3",
   "quando": "2026-10-26T12:00:00+00:00",
-  "qualificacao": "Material enviado",
-  "nota": "Apresentação da empresa enviada por e-mail para contato@placi.com.br em 26/10. Próximo passo: ligar para confirmar recebimento e agendar as duas visitas (Barra e Botafogo), em 29/10 (quinta-feira).",
-  "etapa": "apresentar",
-  "conversou": false,
-  "prazo": "2026-10-29"
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:14: mensagem residencial (razegeradores.com.br/condominios/) para (21) 99303-5879. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w4",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:16: mensagem residencial (razegeradores.com.br/condominios/) para (21) 98181-2314. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w5",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:18: mensagem residencial (razegeradores.com.br/condominios/) para (21) 96438-0385. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w6",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:20: mensagem residencial (razegeradores.com.br/condominios/) para (21) 99801-7357. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w7",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "WhatsApp enviado (1 tique)",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:23: mensagem residencial (razegeradores.com.br/condominios/) para (21) 99417-8008. Ficou com 1 tique (não entregue). Próximo passo: reenviar a mensagem.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w8",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:25: mensagem residencial (razegeradores.com.br/condominios/) para (21) 97138-4580. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w9",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:28: mensagem residencial (razegeradores.com.br/condominios/) para (21) 99511-3380. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w10",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:30: mensagem residencial (razegeradores.com.br/condominios/) para (21) 96951-5432. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w11",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 01 em 26/10, às 16:32: mensagem comercial (razegeradores.com.br/comercio/) para (21) 96444-2627. Entregue, sem resposta até o fim do dia. Próximo passo: segundo contato, com foco no síndico ou na administração.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l1",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Alan Oliveira, Gerente de Condomínios (Fernando e Fernandes Imobiliária). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "r19",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Marcus Mendonça, Gerente Prime (APSA). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "r19",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Caroline Paz, Coordenadora Condominial (APSA). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l2",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Jeferson Luiz Gomes Bernardo, Gerente Geral de Operações (BCF Administradora de Bens). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l3",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Vagner Fontella Godinho, Síndico Profissional (Condomínio do Edifício Ambar Onyx). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "r13",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Fábio Alves, Gerente de Projetos, Obras e Manutenção (Hospital São Lucas Copacabana). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l4",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Mozart Carneiro, Supervisor de Manutenção Hospitalar (Rede D'Or). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l5",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Sheila Ramos, Gerente de Hotelaria (Hospital Unimed Ferj). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l6",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Rafael Cavalcanti, Head de Facilities (Bradesco Seguros). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l7",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Tamires Pimentel, Gerente de Contratos de Facilities (Manserv). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l8",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Denise Barabana, Gerente de Operações (Ancar). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l9",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Claudia S., Gerente de Operações (Hotel Nacional Rio de Janeiro). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l10",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Pousada Sonho de Deus, Proprietário (Hotel e Pousada Sonho de Deus). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l11",
+  "quando": "2026-10-26T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 26/10 para Eco das Folhas Lodge, Proprietário (Eco das Folhas Lodge Rio de Janeiro). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
  }
 ]
