@@ -1,6 +1,6 @@
 # Status da campanha Raze Geradores
 
-Carteira com 568 contas: 36 em andamento e 532 não abordadas. Publicado no GitHub Pages, com o relatório do cliente também entregue em arquivo HTML.
+Carteira com 590 contas: 60 em andamento e 530 não abordadas (posição de 27/10). Publicado no GitHub Pages, com o relatório do cliente também entregue em arquivo HTML.
 
 ## Onde ver
 
@@ -27,6 +27,20 @@ Próximos passos por data: 17 contas na quinta, 08/10; 15 na sexta, 09/10; 1 na 
 
 Seis contas estão marcadas como de grande porte ou de rede, a validar com a Raze: Centro Empresarial Rio, Torre Almirante, Shopping Downtown, RB1, Sheraton e Croma Oncologia; o Centro Médico Pró-Cardíaco pertence a grupo hospitalar.
 
+## Prospecção de 26/10
+
+32 contatos registrados em `tentativas.json`, com relatório em `analises/`:
+
+- **E-mail (7):** segundo contato com o Diagnóstico de Prontidão para Centro Empresarial Rio, Torre Almirante, Shopping Downtown, Viña del Mar, La Reverence, Studio 188 e AMI (x1, x2, x3, x5, x6, x8, x9). Retorno em 28/10. Nefroclin e as duas Placi ficam para depois.
+- **WhatsApp Lote 01 (11):** condomínios w1 a w11, 10 entregues e 1 só enviado (Ed. Cidade de Veneza, um tique). Barra Village Lakes e Everglades podem ser número de corretor ou imobiliária. Ainda sem resposta registrada.
+- **LinkedIn (14 convites):** em São Lucas (r13), APSA (r19, dois convites) e 11 contas novas (l1 a l11).
+
+## WhatsApp Lote 02 (preparado em 27/10, não enviado)
+
+`analises/Condominios WhatsApp Lote 02 - 27-10-2026.xlsx`: os 10 condomínios seguintes com celular em `condominios_com_google_raze.csv` (Painel_Raze), por número de domicílios: Angra dos Reis – Bloco 8, Jardim das Rosas, Barra Soleil Résidence, Alvor, Pero Lopes de Souza, Água Marinha, Barodin, Reserva do Rio Grande, Vip Leblon The Claridge e Julimar. Fora do lote: Condomínio Independência (celular de DDD 38). No Barra Soleil, o nome no Google não bate com a razão social do CNPJ (Le Byblos).
+
+Depois do Lote 02, sobram 20 condomínios com celular: 9 na mesma base, 10 já na carteira como não abordados (r68, r80, r91, r98, r99, r101, r108, r113, r229, r233) e o Pontal Oceânico (`lugares_raze.csv`, número possivelmente de imobiliária). As contas do Lote 02 ainda não estão em `contas.json`: entram com o resultado do disparo, como o Lote 01.
+
 ## O que existe
 
 - **Painel:** só o Kanban e os contatos. O Kanban tem uma coluna por etapa (não abordada, localizar o responsável, retorno combinado, abordar por canais de apoio, apresentar a proposta personalizada, proposta enviada, proposta aceita, encerrada sem negócio), com o campo "Evolução até esta etapa" em cada cartão. A lista de leads abre a ficha de cada conta, com o contato, os dados da empresa e o histórico.
@@ -45,7 +59,9 @@ Seis contas estão marcadas como de grande porte ou de rede, a validar com a Raz
 
 ## Pendências
 
-- Cumprir os retornos: 17 contas na quinta, 08/10; 15 na sexta, 09/10; Centro Médico Pró-Cardíaco na terça, 13/10.
+- Disparar o WhatsApp Lote 02 e registrar o resultado; acompanhar respostas do Lote 01 e reenviar ao Ed. Cidade de Veneza, que ficou em um tique.
+- Cobrar os 7 e-mails de 26/10 em 28/10.
+- Retornos atrasados de outubro: 17 contas com prazo em 08/10, 8 em 09/10 e o Centro Médico Pró-Cardíaco em 13/10 continuam sem novo registro.
 - Validar com a Raze se entram na campanha as contas de grande porte ou de rede (Centro Empresarial Rio, Torre Almirante, Shopping Downtown, RB1, Sheraton, Croma Oncologia e Centro Médico Pró-Cardíaco).
 - Decidir a retirada do laboratório da UFRJ (órgão público, contratação por licitação) e achar o telefone real do Niemeyer 101.
 - Na lista de cadeia fria, 110 das 263 contas têm o telefone marcado como "a validar" no campo de sinal (celular sem o nono dígito, número de outra UF ou de preenchimento).
