@@ -1,6 +1,6 @@
 # Status da campanha Raze Geradores
 
-Carteira com 609 contas: 80 em andamento e 529 não abordadas (posição de 28/10, com a prospecção de 27/10). Publicado no GitHub Pages, com o relatório do cliente também entregue em arquivo HTML.
+Carteira com 629 contas: 102 em andamento e 527 não abordadas (posição de 28/10, com a prospecção do dia). Publicado no GitHub Pages, com o relatório do cliente também entregue em arquivo HTML.
 
 ## Onde ver
 
@@ -44,7 +44,32 @@ Seis contas estão marcadas como de grande porte ou de rede, a validar com a Raz
 
 A lista de convites de 27/10 tem 45 convites pendentes, 35 deles marcados como enviados antes. Desses 35, só 12 estão no CRM, registrados em 26/10; os outros 23 não. Dois convites registrados em 26/10, Rafael Cavalcanti (Bradesco Seguros, l6) e Denise Barabana (Ancar, l8), não aparecem na lista.
 
-Depois do Lote 02, sobram 20 condomínios com celular: 9 na base `condominios_com_google_raze.csv` (Painel_Raze), 10 já na carteira como não abordados (r68, r80, r91, r98, r99, r101, r108, r113, r229, r233) e o Pontal Oceânico (`lugares_raze.csv`, número possivelmente de imobiliária).
+## Prospecção de 28/10
+
+Relatório consolidado em `analises/Relatorio_Prospeccao_Raze_28-10-2026_consolidado.pdf`. 30 registros em `tentativas.json`:
+
+- **WhatsApp Lote 03 (8 dos 25 da fila):** `analises/WhatsApp Lote 03 - 28-10-2026.csv` (e `.xlsx`) tem os 25 contatos, com a mensagem pronta e o link `wa.me`. Foram trabalhados 8: 7 mensagens enviadas e o Tibagi (w22) sem WhatsApp. O Residencial Guilhermina (w24) recusou ("Não", Tattiana Santú) e foi encerrado. O RG Personal (r68) deu resposta automática da administração (cadastro de moradores r2isolutions e garantidora Garantiza) e recebeu follow-up pedindo o contato do síndico. Elegance Freguesia (w23), Mirante da Taquara (w26), Leblon House (w27) e Park Premium (r80) estão sem resposta, e o Âncora (w25) segue sem entrega. Os 6 condomínios que ainda não estavam na carteira entram como w22 a w27.
+- **LinkedIn (15 convites):** 14 contas novas (l21 a l34): Lumarj, ML Administradora, Pred Rio, Icaraí Síndico Profissional, Alex Reimão Almeida, Trend Tower Office, Luciana Barbosa de Miranda, Windsor Hotéis, Lagune Barra, Fairmont Copacabana, Borgo Del Vino, Multiway Infra (data center), TopShopping Nova Iguaçu e Sá Cavalcante. Mais Silas Jardim na Rede D'Or (l4).
+- **LinkedIn (5 ofertas a quem aceitou, na etapa "apresentar", follow-up em 30/10):** Laércio Fonseca (TopShopping, l33), Mauricio Carvalho Martins (Trend Tower, l26), André Felipe (Super Centro de Exames, l15), Gilson Pinheiro (l20, que agora tem empresa: Supermercado Real, no Éden) e Rafael Cavalcanti (Bradesco Seguros, l6). Também foi registrada a oferta de 27/10 para Denise Barabana (Ancar, l8).
+
+Segundo o relatório, a carteira do LinkedIn soma 20 conexões, 18 com oferta, e 58 convites aguardando aceite. Das 13 ofertas de 27/10, só a de Denise Barabana está no CRM. As outras 12 (Filipe Bastos, Mavio Torres, Wolkman Figueira, Marcio Marconi, Jorge Nogueira, William Rodrigues, Wellington Hinkel, Valdenyr Chagas, Wesleon Souza, Michele Pessanha, Everaldo Gomes e Pedro Souza) não têm empresa no relatório e não foram lançadas.
+
+Fila do Lote 03 ainda não trabalhada: os condomínios 11, 13, 14 e 15, os comerciais 17 e 18, o hospital 19 e os supermercados 21 a 25. Os itens 12 (Damai), 16 (Kaasas) e 20 (HNSA Petrópolis) precisam de confirmação antes de qualquer envio.
+
+## Fontes de contato (diagnóstico de 28/10)
+
+Nenhum dos 21 condomínios dos Lotes 01 e 02 respondeu, e há indícios de número errado do lugar. Todos os celulares de condomínio vêm da ficha do Google Maps (Apify e navegador), que qualquer pessoa pode sugerir ou editar. Na base do Google, o Bay View (w2) é "Guest house" e o The Claridge (w20) é "Hotel". Mediterrâneo Flat, Ministro Salgado Filho, Cordeiro e Julimar aparecem como flat ou "Apartamentos". Barra Village Lakes e Everglades têm site de imobiliária. 8 dos 21 casaram com o CNPJ só pelo nome. O Lote 03 veio da mesma fonte e confirmou o padrão: uma recusa e uma resposta automática.
+
+Fontes propostas, por ordem de confiança:
+
+1. Receita Federal: telefone e e-mail do CNPJ do condomínio, quase sempre os da administradora.
+2. Site oficial da administradora ou da empresa.
+3. Lusha (pessoas: gerente da administradora, síndico profissional, facilities), que consome créditos.
+4. CNES, para saúde.
+
+O Google Maps fica só para confirmar. Regra proposta: um número só entra em lote se duas fontes independentes o confirmarem.
+
+O Painel_Raze já mapeia 344 administradoras pelo domínio do e-mail da Receita, com 3.179 prédios (1.367 no foco). Só 82 têm telefone na base. As maiores no foco são Protel (98 prédios), Imodata (90), JB Andrade (69), Fernando e Fernandes (62), BAP (38), Zirtaeb (37) e CIPA (27).
 
 ## O que existe
 
@@ -64,10 +89,13 @@ Depois do Lote 02, sobram 20 condomínios com celular: 9 na base `condominios_co
 
 ## Pendências
 
+- **Decidir as fontes de contato** (seção acima): montar o lote das 25 maiores administradoras do foco com contato do site oficial e confirmação pela Receita, marcar como não confirmados os números de condomínio vindos do Google e liberar ou não o Lusha. Até lá, segurar o restante da fila do Lote 03.
+- 30/10: follow-up no LinkedIn nas 5 ofertas de 28/10 e segundo contato nas 13 de 27/10. Lançar no CRM as 12 conexões de 27/10 que faltam, quando houver a empresa de cada uma.
+- Contatos prioritários pela criticidade do gerador: Andre Felipe Oliva (Multiway Infra, l32), Silas Jardim (Rede D'Or, l4) e Laércio Fonseca (TopShopping, l33). Decidir a abordagem dedicada às contas grandes (Rede D'Or, Fairmont, Bradesco Seguros) e a conversa de parceria com o técnico de grupos geradores da rede da Raze.
+- WhatsApp: acompanhar o follow-up do RG Personal (r68), reenviar ao Âncora (w25) e buscar outro contato do Tibagi (w22).
 - Follow-up em 29/10 nos 4 condomínios do Lote 02 com mensagem entregue; reenviar ao Jardim das Rosas e ao Ed. Cidade de Veneza (Lote 01), ambos em um tique; acompanhar as respostas do Lote 01.
 - Ligar para os 5 condomínios do Lote 02 sem WhatsApp (w15 a w18 e w21).
 - Registrar os 23 convites no LinkedIn enviados antes de 27/10 que não estão no CRM, e acompanhar os aceites dos 24 registrados.
-- Preparar o WhatsApp Lote 03.
 - Cobrar os 7 e-mails de 26/10 em 28/10.
 - Retornos atrasados de outubro: 17 contas com prazo em 08/10, 8 em 09/10 e o Centro Médico Pró-Cardíaco em 13/10 continuam sem novo registro.
 - Validar com a Raze se entram na campanha as contas de grande porte ou de rede (Centro Empresarial Rio, Torre Almirante, Shopping Downtown, RB1, Sheraton, Croma Oncologia e Centro Médico Pró-Cardíaco).

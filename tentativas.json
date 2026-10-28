@@ -747,5 +747,243 @@
   "nota": "Convite de conexão no LinkedIn em 27/10 para Gilson Pinheiro, Gerente de Manutenção e Gestão de Ativos (Gilson Pinheiro (gestão de ativos, Nilópolis)). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
   "etapa": "tentar",
   "conversou": false
+ },
+ {
+  "conta": "w22",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Número sem WhatsApp",
+  "nota": "WhatsApp Lote 03 em 28/10: o número (21) 99484-0837 não tem WhatsApp, a mensagem não foi enviada. Próximo passo: buscar outro contato do condomínio.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w23",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp Lote 03 em 28/10: mensagem padrão do Lote 03 (razegeradores.com.br/condominios/) com o Diagnóstico de Prontidão, para (21) 99883-0273. Enviado, sem resposta até o fim do dia. Próximo passo: acompanhar a resposta.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w26",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp Lote 03 em 28/10: mensagem padrão do Lote 03 (razegeradores.com.br/condominios/) com o Diagnóstico de Prontidão, para (21) 98054-1846. Enviado, sem resposta até o fim do dia. Próximo passo: acompanhar a resposta.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w27",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp Lote 03 em 28/10: mensagem padrão do Lote 03 (razegeradores.com.br/condominios/) com o Diagnóstico de Prontidão, para (21) 99969-7506. Enviado, sem resposta até o fim do dia. Próximo passo: acompanhar a resposta.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "r80",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp Lote 03 em 28/10: mensagem padrão do Lote 03 (razegeradores.com.br/condominios/) com o Diagnóstico de Prontidão, para (21) 97239-5621. Enviado, sem resposta até o fim do dia. Próximo passo: acompanhar a resposta.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w25",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "WhatsApp enviado (1 tique)",
+  "nota": "WhatsApp Lote 03 em 28/10: mensagem padrão do Lote 03 (razegeradores.com.br/condominios/) com o Diagnóstico de Prontidão, para (21) 99875-4178. Ainda não entregue. Próximo passo: reenviar.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w24",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Recusou",
+  "nota": "WhatsApp Lote 03 em 28/10: mensagem padrão do Lote 03 (razegeradores.com.br/condominios/) com o Diagnóstico de Prontidão, para (21) 97920-9595. Tattiana Santú respondeu \"Não\". Contato encerrado.",
+  "etapa": "encerrada",
+  "conversou": true
+ },
+ {
+  "conta": "r68",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Resposta automática",
+  "nota": "WhatsApp Lote 03 em 28/10: mensagem padrão do Lote 03 (razegeradores.com.br/condominios/) com o Diagnóstico de Prontidão, para (21) 96480-2124. Resposta automática da administração, com link de cadastro de moradores (r2isolutions) e a garantidora Garantiza, (41) 3798-5987. Follow-up enviado: apresentação como fornecedor e pedido do contato ou e-mail do síndico ou da gestão predial. Próximo passo: acompanhar a resposta.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l21",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Matheus Tito, Gerente de Condomínios (Lumarj). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l22",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Cynthia Alves, Gerente de Condomínios (ML Administradora). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l23",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Mari Pires, Gerente Administrativa (Pred Rio Administradora de Condomínios). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l24",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para João Aurora, Síndico Profissional (Icaraí Síndico Profissional). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l25",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Alex Reimão Almeida, Engenheiro Mecânico e Síndico Profissional (Alex Reimão Almeida (síndico profissional)). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l26",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Mauricio Carvalho Martins, Síndico (Trend Tower Office). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l27",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Luciana Barbosa de Miranda, Síndica Profissional (Luciana Barbosa de Miranda (síndica profissional)). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l28",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Rafael Manske, Gerente Geral (Windsor Hotéis). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l29",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Átila Sousa, Gerente Geral (Lagune Barra Hotel (GL events)). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l30",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Netto Moreira, General Manager (Fairmont Rio de Janeiro Copacabana). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l31",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Stephanie Reis, Gerente Geral (Hotel Borgo Del Vino). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l4",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Silas Jardim, Head de Engenharia de Manutenção e Infraestrutura (Rede D'Or). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l32",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Andre Felipe Oliva, Gerente de Operações (Multiway Infra). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l33",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Laércio Fonseca, Head de Facilities (TopShopping Nova Iguaçu). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l34",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 28/10 para Gaspar Sameiro, Gerente de Operações (Sá Cavalcante). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l33",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Oferta enviada no LinkedIn",
+  "nota": "Laércio Fonseca aceitou a conexão no LinkedIn e recebeu em 28/10 a oferta do plano Prontidão Comercial: Diagnóstico de Prontidão como ponto de partida (valor abatido no contrato) e convite para uma conversa de 20 minutos, com a página razegeradores.com.br/comercio/. Próximo passo: follow-up em 30/10 se não houver resposta.",
+  "etapa": "apresentar",
+  "conversou": false,
+  "prazo": "2026-10-30"
+ },
+ {
+  "conta": "l26",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Oferta enviada no LinkedIn",
+  "nota": "Mauricio Carvalho Martins aceitou a conexão no LinkedIn e recebeu em 28/10 a oferta do plano Prontidão Residencial, com autovistoria (Lei 6.400) e AVCB: Diagnóstico de Prontidão como ponto de partida (valor abatido no contrato) e convite para uma conversa de 20 minutos, com a página razegeradores.com.br/condominios/. Próximo passo: follow-up em 30/10 se não houver resposta.",
+  "etapa": "apresentar",
+  "conversou": false,
+  "prazo": "2026-10-30"
+ },
+ {
+  "conta": "l15",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Oferta enviada no LinkedIn",
+  "nota": "André Felipe aceitou a conexão no LinkedIn e recebeu em 28/10 a oferta do plano Prontidão Hospitalar (RDC 50): Diagnóstico de Prontidão como ponto de partida (valor abatido no contrato) e convite para uma conversa de 20 minutos, com a página razegeradores.com.br/saude/. Próximo passo: follow-up em 30/10 se não houver resposta.",
+  "etapa": "apresentar",
+  "conversou": false,
+  "prazo": "2026-10-30"
+ },
+ {
+  "conta": "l20",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Oferta enviada no LinkedIn",
+  "nota": "Gilson Pinheiro aceitou a conexão no LinkedIn e recebeu em 28/10 a oferta do plano Prontidão Comercial, com câmaras frias e caixas: Diagnóstico de Prontidão como ponto de partida (valor abatido no contrato) e convite para uma conversa de 20 minutos, com a página razegeradores.com.br/comercio/. Próximo passo: follow-up em 30/10 se não houver resposta.",
+  "etapa": "apresentar",
+  "conversou": false,
+  "prazo": "2026-10-30"
+ },
+ {
+  "conta": "l6",
+  "quando": "2026-10-28T12:00:00+00:00",
+  "qualificacao": "Oferta enviada no LinkedIn",
+  "nota": "Rafael Cavalcanti aceitou a conexão no LinkedIn e recebeu em 28/10 a oferta do plano Prontidão Comercial: Diagnóstico de Prontidão como ponto de partida (valor abatido no contrato) e convite para uma conversa de 20 minutos, com a página razegeradores.com.br/comercio/. Próximo passo: follow-up em 30/10 se não houver resposta.",
+  "etapa": "apresentar",
+  "conversou": false,
+  "prazo": "2026-10-30"
+ },
+ {
+  "conta": "l8",
+  "quando": "2026-10-27T18:00:00+00:00",
+  "qualificacao": "Oferta enviada no LinkedIn",
+  "nota": "Denise Barabana aceitou a conexão no LinkedIn e recebeu em 27/10 a oferta do plano Prontidão Comercial, com o Diagnóstico de Prontidão como ponto de partida (valor abatido no contrato). Próximo passo: segundo contato.",
+  "etapa": "apresentar",
+  "conversou": false,
+  "prazo": "2026-10-30"
  }
 ]
