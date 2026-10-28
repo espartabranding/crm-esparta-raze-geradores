@@ -1,6 +1,6 @@
 # Status da campanha Raze Geradores
 
-Carteira com 590 contas: 60 em andamento e 530 não abordadas (posição de 27/10). Publicado no GitHub Pages, com o relatório do cliente também entregue em arquivo HTML.
+Carteira com 609 contas: 80 em andamento e 529 não abordadas (posição de 28/10, com a prospecção de 27/10). Publicado no GitHub Pages, com o relatório do cliente também entregue em arquivo HTML.
 
 ## Onde ver
 
@@ -35,11 +35,16 @@ Seis contas estão marcadas como de grande porte ou de rede, a validar com a Raz
 - **WhatsApp Lote 01 (11):** condomínios w1 a w11, 10 entregues e 1 só enviado (Ed. Cidade de Veneza, um tique). Barra Village Lakes e Everglades podem ser número de corretor ou imobiliária. Ainda sem resposta registrada.
 - **LinkedIn (14 convites):** em São Lucas (r13), APSA (r19, dois convites) e 11 contas novas (l1 a l11).
 
-## WhatsApp Lote 02 (preparado em 27/10, não enviado)
+## Prospecção de 27/10
 
-`analises/Condominios WhatsApp Lote 02 - 27-10-2026.xlsx`: os 10 condomínios seguintes com celular em `condominios_com_google_raze.csv` (Painel_Raze), por número de domicílios: Angra dos Reis – Bloco 8, Jardim das Rosas, Barra Soleil Résidence, Alvor, Pero Lopes de Souza, Água Marinha, Barodin, Reserva do Rio Grande, Vip Leblon The Claridge e Julimar. Fora do lote: Condomínio Independência (celular de DDD 38). No Barra Soleil, o nome no Google não bate com a razão social do CNPJ (Le Byblos).
+20 contatos registrados em `tentativas.json`, com os dois relatórios do dia em `analises/` (`Relatorio_Prospeccao_Raze_27-10-2026.pdf` e `Raze_Convites_LinkedIn_2026-10-27.pdf`):
 
-Depois do Lote 02, sobram 20 condomínios com celular: 9 na mesma base, 10 já na carteira como não abordados (r68, r80, r91, r98, r99, r101, r108, r113, r229, r233) e o Pontal Oceânico (`lugares_raze.csv`, número possivelmente de imobiliária). As contas do Lote 02 ainda não estão em `contas.json`: entram com o resultado do disparo, como o Lote 01.
+- **WhatsApp Lote 02 (10 condomínios, w12 a w21):** 5 enviadas pelo WhatsApp Business da Raze, com o Diagnóstico de Prontidão e o pedido de indicação do responsável pelo gerador (no Angra dos Reis, também o plano de manutenção 24h). 4 entregues (Angra dos Reis – Bloco 8, Barra Soleil Résidence, Reserva do Rio Grande e The Claridge), com follow-up em 29/10; o Jardim das Rosas ficou em um tique. Os outros 5 números não têm WhatsApp (Alvor, Pero Lopes de Souza, Água Marinha, Barodin e Julimar) e vão para ligação. No Barra Soleil, o nome no Google não bate com a razão social do CNPJ (Le Byblos).
+- **LinkedIn (10 convites):** Estasa (r16, Anna Carolina Chazan) e 9 contas novas (l12 a l20): PCA, José Orlando Ribeiro (síndico profissional), Union Suítes, Super Centro de Exames, HU Clementino Fraga Filho (UFRJ), Hapvida NotreDame, Seara (Duque de Caxias), Grupo Cataratas e Gilson Pinheiro (Nilópolis). O HU da UFRJ é órgão público, como o laboratório da UFRJ; a Seara de Duque de Caxias pode ser a mesma operação do Swift CD (f127).
+
+A lista de convites de 27/10 tem 45 convites pendentes, 35 deles marcados como enviados antes. Desses 35, só 12 estão no CRM, registrados em 26/10; os outros 23 não. Dois convites registrados em 26/10, Rafael Cavalcanti (Bradesco Seguros, l6) e Denise Barabana (Ancar, l8), não aparecem na lista.
+
+Depois do Lote 02, sobram 20 condomínios com celular: 9 na base `condominios_com_google_raze.csv` (Painel_Raze), 10 já na carteira como não abordados (r68, r80, r91, r98, r99, r101, r108, r113, r229, r233) e o Pontal Oceânico (`lugares_raze.csv`, número possivelmente de imobiliária).
 
 ## O que existe
 
@@ -59,7 +64,10 @@ Depois do Lote 02, sobram 20 condomínios com celular: 9 na mesma base, 10 já n
 
 ## Pendências
 
-- Disparar o WhatsApp Lote 02 e registrar o resultado; acompanhar respostas do Lote 01 e reenviar ao Ed. Cidade de Veneza, que ficou em um tique.
+- Follow-up em 29/10 nos 4 condomínios do Lote 02 com mensagem entregue; reenviar ao Jardim das Rosas e ao Ed. Cidade de Veneza (Lote 01), ambos em um tique; acompanhar as respostas do Lote 01.
+- Ligar para os 5 condomínios do Lote 02 sem WhatsApp (w15 a w18 e w21).
+- Registrar os 23 convites no LinkedIn enviados antes de 27/10 que não estão no CRM, e acompanhar os aceites dos 24 registrados.
+- Preparar o WhatsApp Lote 03.
 - Cobrar os 7 e-mails de 26/10 em 28/10.
 - Retornos atrasados de outubro: 17 contas com prazo em 08/10, 8 em 09/10 e o Centro Médico Pró-Cardíaco em 13/10 continuam sem novo registro.
 - Validar com a Raze se entram na campanha as contas de grande porte ou de rede (Centro Empresarial Rio, Torre Almirante, Shopping Downtown, RB1, Sheraton, Croma Oncologia e Centro Médico Pró-Cardíaco).

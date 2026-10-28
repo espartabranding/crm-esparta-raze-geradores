@@ -582,5 +582,170 @@
   "nota": "Convite de conexão no LinkedIn em 26/10 para Eco das Folhas Lodge, Proprietário (Eco das Folhas Lodge Rio de Janeiro). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
   "etapa": "tentar",
   "conversou": false
+ },
+ {
+  "conta": "w12",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 02 em 27/10: mensagem residencial (razegeradores.com.br/condominios/) para (21) 99354-7096, oferta Plano 24h + Diagnóstico, com pedido de indicação do responsável pelo gerador. Entregue, sem resposta registrada. Próximo passo: follow-up em 29/10 (D+2), reforçando o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-10-29"
+ },
+ {
+  "conta": "w13",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "WhatsApp enviado (1 tique)",
+  "nota": "WhatsApp Lote 02 em 27/10: mensagem residencial (razegeradores.com.br/condominios/) para (21) 97752-5512, oferta Diagnóstico de Prontidão. Ficou com 1 tique (não entregue). Próximo passo: reenviar a mensagem.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-10-29"
+ },
+ {
+  "conta": "w14",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 02 em 27/10: mensagem residencial (razegeradores.com.br/condominios/) para (21) 96700-3833, oferta Diagnóstico de Prontidão, com pedido de indicação do responsável pelo gerador. Entregue, sem resposta registrada. Próximo passo: follow-up em 29/10 (D+2), reforçando o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-10-29"
+ },
+ {
+  "conta": "w15",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Número sem WhatsApp",
+  "nota": "WhatsApp Lote 02 em 27/10: o número (21) 97086-2576 não tem WhatsApp, a mensagem não foi enviada. Próximo passo: ligar com a oferta do Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w16",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Número sem WhatsApp",
+  "nota": "WhatsApp Lote 02 em 27/10: o número (21) 97745-6450 não tem WhatsApp, a mensagem não foi enviada. Próximo passo: ligar com a oferta do Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w17",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Número sem WhatsApp",
+  "nota": "WhatsApp Lote 02 em 27/10: o número (21) 96752-3173 não tem WhatsApp, a mensagem não foi enviada. Próximo passo: ligar com a oferta do Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w18",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Número sem WhatsApp",
+  "nota": "WhatsApp Lote 02 em 27/10: o número (21) 99763-3820 não tem WhatsApp, a mensagem não foi enviada. Próximo passo: ligar com a oferta do Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "w19",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 02 em 27/10: mensagem residencial (razegeradores.com.br/condominios/) para (21) 97747-1179, oferta Diagnóstico de Prontidão, com pedido de indicação do responsável pelo gerador. Entregue, sem resposta registrada. Próximo passo: follow-up em 29/10 (D+2), reforçando o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-10-29"
+ },
+ {
+  "conta": "w20",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "WhatsApp entregue",
+  "nota": "WhatsApp Lote 02 em 27/10: mensagem residencial (razegeradores.com.br/condominios/) para (21) 97839-9999, oferta Diagnóstico de Prontidão, com pedido de indicação do responsável pelo gerador. Entregue, sem resposta registrada. Próximo passo: follow-up em 29/10 (D+2), reforçando o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-10-29"
+ },
+ {
+  "conta": "w21",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Número sem WhatsApp",
+  "nota": "WhatsApp Lote 02 em 27/10: o número (21) 99067-5305 não tem WhatsApp, a mensagem não foi enviada. Próximo passo: ligar com a oferta do Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "r16",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para Anna Carolina Chazan, Gerente-Geral (Estasa Empresa de Serviços Técnicos e Administrativos Ltda). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l12",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para Welber Ferreira, Administrador de Condomínios (PCA). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l13",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para José Orlando Ribeiro, Administrador e Síndico Profissional (José Orlando Ribeiro (síndico profissional)). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l14",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para André Sibanto, Síndico Profissional (Condomínio Union Suítes). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l15",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para André Felipe, Gerente de Engenharia Clínica (Super Centro de Exames). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l16",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para Wallace Marques, Chefe de Engenharia Clínica (Hospital Universitário Clementino Fraga Filho (UFRJ)). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l17",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para Victor Juventude, Engenheiro Regional de Infraestrutura (Hapvida NotreDame Intermédica). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l18",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para Alfredo de Brito Junior, Gerente de Manutenção, Utilidades e Engenharia (Seara (Duque de Caxias)). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l19",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para Evandro Coelho, Coordenador de Manutenção (Grupo Cataratas). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
+ },
+ {
+  "conta": "l20",
+  "quando": "2026-10-27T12:00:00+00:00",
+  "qualificacao": "Convite no LinkedIn",
+  "nota": "Convite de conexão no LinkedIn em 27/10 para Gilson Pinheiro, Gerente de Manutenção e Gestão de Ativos (Gilson Pinheiro (gestão de ativos, Nilópolis)). Próximo passo: acompanhar o aceite e enviar a mensagem de abertura com o Diagnóstico de Prontidão.",
+  "etapa": "tentar",
+  "conversou": false
  }
 ]
