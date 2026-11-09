@@ -1020,6 +1020,10 @@
    "contato": "E-mail matriz@imodata.net",
    "telefones_confirmados": [
     {
+     "numero": "matriz@imodata.net",
+     "como": "e-mail indicado pela atendente Carolina Silva"
+    },
+    {
      "numero": "(21) 99112-3600",
      "como": "atendente da Imodata (Carolina Silva)"
     }
@@ -1163,6 +1167,10 @@
    "contato": "Guilherme, e-mail precisao@precisaoadm.com.br",
    "telefones_confirmados": [
     {
+     "numero": "precisao@precisaoadm.com.br",
+     "como": "e-mail aos cuidados do Guilherme, indicado pela Lidiane"
+    },
+    {
      "numero": "(21) 3883-2450",
      "como": "setor de condomínio (Lidiane)"
     },
@@ -1200,6 +1208,10 @@
    "ultima_acao": "2026-11-09T14:24:56-03:00",
    "contato": "Eduardo Sousa (atendimento)",
    "telefones_confirmados": [
+    {
+     "numero": "atendimento@conac.com.br",
+     "como": "e-mail indicado pelo atendente Eduardo Sousa"
+    },
     {
      "numero": "(21) 99614-1857",
      "como": "atendente da Conac (Eduardo Sousa)"
@@ -1268,6 +1280,10 @@
    "contato": "Cristiane Marques (atendimento)",
    "telefones_confirmados": [
     {
+     "numero": "crase@crasesigma.com.br",
+     "como": "e-mail indicado pela atendente Cristiane Marques"
+    },
+    {
      "numero": "(21) 2525-0900",
      "como": "atendente da Crase Sigma (Cristiane Marques)"
     }
@@ -1302,6 +1318,10 @@
    "ultima_acao": "2026-11-09T15:37:35-03:00",
    "contato": "Claudia Dias (gerente), housing@housing.com.br",
    "telefones_confirmados": [
+    {
+     "numero": "housing@housing.com.br",
+     "como": "e-mail da gerente Claudia Dias, indicado pela Keila"
+    },
     {
      "numero": "(21) 2544-0811",
      "como": "atendimento a fornecedores (Keila)"

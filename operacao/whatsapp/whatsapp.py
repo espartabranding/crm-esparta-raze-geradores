@@ -561,6 +561,18 @@ def cmd_relatorio(args) -> None:
     else:
         s.append(Paragraph(f"Não houve ação de WhatsApp registrada em {dia.strftime('%d/%m/%Y')}.", body))
 
+    # Só os contatos confirmados: número ou e-mail que respondeu em nome da empresa ou que ela indicou.
+    conf = [it for it in estado["fila"] if it.get("telefones_confirmados")]
+    conf.sort(key=lambda it: ((it.get("resposta_cliente") or {}).get("grupo", 9), it["nome"]))
+    if conf:
+        linhas = [["Empresa", "Contato", "Origem"]]
+        for it in conf:
+            for n, tc in enumerate(it["telefones_confirmados"]):
+                linhas.append([f"<b>{it['nome']}</b>" if n == 0 else "", tc["numero"], tc["como"]])
+        total = sum(len(it["telefones_confirmados"]) for it in conf)
+        s.append(Paragraph(f"Contatos confirmados · {total} contatos de {len(conf)} empresas", h2))
+        s.append(tabela(linhas, [52, 52, 70]))
+
     if linhas_dia:
         # Três grupos: quem respondeu, quem ainda está no prazo de responder e quem não respondeu.
         RESPONDEU = {"respondeu", "contato_obtido", "resposta_automatica", "recusou", "nao_contatar"}
