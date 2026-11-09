@@ -10,7 +10,8 @@
    "nome": "Clínica Gestus Saúde da Mulher",
    "situacao": "resposta_automatica",
    "quando": "2026-11-09T16:02:30-03:00"
-  }
+  },
+  "onde_parou": "09/11: Lote 07 enviado até L07-17 (exceto L07-14, a conferir). A conexão do Chrome caiu às 16:05; as respostas que chegaram depois disso ainda não foram lidas. Próxima sessão: ler as conversas não lidas, conferir a L07-14 e a Gestus e refazer a 2ª varredura do CNES (a lista de 151 estabelecimentos ficou só no navegador e não foi salva)."
  },
  "fila": [
   {
@@ -1627,7 +1628,7 @@
    "obs": "",
    "toques": 1,
    "prazo": "2026-11-10",
-   "proximo": "Responder pedindo o contato do responsável",
+   "proximo": "Ler a resposta completa e seguir pelo canal indicado",
    "fonte": "CNES 8164681 declara grupo gerador (consulta de 09/11/2026); celular do CNES",
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T16:02:30-03:00",
@@ -1718,7 +1719,7 @@
    "cnpj": "",
    "perfil": "",
    "situacao": "a_enviar",
-   "obs": "",
+   "obs": "Envio de 09/11 às 16:04 interrompido (Chrome caiu). Antes de enviar, abrir a conversa e conferir se a mensagem já chegou, para não mandar duas vezes.",
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
