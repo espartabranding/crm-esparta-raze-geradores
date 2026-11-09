@@ -1183,5 +1183,77 @@
   "etapa": "apresentar",
   "conversou": true,
   "prazo": "2026-11-09"
+ },
+ {
+  "conta": "r80",
+  "quando": "2026-11-09T12:14:49-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 97239-5621. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w12",
+  "quando": "2026-11-09T12:15:57-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 99354-7096. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w14",
+  "quando": "2026-11-09T12:17:10-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 96700-3833. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w19",
+  "quando": "2026-11-09T12:18:32-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 97747-1179. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w20",
+  "quando": "2026-11-09T12:18:32-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 97839-9999. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w5",
+  "quando": "2026-11-09T12:20:10-03:00",
+  "qualificacao": "Número sem WhatsApp",
+  "nota": "WhatsApp em 09/11: o número (21) 96438-0385 não está mais no WhatsApp (conferido duas vezes; em 26/10 a mensagem tinha sido entregue). Próximo passo: ligar (Camile/Fluke) ou buscar outro contato do condomínio.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "w6",
+  "quando": "2026-11-09T12:20:10-03:00",
+  "qualificacao": "Número sem WhatsApp",
+  "nota": "WhatsApp em 09/11: o número (21) 99801-7357 não está mais no WhatsApp (conferido duas vezes; em 26/10 a mensagem tinha sido entregue). Próximo passo: ligar (Camile/Fluke) ou buscar outro contato do condomínio.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "w14",
+  "quando": "2026-11-09T12:20:10-03:00",
+  "qualificacao": "Número errado",
+  "nota": "Barra Soleil respondeu em 09/11: «Não é conosco. Sou corretor.» O número é de corretor, não do condomínio. A Raze agradeceu e pediu, se ele tiver, o contato da administração. Próximo passo: buscar o contato da administração (CNPJ/Receita ou administradora).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
  }
 ]

@@ -1,15 +1,15 @@
 {
  "sobre": "Ponto fixo da operação de WhatsApp da Raze. Atualizado pelo whatsapp.py a cada mensagem registrada.",
- "atualizado_em": "2026-11-09T12:12:44-03:00",
+ "atualizado_em": "2026-11-09T12:20:10-03:00",
  "numero_raze": "WhatsApp Business da Raze Geradores",
  "ultima_sessao": {
   "data": "2026-11-09",
-  "registros": 22,
+  "registros": 30,
   "ultimo_registro": {
-   "conta": "w11",
-   "nome": "Everglades Escritórios",
-   "situacao": "respondeu",
-   "quando": "2026-11-09T12:12:44-03:00"
+   "conta": "w14",
+   "nome": "Condomínio Barra Soleil Résidence",
+   "situacao": "numero_errado",
+   "quando": "2026-11-09T12:20:10-03:00"
   }
  },
  "fila": [
@@ -95,12 +95,13 @@
    "bairro": "Flamengo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
+   "situacao": "sem_whatsapp",
    "toques": 1,
    "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "prazo": "2026-11-10",
+   "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:20:10-03:00"
   },
   {
    "ordem": 6,
@@ -112,12 +113,13 @@
    "bairro": "Leblon",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
+   "situacao": "sem_whatsapp",
    "toques": 1,
    "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "prazo": "2026-11-10",
+   "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:20:10-03:00"
   },
   {
    "ordem": 7,
@@ -219,12 +221,13 @@
    "bairro": "Taquara",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-27",
-   "prazo": "2026-10-29",
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:15:57-03:00"
   },
   {
    "ordem": 13,
@@ -254,12 +257,13 @@
    "bairro": "Barra da Tijuca",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-27",
-   "prazo": "2026-10-29",
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "numero_errado",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-10",
+   "proximo": "Buscar outro contato",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:20:10-03:00"
   },
   {
    "ordem": 15,
@@ -339,12 +343,13 @@
    "bairro": "Taquara",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-27",
-   "prazo": "2026-10-29",
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:18:32-03:00"
   },
   {
    "ordem": 20,
@@ -356,12 +361,13 @@
    "bairro": "Leblon",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-27",
-   "prazo": "2026-10-29",
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:18:32-03:00"
   },
   {
    "ordem": 21,
@@ -514,12 +520,13 @@
    "bairro": "Recreio dos Bandeirantes",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "enviado",
-   "toques": 1,
-   "ultimo_toque": "2026-10-28",
-   "prazo": null,
-   "proximo": "Conferir a entrega e fazer o 2º toque",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:14:49-03:00"
   },
   {
    "ordem": 30,
