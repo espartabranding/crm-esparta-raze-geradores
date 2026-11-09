@@ -1,15 +1,15 @@
 {
  "sobre": "Ponto fixo da operação de WhatsApp da Raze. Atualizado pelo whatsapp.py a cada mensagem registrada.",
- "atualizado_em": "2026-11-09T11:51:58-03:00",
+ "atualizado_em": "2026-11-09T11:55:47-03:00",
  "numero_raze": "WhatsApp Business da Raze Geradores",
  "ultima_sessao": {
   "data": "2026-11-09",
-  "registros": 5,
+  "registros": 9,
   "ultimo_registro": {
-   "conta": "x7",
-   "nome": "Além do Sonho Eventos",
-   "situacao": "contato_obtido",
-   "quando": "2026-11-09T11:51:58-03:00"
+   "conta": "w25",
+   "nome": "Conjunto Residencial Âncora",
+   "situacao": "enviado",
+   "quando": "2026-11-09T11:55:47-03:00"
   }
  },
  "fila": [
@@ -125,12 +125,13 @@
    "bairro": "Leblon",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "1_tique",
+   "situacao": "enviado",
    "toques": 1,
    "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "Reenviar a mensagem",
-   "obs": ""
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T11:53:17-03:00"
   },
   {
    "ordem": 8,
@@ -227,12 +228,13 @@
    "bairro": "Jacarepaguá",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "1_tique",
+   "situacao": "resposta_automatica",
    "toques": 1,
    "ultimo_toque": "2026-10-27",
-   "prazo": "2026-10-29",
-   "proximo": "Reenviar a mensagem",
-   "obs": ""
+   "prazo": "2026-11-10",
+   "proximo": "Responder pedindo o contato do responsável",
+   "obs": "",
+   "ultima_acao": "2026-11-09T11:54:31-03:00"
   },
   {
    "ordem": 14,
@@ -431,12 +433,13 @@
    "bairro": "Jacarepaguá",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "1_tique",
+   "situacao": "enviado",
    "toques": 1,
    "ultimo_toque": "2026-10-28",
-   "prazo": null,
-   "proximo": "Reenviar a mensagem",
-   "obs": ""
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T11:55:47-03:00"
   },
   {
    "ordem": 26,
