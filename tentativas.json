@@ -1683,7 +1683,7 @@
   "conta": "w36",
   "quando": "2026-11-09T15:58:00-03:00",
   "qualificacao": "Pediu para não contatar",
-  "nota": "Respondeu às 15:57 que a empresa M Lab Diagnóstico foi fechada em 2021 (o cadastro do CNES está desatualizado). Agradecemos, pedimos desculpas e informamos que não voltaremos a contatar o número.",
+  "nota": "M Lab respondeu em 09/11 que a empresa encerrou as atividades em 2021. A Raze agradeceu e retirou o número da base.",
   "etapa": "encerrada",
   "conversou": true,
   "prazo": null
@@ -1818,7 +1818,7 @@
   "conta": "w44",
   "quando": "2026-11-09T16:02:30-03:00",
   "qualificacao": "Resposta automática",
-  "nota": "Resposta automática da Clínica Gestus ('agradece seu contato; esse número é para uso...'). Ler a mensagem completa e seguir o canal indicado.",
+  "nota": "Gestus respondeu em 09/11 com mensagem automática indicando outro canal de atendimento. Próximo passo: seguir pelo canal indicado.",
   "etapa": "tentar",
   "conversou": false,
   "prazo": "2026-11-10"
