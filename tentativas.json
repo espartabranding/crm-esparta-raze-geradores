@@ -1255,5 +1255,59 @@
   "etapa": "tentar",
   "conversou": false,
   "prazo": "2026-11-10"
+ },
+ {
+  "conta": "r2",
+  "quando": "2026-11-09T12:27:02-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à administradora pelo WhatsApp publicado no site oficial (imodata.net), sobre a garantia de energia dos condomínios administrados, pedindo o responsável pela manutenção. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r3",
+  "quando": "2026-11-09T12:29:14-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à Zirtaeb pelo WhatsApp do site oficial (zirtaeb.com), sobre a garantia de energia dos condomínios administrados. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r2",
+  "quando": "2026-11-09T12:29:15-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "Imodata respondeu em 09/11 com menu automático; a Raze escolheu «Outros assuntos» e pediu o nome e o contato do responsável pela manutenção dos condomínios administrados. O atendimento informou que um operador vai responder. Próximo passo: aguardar o operador; se não vier, retomar em 11/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "r5",
+  "quando": "2026-11-09T12:31:15-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à ML Administradora pelo WhatsApp do site oficial (mlimoveis.com.br).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r5",
+  "quando": "2026-11-09T12:31:15-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "ML Administradora respondeu em 09/11 com atendente virtual; a Raze escolheu o setor Condomínios. O robô pede aceite da política de privacidade e cadastro de cliente para seguir. Próximo passo: decidir se aceita o cadastro no robô ou buscar outro canal (telefone (21) 3032-6400).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "w2",
+  "quando": "2026-11-09T12:31:15-03:00",
+  "qualificacao": "Respondeu",
+  "nota": "Bay View respondeu em 09/11 pedindo que a Raze entre em contato com a recepção e peça para transferir para a administração (mensagem apagada em seguida). Próximo passo: ligar para a recepção do prédio e pedir a administração.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-09"
  }
 ]
