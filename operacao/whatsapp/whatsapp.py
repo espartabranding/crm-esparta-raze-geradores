@@ -421,6 +421,42 @@ MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "a
          "outubro", "novembro", "dezembro"]
 
 
+import re as _re
+
+# O relatório vai ao cliente como trabalho da equipe comercial da Raze. Nada de processo interno,
+# ferramenta, automação, fonte de pesquisa ou dado pessoal. A ordem importa: frases longas antes das curtas.
+_CLIENTE = [
+    (r",? com autorização do Rodrigo", ""),
+    (r"\s*\((?:o robô|o atendimento)[^)]*\)", ""),
+    (r"\s*\((?:a|o) do CNES[^)]*\)", " (a unidade com gerador)"),
+    (r"\s*\([^)]*(?:CNPJ|Receita|CNES)[^)]*\)", ""),
+    (r"encerrou o atendimento automático em (\d\d/\d\d) por falta de interação", r"encerrou o atendimento eletrônico em \1 sem encaminhar a um atendente"),
+    (r"\s*por (?:falta de interação|inatividade)", ""),
+    (r"respondeu em (\d\d/\d\d) com assistente de IA que exige consentimento automático com os termos de uso e a política de privacidade para seguir",
+     r"respondeu em \1 com atendimento eletrônico que pede cadastro prévio"),
+    (r"; o robô exige [^.]*\.", "; o canal atende apenas condôminos cadastrados."),
+    (r"\bo robô transferiu\b", "a mensagem foi transferida"),
+    (r"\bo robô\b", "o atendimento eletrônico"),
+    (r"\brobôs?\b", "atendimento eletrônico"),
+    (r"A Raze não seguiu sem autorização\. ", ""),
+    (r"decidir se aceita seguir pela (\w+) ou ligar", r"seguir pelo atendimento comercial (\1) ou ligar"),
+    (r"\bCPF\b,?\s*", ""),
+    (r"\bCNES\b", "cadastro oficial"),
+    (r"\b[Qq]ualificar na conversa\b", "confirmar na conversa"),
+    (r"\bSem prova de gerador: ", ""),
+]
+
+
+def para_cliente(texto: str, nome: str = "") -> str:
+    t = texto or ""
+    t = _re.sub(r"^[^:]{0,60}(respondeu|Resposta automática[^:]*) em \d\d/\d\d: ", "", t)
+    if nome:  # tira o prefixo repetido "Imodata: ..." quando a nota já começa com o nome da conta
+        t = _re.sub(r"^" + _re.escape(nome.split()[0]) + r"[^:]{0,25}:\s*", "", t)
+    for a, b in _CLIENTE:
+        t = _re.sub(a, b, t)
+    return _re.sub(r"\s{2,}", " ", t).strip()
+
+
 def cmd_relatorio(args) -> None:
     from reportlab.lib import colors
     from reportlab.lib.pagesizes import A4
@@ -518,29 +554,27 @@ def cmd_relatorio(args) -> None:
         if acompanha: detalhe.append(pl(len(acompanha), "mensagem de acompanhamento", "mensagens de acompanhamento"))
         if respostas: detalhe.append(pl(len(respostas), "resposta recebida", "respostas recebidas"))
         if sem_wa: detalhe.append(pl(len(sem_wa), "número sem WhatsApp, encaminhado", "números sem WhatsApp, encaminhados") + " para ligação")
-        s.append(Paragraph(f"Em {dia.strftime('%d/%m/%Y')}, a Raze Geradores trabalhou "
-                           f"{pl(len(linhas_dia), 'conta', 'contas')} por WhatsApp"
+        s.append(Paragraph(f"Em {dia.strftime('%d/%m/%Y')}, a equipe comercial da Raze Geradores fez contato com "
+                           f"{pl(len(linhas_dia), 'empresa', 'empresas')} por WhatsApp"
                            + (": " + ", ".join(detalhe) if detalhe else "") + ".", body))
     else:
         s.append(Paragraph(f"Não houve ação de WhatsApp registrada em {dia.strftime('%d/%m/%Y')}.", body))
 
     if linhas_dia:
-        s.append(Paragraph(f"Contas trabalhadas no dia · {len(linhas_dia)}", h2))
+        s.append(Paragraph(f"Empresas contatadas no dia · {len(linhas_dia)}", h2))
         linhas = [["Conta", "Bairro", "Ação", "Resultado", "Próximo passo"]]
         for p in linhas_dia:
             r = p["final"]
             it = achar(estado, r["conta"]) or {}
             acoes = " + ".join(dict.fromkeys(p["acoes"]))
-            linhas.append([f"<b>{p['nome']}</b>", p["bairro"], acoes, RESULTADOS[r["resultado"]][0],
-                           f"{it.get('proximo', RESULTADOS[r['resultado']][4])} ({br(it.get('prazo'))})"])
+            linhas.append([f"<b>{p['nome']}</b>", p["bairro"], acoes, para_cliente(RESULTADOS[r["resultado"]][0]),
+                           f"{para_cliente(it.get('proximo', RESULTADOS[r['resultado']][4]))} ({br(it.get('prazo'))})"])
         s.append(tabela(linhas, [40, 23, 33, 32, 46]))
 
     if respostas:
         bloco = [Paragraph("Respostas e contatos", h2)]
-        import re as _re
         for r in respostas:
-            nota = _re.sub(r",? com autorização do Rodrigo", "", r["nota"])  # nota interna não vai ao cliente
-            nota = _re.sub(r"^[^:]{0,60}(respondeu|Resposta automática[^:]*) em \d\d/\d\d: ", "", nota)
+            nota = para_cliente(r["nota"], r["nome"])
             bloco.append(Paragraph(f"<b>{r['nome']}</b>: {nota}", body))
             bloco.append(Spacer(1, 3))
         s.append(KeepTogether(bloco))
@@ -551,9 +585,39 @@ def cmd_relatorio(args) -> None:
     ordem = ["respondeu", "contato_obtido", "resposta_automatica", "material_enviado", "material_pendente", "entregue",
              "followup", "enviado", "1_tique", "sem_whatsapp", "numero_errado", "a_enviar", "segurar", "confirmar",
              "recusou", "nao_contatar"]
-    linhas = [["Situação", "Contas"]] + [[ROTULO[k], str(contagem[k])] for k in ordem if contagem.get(k)]
-    linhas.append(["<b>Total na operação</b>", f"<b>{len(estado['fila'])}</b>"])
-    s.append(KeepTogether([Paragraph("Situação da base no WhatsApp", h2), tabela(linhas, [120, 54])]))
+    # Telefones que a própria empresa confirmou (respondeu em nome dela ou indicou o número).
+    conf = [(it["nome"], t["numero"], t["como"]) for it in estado["fila"] for t in it.get("telefones_confirmados", [])]
+    if conf:
+        linhas = [["Empresa", "Telefone", "Confirmação"]]
+        anterior = None
+        for nome, num, como in conf:
+            linhas.append([f"<b>{nome}</b>" if nome != anterior else "", num, como])
+            anterior = nome
+        s.append(Paragraph(f"Telefones confirmados pelas empresas · {len({c[0] for c in conf})} empresas", h2))
+        s.append(tabela(linhas, [62, 30, 82]))
+
+    # Para o cliente: situação de toda empresa já contatada, pela última ação registrada.
+    # Quem saiu da lista ativa depois do contato continua contado como contatado.
+    internos = {"a_enviar", "segurar", "confirmar"}
+    contagem = {}
+    ultimo = {}
+    for arq_d in sorted(DIARIO.glob("*.jsonl")):
+        if arq_d.stem > dia.isoformat():
+            continue
+        for l in arq_d.read_text(encoding="utf-8").splitlines():
+            if l.strip():
+                r = json.loads(l); ultimo[r["conta"]] = RESULTADOS[r["resultado"]][3]
+    for it in estado["fila"]:
+        sit = it["situacao"]
+        if sit in internos:
+            sit = ultimo.get(it.get("conta")) or ultimo.get(it["chave"]) or sit
+        if sit not in internos:
+            contagem[sit] = contagem.get(sit, 0) + 1
+    ordem = [k for k in ordem if k not in internos]
+    linhas = [["Situação", "Empresas"]] + [[para_cliente(ROTULO[k]), str(contagem[k])] for k in ordem if contagem.get(k)]
+    total = sum(contagem.get(k, 0) for k in ordem)
+    linhas.append(["<b>Total de empresas já contatadas</b>", f"<b>{total}</b>"])
+    s.append(KeepTogether([Paragraph("Situação das empresas contatadas", h2), tabela(linhas, [120, 54])]))
 
     g = acoes_do_dia(estado, somar_dias_uteis(dia, 1))
     passos = []
@@ -561,9 +625,9 @@ def cmd_relatorio(args) -> None:
     if g["material"]: passos.append(f"Enviar o material prometido a {pl(len(g['material']), 'conta', 'contas')}: " + ", ".join(i["nome"] for i in g["material"]) + ".")
     if g["reenviar"]: passos.append(f"Reenviar {pl(len(g['reenviar']), 'mensagem não entregue', 'mensagens não entregues')}.")
     if g["followup"]: passos.append(f"Acompanhamento de {pl(len(g['followup']), 'conta', 'contas')} com mensagem entregue e sem resposta.")
-    if g["novos"]: passos.append(f"Primeira mensagem às próximas {min(len(g['novos']), 15)} contas da fila liberada.")
-    if g["voz"] or g["esgotados"]: passos.append(f"Ligar para {pl(len(g['voz']) + len(g['esgotados']), 'conta', 'contas')} sem WhatsApp ou sem resposta após três mensagens.")
-    if g["espera"]: passos.append(f"Decidir a liberação de {pl(len(g['espera']), 'conta', 'contas')} em espera.")
+    if g["novos"]: passos.append(f"Primeiro contato com mais {pl(min(len(g['novos']), 15), 'empresa selecionada', 'empresas selecionadas')}.")
+    if g["voz"] or g["esgotados"]: passos.append(f"Ligar para {pl(len(g['voz']) + len(g['esgotados']), 'empresa', 'empresas')} sem WhatsApp ou sem resposta após três mensagens.")
+    if g["espera"]: passos.append("Ampliar a prospecção para novas empresas do perfil da Raze.")
     if passos:
         s.append(KeepTogether([Paragraph(f"Próximos passos · {br(somar_dias_uteis(dia, 1))}", h2)] +
                               [Paragraph("• " + p, body) for p in passos]))

@@ -49,7 +49,17 @@
    "obs": "Sem prova de gerador: qualificar na conversa (perguntar se o prédio tem gerador) antes de seguir",
    "ultima_acao": "2026-11-09T14:24:55-03:00",
    "contato": "ADM Bay VIEW: (21) 99312-2669",
-   "telefone_original": "(21) 98158-6069"
+   "telefone_original": "(21) 98158-6069",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 99312-2669",
+     "como": "administração do prédio, contato enviado pelo condomínio"
+    },
+    {
+     "numero": "(21) 98158-6069",
+     "como": "respondeu em nome do condomínio"
+    }
+   ]
   },
   {
    "ordem": 3,
@@ -211,7 +221,13 @@
    "prazo": "2026-11-09",
    "proximo": "Dar sequência à conversa",
    "obs": "Sem prova de gerador: qualificar na conversa (perguntar se o prédio tem gerador) antes de seguir",
-   "ultima_acao": "2026-11-09T12:12:44-03:00"
+   "ultima_acao": "2026-11-09T12:12:44-03:00",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 96444-2627",
+     "como": "respondeu em nome do edifício"
+    }
+   ]
   },
   {
    "ordem": 12,
@@ -247,7 +263,13 @@
    "prazo": null,
    "proximo": "Responder pedindo o contato do responsável",
    "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
-   "ultima_acao": "2026-11-09T11:54:31-03:00"
+   "ultima_acao": "2026-11-09T11:54:31-03:00",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 97752-5512",
+     "como": "respondeu em nome do condomínio"
+    }
+   ]
   },
   {
    "ordem": 14,
@@ -566,7 +588,17 @@
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T14:24:55-03:00",
    "contato": "Time comercial: (21) 99491-7249",
-   "telefone_original": "(21) 96892-8133"
+   "telefone_original": "(21) 96892-8133",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 99491-7249",
+     "como": "indicado pela empresa para fornecedores"
+    },
+    {
+     "numero": "(21) 96892-8133",
+     "como": "respondeu pela empresa (Fernanda)"
+    }
+   ]
   },
   {
    "ordem": 32,
@@ -585,7 +617,13 @@
    "obs": "atendimento indicado pela resposta automática",
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T14:24:55-03:00",
-   "telefone_original": "(21) 98198-5759"
+   "telefone_original": "(21) 98198-5759",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 99581-6981",
+     "como": "indicado pela clínica como canal de atendimento"
+    }
+   ]
   },
   {
    "ordem": 33,
@@ -930,7 +968,13 @@
    "proximo": "Abordar o responsável indicado",
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T14:34:14-03:00",
-   "contato": "E-mail matriz@imodata.net"
+   "contato": "E-mail matriz@imodata.net",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 99112-3600",
+     "como": "atendente da Imodata (Carolina Silva)"
+    }
+   ]
   },
   {
    "ordem": 51,
@@ -972,7 +1016,13 @@
    "prazo": "2026-11-10",
    "proximo": "Responder pedindo o contato do responsável",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T14:24:56-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 98490-0233",
+     "como": "atendimento da ML Administradora"
+    }
+   ]
   },
   {
    "ordem": 53,
@@ -1014,7 +1064,13 @@
    "prazo": "2026-11-10",
    "proximo": "Responder pedindo o contato do responsável",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T14:24:56-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 2518-3700",
+     "como": "atendimento da Pacífica"
+    }
+   ]
   },
   {
    "ordem": 55,
@@ -1037,7 +1093,17 @@
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T14:34:14-03:00",
    "telefone_original": "(21) 99708-5131",
-   "contato": "Guilherme, e-mail precisao@precisaoadm.com.br"
+   "contato": "Guilherme, e-mail precisao@precisaoadm.com.br",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 3883-2450",
+     "como": "setor de condomínio (Lidiane)"
+    },
+    {
+     "numero": "(21) 99708-5131",
+     "como": "setor de locação (Vinicius)"
+    }
+   ]
   },
   {
    "ordem": 56,
@@ -1059,7 +1125,13 @@
    "proximo": "Dar sequência à conversa",
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T14:24:56-03:00",
-   "contato": "Eduardo Sousa (atendimento)"
+   "contato": "Eduardo Sousa (atendimento)",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 99614-1857",
+     "como": "atendente da Conac (Eduardo Sousa)"
+    }
+   ]
   },
   {
    "ordem": 57,
@@ -1080,7 +1152,13 @@
    "prazo": "2026-11-10",
    "proximo": "Responder pedindo o contato do responsável",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T14:24:56-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 99702-2576",
+     "como": "atendimento da Masset"
+    }
+   ]
   },
   {
    "ordem": 58,
@@ -1102,7 +1180,13 @@
    "proximo": "Dar sequência à conversa",
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T14:24:56-03:00",
-   "contato": "Cristiane Marques (atendimento)"
+   "contato": "Cristiane Marques (atendimento)",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 2525-0900",
+     "como": "atendente da Crase Sigma (Cristiane Marques)"
+    }
+   ]
   },
   {
    "ordem": 59,
@@ -1125,7 +1209,13 @@
    "fonte": "housing.com.br (botão WhatsApp, fixo com WhatsApp Business)",
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T15:37:35-03:00",
-   "contato": "Claudia Dias (gerente), housing@housing.com.br"
+   "contato": "Claudia Dias (gerente), housing@housing.com.br",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 2544-0811",
+     "como": "atendimento a fornecedores (Keila)"
+    }
+   ]
   },
   {
    "ordem": 60,
@@ -1148,7 +1238,13 @@
    "fonte": "4di.mobi (botão WhatsApp)",
    "telefone_original": "(21) 96013-1499",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T14:34:14-03:00"
+   "ultima_acao": "2026-11-09T14:34:14-03:00",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 3900-7222",
+     "como": "atendimento da 4D Imobi"
+    }
+   ]
   },
   {
    "ordem": 61,
@@ -1214,7 +1310,13 @@
    "proximo": "Responder pedindo o contato do responsável",
    "fonte": "CNES 4485866 declara grupo gerador",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T15:43:08-03:00"
+   "ultima_acao": "2026-11-09T15:43:08-03:00",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 96845-9159",
+     "como": "atendimento do laboratório"
+    }
+   ]
   },
   {
    "ordem": 64,
@@ -1258,7 +1360,13 @@
    "proximo": "Responder pedindo o contato do responsável",
    "fonte": "CNES 2269872 declara grupo gerador",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T15:43:08-03:00"
+   "ultima_acao": "2026-11-09T15:43:08-03:00",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 2573-7577",
+     "como": "atendimento da clínica"
+    }
+   ]
   },
   {
    "ordem": 66,
@@ -1522,7 +1630,13 @@
    "proximo": "Responder pedindo o contato do responsável",
    "fonte": "CNES 8164681 declara grupo gerador (consulta de 09/11/2026); celular do CNES",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T16:02:30-03:00"
+   "ultima_acao": "2026-11-09T16:02:30-03:00",
+   "telefones_confirmados": [
+    {
+     "numero": "(21) 99994-7455",
+     "como": "administração da clínica"
+    }
+   ]
   },
   {
    "ordem": 78,
