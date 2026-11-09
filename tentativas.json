@@ -1660,5 +1660,167 @@
   "etapa": "tentar",
   "conversou": false,
   "prazo": "2026-11-10"
+ },
+ {
+  "conta": "w35",
+  "quando": "2026-11-09T15:52:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w36",
+  "quando": "2026-11-09T15:54:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w36",
+  "quando": "2026-11-09T15:58:00-03:00",
+  "qualificacao": "Pediu para não contatar",
+  "nota": "Respondeu às 15:57 que a empresa M Lab Diagnóstico foi fechada em 2021 (o cadastro do CNES está desatualizado). Agradecemos, pedimos desculpas e informamos que não voltaremos a contatar o número.",
+  "etapa": "encerrada",
+  "conversou": true,
+  "prazo": null
+ },
+ {
+  "conta": "w37",
+  "quando": "2026-11-09T15:58:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w38",
+  "quando": "2026-11-09T15:59:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w39",
+  "quando": "2026-11-09T16:00:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w40",
+  "quando": "2026-11-09T16:00:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w41",
+  "quando": "2026-11-09T16:00:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w42",
+  "quando": "2026-11-09T16:01:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w43",
+  "quando": "2026-11-09T16:02:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w44",
+  "quando": "2026-11-09T16:02:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w45",
+  "quando": "2026-11-09T16:02:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w46",
+  "quando": "2026-11-09T16:03:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w47",
+  "quando": "2026-11-09T16:04:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w48",
+  "quando": "2026-11-09T16:04:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w49",
+  "quando": "2026-11-09T16:05:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w50",
+  "quando": "2026-11-09T16:05:00-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "1ª mensagem da Raze pedindo o responsável por energia e gerador (ICP comprovado: o CNES declara grupo gerador próprio). O número responde como conta comercial 'Clínica Oncologia São Gonçalo'.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w44",
+  "quando": "2026-11-09T16:02:30-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "Resposta automática da Clínica Gestus ('agradece seu contato; esse número é para uso...'). Ler a mensagem completa e seguir o canal indicado.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
  }
 ]
