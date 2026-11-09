@@ -1,15 +1,15 @@
 {
  "sobre": "Ponto fixo da operação de WhatsApp da Raze. Atualizado pelo whatsapp.py a cada mensagem registrada.",
- "atualizado_em": "2026-11-09T11:30:00-03:00",
+ "atualizado_em": "2026-11-09T11:51:58-03:00",
  "numero_raze": "WhatsApp Business da Raze Geradores",
  "ultima_sessao": {
-  "data": "2026-10-28",
-  "registros": 8,
+  "data": "2026-11-09",
+  "registros": 5,
   "ultimo_registro": {
-   "conta": "r80",
-   "nome": "Park Premium Recreio Residences",
-   "situacao": "enviado",
-   "quando": "2026-10-28T12:00:00+00:00"
+   "conta": "x7",
+   "nome": "Além do Sonho Eventos",
+   "situacao": "contato_obtido",
+   "quando": "2026-11-09T11:51:58-03:00"
   }
  },
  "fila": [
@@ -516,11 +516,13 @@
    "bairro": "Jacarepaguá",
    "tipo": "comercial",
    "segmento": "Comércio e centros comerciais",
-   "situacao": "material_pendente",
-   "toques": 0,
-   "prazo": "2026-10-09",
-   "proximo": "Enviar a apresentação da Raze pedida na ligação",
-   "obs": "Pediu a apresentação por WhatsApp na ligação de 05/10"
+   "situacao": "material_enviado",
+   "toques": 1,
+   "prazo": "2026-11-11",
+   "proximo": "Confirmar o recebimento do material",
+   "obs": "Pediu a apresentação por WhatsApp na ligação de 05/10",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T11:49:11-03:00"
   },
   {
    "ordem": 31,
@@ -532,11 +534,14 @@
    "bairro": "Ilha de Guaratiba",
    "tipo": "comercial",
    "segmento": "Hotelaria e eventos",
-   "situacao": "material_pendente",
-   "toques": 0,
-   "prazo": "2026-10-09",
-   "proximo": "Enviar a apresentação da Raze pedida na ligação",
-   "obs": "Pediu a apresentação por WhatsApp na ligação de 05/10"
+   "situacao": "contato_obtido",
+   "toques": 1,
+   "prazo": "2026-11-10",
+   "proximo": "Abordar o responsável indicado",
+   "obs": "Pediu a apresentação por WhatsApp na ligação de 05/10",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T11:51:58-03:00",
+   "contato": "Time comercial: (21) 99491-7249"
   },
   {
    "ordem": 32,
@@ -548,11 +553,13 @@
    "bairro": "Flamengo",
    "tipo": "hospital",
    "segmento": "Saúde",
-   "situacao": "material_pendente",
-   "toques": 0,
-   "prazo": "2026-10-08",
-   "proximo": "Enviar a apresentação da Raze pedida na ligação",
-   "obs": "Pediu a apresentação por WhatsApp na ligação de 05/10"
+   "situacao": "resposta_automatica",
+   "toques": 1,
+   "prazo": "2026-11-10",
+   "proximo": "Responder pedindo o contato do responsável",
+   "obs": "Pediu a apresentação por WhatsApp na ligação de 05/10",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T11:51:58-03:00"
   },
   {
    "ordem": 33,
