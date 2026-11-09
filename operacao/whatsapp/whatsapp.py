@@ -473,6 +473,7 @@ def cmd_relatorio(args) -> None:
     F, FB = _fontes()
     PRETO, AMARELO, CINZA, CLARO = colors.HexColor("#111111"), colors.HexColor("#F5B800"), colors.HexColor("#5A5A5A"), colors.HexColor("#F3F3F3")
     h2 = ParagraphStyle("h2", fontName=FB, fontSize=12.5, leading=16, spaceBefore=10, spaceAfter=6, textColor=PRETO)
+    h3 = ParagraphStyle("h3", fontName=FB, fontSize=10, leading=13, spaceBefore=4, spaceAfter=4, textColor=PRETO)
     body = ParagraphStyle("b", fontName=F, fontSize=9.2, leading=13, textColor=PRETO)
     cel = ParagraphStyle("c", fontName=F, fontSize=8.4, leading=11)
     celb = ParagraphStyle("cb", parent=cel, fontName=FB)
@@ -605,12 +606,30 @@ def cmd_relatorio(args) -> None:
             s.append(tabela(linhas, [40, 23, 33, 32, 46]))
 
     if respostas:
-        bloco = [Paragraph("Respostas e contatos", h2)]
+        # Uma linha por empresa, agrupada pelo desfecho. Usa o resumo curado `resposta_cliente`
+        # do estado.json; sem ele, cai na última nota filtrada.
+        GRUPOS = {1: "Contato indicado pela empresa", 2: "Em conversa",
+                  3: "Atendimento eletrônico (seguir por telefone)", 4: "Encerrados"}
+        por_conta = {}
         for r in respostas:
-            nota = para_cliente(r["nota"], r["nome"])
-            bloco.append(Paragraph(f"<b>{r['nome']}</b>: {nota}", body))
-            bloco.append(Spacer(1, 3))
-        s.append(KeepTogether(bloco))
+            por_conta[r["conta"]] = r
+        itens = []
+        for conta, r in por_conta.items():
+            it = achar(estado, conta) or {}
+            rc = it.get("resposta_cliente") or {"grupo": 2, "resposta": para_cliente(r["nota"], r["nome"]),
+                                                 "contato": "—", "proximo": para_cliente(it.get("proximo", ""))}
+            itens.append((rc["grupo"], r["nome"], rc))
+        titulo_resp = Paragraph(f"Respostas obtidas · {len(itens)} empresas", h2)
+        for g in sorted(GRUPOS):
+            gi = [x for x in itens if x[0] == g]
+            if not gi:
+                continue
+            linhas = [["Empresa", "O que respondeu", "Contato confirmado", "Próximo passo"]]
+            linhas += [[f"<b>{nome}</b>", rc["resposta"], rc["contato"], rc["proximo"]] for _, nome, rc in gi]
+            topo = [titulo_resp] if titulo_resp else []
+            titulo_resp = None
+            s.append(KeepTogether(topo + [Paragraph(f"{GRUPOS[g]} · {len(gi)}", h3), tabela(linhas, [34, 46, 52, 42])]))
+            s.append(Spacer(1, 4))
 
     contagem: dict[str, int] = {}
     for it in estado["fila"]:
@@ -618,17 +637,6 @@ def cmd_relatorio(args) -> None:
     ordem = ["respondeu", "contato_obtido", "resposta_automatica", "material_enviado", "material_pendente", "entregue",
              "followup", "enviado", "1_tique", "sem_whatsapp", "numero_errado", "a_enviar", "segurar", "confirmar",
              "recusou", "nao_contatar"]
-    # Telefones que a própria empresa confirmou (respondeu em nome dela ou indicou o número).
-    conf = [(it["nome"], t["numero"], t["como"]) for it in estado["fila"] for t in it.get("telefones_confirmados", [])]
-    if conf:
-        linhas = [["Empresa", "Telefone", "Confirmação"]]
-        anterior = None
-        for nome, num, como in conf:
-            linhas.append([f"<b>{nome}</b>" if nome != anterior else "", num, como])
-            anterior = nome
-        s.append(Paragraph(f"Telefones confirmados pelas empresas · {len({c[0] for c in conf})} empresas", h2))
-        s.append(tabela(linhas, [62, 30, 82]))
-
     # Para o cliente: situação de toda empresa já contatada, pela última ação registrada.
     # Quem saiu da lista ativa depois do contato continua contado como contatado.
     internos = {"a_enviar", "segurar", "confirmar"}

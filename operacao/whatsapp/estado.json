@@ -60,7 +60,13 @@
      "numero": "(21) 98158-6069",
      "como": "respondeu em nome do condomínio"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 1,
+    "resposta": "Enviou o cartão da administração do prédio.",
+    "contato": "(21) 99312-2669",
+    "proximo": "Abordar a administração nesse número."
+   }
   },
   {
    "ordem": 3,
@@ -78,7 +84,13 @@
    "prazo": "2026-11-10",
    "proximo": "Buscar outro contato",
    "obs": "Portaria informou que o prédio não tem gerador (09/11): fora do ICP",
-   "ultima_acao": "2026-11-09T14:24:56-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00",
+   "resposta_cliente": {
+    "grupo": 4,
+    "resposta": "A portaria informou que o prédio não tem gerador.",
+    "contato": "—",
+    "proximo": "Encerrado."
+   }
   },
   {
    "ordem": 4,
@@ -228,7 +240,13 @@
      "numero": "(21) 96444-2627",
      "como": "respondeu em nome do edifício"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 2,
+    "resposta": "Informou que o assunto é com a administração, no subsolo do prédio.",
+    "contato": "(21) 96444-2627",
+    "proximo": "Aguardar o nome e o telefone da administração."
+   }
   },
   {
    "ordem": 12,
@@ -270,7 +288,13 @@
      "numero": "(21) 97752-5512",
      "como": "respondeu em nome do condomínio"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 2,
+    "resposta": "O condomínio respondeu e perguntou como pode ajudar.",
+    "contato": "(21) 97752-5512",
+    "proximo": "Pedir o contato do síndico ou da administradora."
+   }
   },
   {
    "ordem": 14,
@@ -288,7 +312,13 @@
    "prazo": null,
    "proximo": "Buscar outro contato",
    "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
-   "ultima_acao": "2026-11-09T12:20:10-03:00"
+   "ultima_acao": "2026-11-09T12:20:10-03:00",
+   "resposta_cliente": {
+    "grupo": 4,
+    "resposta": "O número é de um corretor, não do condomínio.",
+    "contato": "—",
+    "proximo": "Buscar o contato da administração."
+   }
   },
   {
    "ordem": 15,
@@ -551,7 +581,13 @@
    "prazo": "2026-11-09",
    "proximo": "Dar sequência à conversa",
    "obs": "Sem prova de gerador: qualificar na conversa (perguntar se o prédio tem gerador) antes de seguir",
-   "ultima_acao": "2026-11-09T14:24:56-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00",
+   "resposta_cliente": {
+    "grupo": 2,
+    "resposta": "Respondeu e a conversa está aberta.",
+    "contato": "—",
+    "proximo": "Confirmar quem cuida do gerador."
+   }
   },
   {
    "ordem": 30,
@@ -599,7 +635,13 @@
      "numero": "(21) 96892-8133",
      "como": "respondeu pela empresa (Fernanda)"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 1,
+    "resposta": "Indicou o time que trata de fornecedores.",
+    "contato": "(21) 99491-7249",
+    "proximo": "Abordar esse número com a apresentação."
+   }
   },
   {
    "ordem": 32,
@@ -624,7 +666,13 @@
      "numero": "(21) 99581-6981",
      "como": "indicado pela clínica como canal de atendimento"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 1,
+    "resposta": "Indicou o WhatsApp de atendimento da clínica.",
+    "contato": "(21) 99581-6981",
+    "proximo": "Reenviar a apresentação para esse número."
+   }
   },
   {
    "ordem": 33,
@@ -975,7 +1023,13 @@
      "numero": "(21) 99112-3600",
      "como": "atendente da Imodata (Carolina Silva)"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 1,
+    "resposta": "A atendente Carolina Silva indicou o e-mail para o assunto.",
+    "contato": "matriz@imodata.net",
+    "proximo": "Enviar a apresentação por e-mail."
+   }
   },
   {
    "ordem": 51,
@@ -1023,7 +1077,13 @@
      "numero": "(21) 98490-0233",
      "como": "atendimento da ML Administradora"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 3,
+    "resposta": "Atendimento eletrônico, sem encaminhar a um atendente.",
+    "contato": "(21) 98490-0233",
+    "proximo": "Ligar e pedir o setor de condomínios."
+   }
   },
   {
    "ordem": 53,
@@ -1071,7 +1131,13 @@
      "numero": "(21) 2518-3700",
      "como": "atendimento da Pacífica"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 3,
+    "resposta": "Atendimento eletrônico, sem encaminhar a um atendente.",
+    "contato": "(21) 2518-3700",
+    "proximo": "Ligar e pedir o setor de condomínios."
+   }
   },
   {
    "ordem": 55,
@@ -1104,7 +1170,13 @@
      "numero": "(21) 99708-5131",
      "como": "setor de locação (Vinicius)"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 1,
+    "resposta": "A Lidiane, do setor de condomínio, indicou o e-mail aos cuidados do Guilherme.",
+    "contato": "precisao@precisaoadm.com.br",
+    "proximo": "Enviar a apresentação ao Guilherme."
+   }
   },
   {
    "ordem": 56,
@@ -1132,7 +1204,13 @@
      "numero": "(21) 99614-1857",
      "como": "atendente da Conac (Eduardo Sousa)"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 1,
+    "resposta": "O atendente Eduardo Sousa pediu a proposta por e-mail para repassar ao setor responsável.",
+    "contato": "atendimento@conac.com.br",
+    "proximo": "Enviar a apresentação por e-mail."
+   }
   },
   {
    "ordem": 57,
@@ -1159,7 +1237,13 @@
      "numero": "(21) 99702-2576",
      "como": "atendimento da Masset"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 3,
+    "resposta": "O canal atende apenas condôminos cadastrados.",
+    "contato": "(21) 99702-2576",
+    "proximo": "Ligar e pedir o setor de manutenção."
+   }
   },
   {
    "ordem": 58,
@@ -1187,7 +1271,13 @@
      "numero": "(21) 2525-0900",
      "como": "atendente da Crase Sigma (Cristiane Marques)"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 1,
+    "resposta": "A atendente Cristiane Marques indicou o e-mail.",
+    "contato": "crase@crasesigma.com.br",
+    "proximo": "Enviar a apresentação por e-mail."
+   }
   },
   {
    "ordem": 59,
@@ -1216,7 +1306,13 @@
      "numero": "(21) 2544-0811",
      "como": "atendimento a fornecedores (Keila)"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 1,
+    "resposta": "A Keila indicou a gerente Claudia Dias.",
+    "contato": "housing@housing.com.br",
+    "proximo": "Enviar a apresentação à Claudia Dias."
+   }
   },
   {
    "ordem": 60,
@@ -1245,7 +1341,13 @@
      "numero": "(21) 3900-7222",
      "como": "atendimento da 4D Imobi"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 3,
+    "resposta": "Atendimento eletrônico com cadastro prévio; há um canal comercial.",
+    "contato": "(21) 3900-7222",
+    "proximo": "Seguir pelo canal comercial ou ligar."
+   }
   },
   {
    "ordem": 61,
@@ -1317,7 +1419,13 @@
      "numero": "(21) 96845-9159",
      "como": "atendimento do laboratório"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 2,
+    "resposta": "Encaminhou para a unidade Campo Grande.",
+    "contato": "(21) 96845-9159",
+    "proximo": "Falar com o atendente da unidade."
+   }
   },
   {
    "ordem": 64,
@@ -1367,7 +1475,13 @@
      "numero": "(21) 2573-7577",
      "como": "atendimento da clínica"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 2,
+    "resposta": "Encaminhou para o setor administrativo.",
+    "contato": "(21) 2573-7577",
+    "proximo": "Falar com o administrativo."
+   }
   },
   {
    "ordem": 66,
@@ -1455,7 +1569,13 @@
    "proximo": "Não contatar mais",
    "fonte": "CNES 0812730 declara grupo gerador (consulta de 09/11/2026); celular do CNES",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T15:58:00-03:00"
+   "ultima_acao": "2026-11-09T15:58:00-03:00",
+   "resposta_cliente": {
+    "grupo": 4,
+    "resposta": "Informou que a empresa encerrou as atividades em 2021.",
+    "contato": "—",
+    "proximo": "Retirado da base."
+   }
   },
   {
    "ordem": 70,
@@ -1637,7 +1757,13 @@
      "numero": "(21) 99994-7455",
      "como": "administração da clínica"
     }
-   ]
+   ],
+   "resposta_cliente": {
+    "grupo": 3,
+    "resposta": "Mensagem automática indicando outro canal de atendimento.",
+    "contato": "(21) 99994-7455",
+    "proximo": "Seguir pelo canal indicado."
+   }
   },
   {
    "ordem": 78,
