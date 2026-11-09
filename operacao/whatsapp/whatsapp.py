@@ -561,15 +561,48 @@ def cmd_relatorio(args) -> None:
         s.append(Paragraph(f"Não houve ação de WhatsApp registrada em {dia.strftime('%d/%m/%Y')}.", body))
 
     if linhas_dia:
-        s.append(Paragraph(f"Empresas contatadas no dia · {len(linhas_dia)}", h2))
-        linhas = [["Conta", "Bairro", "Ação", "Resultado", "Próximo passo"]]
-        for p in linhas_dia:
-            r = p["final"]
-            it = achar(estado, r["conta"]) or {}
-            acoes = " + ".join(dict.fromkeys(p["acoes"]))
-            linhas.append([f"<b>{p['nome']}</b>", p["bairro"], acoes, para_cliente(RESULTADOS[r["resultado"]][0]),
-                           f"{para_cliente(it.get('proximo', RESULTADOS[r['resultado']][4]))} ({br(it.get('prazo'))})"])
-        s.append(tabela(linhas, [40, 23, 33, 32, 46]))
+        # Três grupos: quem respondeu, quem ainda está no prazo de responder e quem não respondeu.
+        RESPONDEU = {"respondeu", "contato_obtido", "resposta_automatica", "recusou", "nao_contatar"}
+        SEM_RETORNO = {"sem_whatsapp", "numero_errado", "1tique"}
+        hist = {}  # resultados de cada conta em todos os dias até o do relatório
+        for arq_d in sorted(DIARIO.glob("*.jsonl")):
+            if arq_d.stem <= dia.isoformat():
+                for l in arq_d.read_text(encoding="utf-8").splitlines():
+                    if l.strip():
+                        r0 = json.loads(l); hist.setdefault(r0["conta"], []).append(r0)
+
+        def grupo(p):
+            rs = hist.get(p["final"]["conta"], [])
+            if any(x["resultado"] in RESPONDEU for x in rs):
+                return "respondeu"
+            if p["final"]["resultado"] in SEM_RETORNO:
+                return "sem_retorno"
+            datas = [x["quando"][:10] for x in rs] + primeiro_crm.get(p["final"]["conta"], [])
+            primeira = min(datas) if datas else dia.isoformat()
+            return "sem_retorno" if primeira < dia.isoformat() else "aguardando"
+
+        # O diário começou em 09/11; os contatos de outubro estão no CRM (tentativas.json).
+        primeiro_crm = {}
+        for t in json.loads((RAIZ / "tentativas.json").read_text(encoding="utf-8")):
+            if "WhatsApp" in (t.get("qualificacao", "") + t.get("canal", "")):
+                primeiro_crm.setdefault(t["conta"], []).append(t["quando"][:10])
+
+        TITULOS = [("respondeu", "Empresas que responderam"),
+                   ("aguardando", "Aguardando resposta (contato feito no dia)"),
+                   ("sem_retorno", "Não responderam (seguem por nova tentativa ou telefone)")]
+        for chave, titulo in TITULOS:
+            grupo_p = [p for p in linhas_dia if grupo(p) == chave]
+            if not grupo_p:
+                continue
+            linhas = [["Empresa", "Bairro", "Ação", "Resultado", "Próximo passo"]]
+            for p in grupo_p:
+                r = p["final"]
+                it = achar(estado, r["conta"]) or {}
+                acoes = " + ".join(dict.fromkeys(p["acoes"]))
+                linhas.append([f"<b>{p['nome']}</b>", p["bairro"], acoes, para_cliente(RESULTADOS[r["resultado"]][0]),
+                               f"{para_cliente(it.get('proximo', RESULTADOS[r['resultado']][4]))} ({br(it.get('prazo'))})"])
+            s.append(Paragraph(f"{titulo} · {len(grupo_p)}", h2))
+            s.append(tabela(linhas, [40, 23, 33, 32, 46]))
 
     if respostas:
         bloco = [Paragraph("Respostas e contatos", h2)]
