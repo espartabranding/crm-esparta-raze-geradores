@@ -247,7 +247,8 @@ def criar_conta(item: dict) -> str:
         "porte": item.get("porte", ""),
         "perfil": [item["perfil"]] if item.get("perfil") else [],
         "sinal": f"Conta aberta pela operação de WhatsApp ({br(agora().date())}), ainda sem pesquisa individual. "
-                 "Celular da ficha do Google Maps, não confirmado em outra fonte.",
+                 + (f"WhatsApp publicado no site oficial ({item['fonte']})." if item.get("fonte")
+                    else "Celular da ficha do Google Maps, não confirmado em outra fonte."),
         "fontes": [],
         "proximo": "",
         "combo": "P1 Prontidão Residencial" if residencial else "",
@@ -344,11 +345,12 @@ def cmd_incluir(args) -> None:
             "ordem": base + n, "chave": f"{args.lote}-{n:02d}", "conta": conta, "lote": args.lote,
             "nome": l.get("nome") or (plano[conta]["empresa"] if conta else ""), "telefone": tel,
             "bairro": l.get("bairro", ""), "municipio": l.get("municipio", "Rio de Janeiro"),
-            "tipo": l.get("tipo", "condominio"), "segmento": plano[conta]["segmento"] if conta else "Condomínios",
+            "tipo": l.get("tipo", "condominio"), "segmento": plano[conta]["segmento"] if conta else (l.get("segmento") or "Condomínios"),
             "cnpj": "".join(ch for ch in l.get("cnpj", "") if ch.isdigit()),
             "perfil": ", ".join(x for x in [l.get("razao_social", ""), l.get("endereco", "")] if x),
             "situacao": "confirmar" if (l.get("observacao") or "").strip() else args.situacao,
             "obs": (l.get("observacao") or "").strip(), "toques": 0, "prazo": None, "proximo": "Primeira mensagem",
+            **({"fonte": l["fonte"].strip()} if (l.get("fonte") or "").strip() else {}),
         })
         novos += 1
     estado["atualizado_em"] = agora().isoformat()

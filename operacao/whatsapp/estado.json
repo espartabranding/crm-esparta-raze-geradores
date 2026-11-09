@@ -1,15 +1,15 @@
 {
  "sobre": "Ponto fixo da operação de WhatsApp da Raze. Atualizado pelo whatsapp.py a cada mensagem registrada.",
- "atualizado_em": "2026-11-09T14:24:56-03:00",
+ "atualizado_em": "2026-11-09T14:34:14-03:00",
  "numero_raze": "WhatsApp Business da Raze Geradores",
  "ultima_sessao": {
   "data": "2026-11-09",
-  "registros": 58,
+  "registros": 66,
   "ultimo_registro": {
-   "conta": "r57",
-   "nome": "Masset",
-   "situacao": "resposta_automatica",
-   "quando": "2026-11-09T14:24:56-03:00"
+   "conta": "w28",
+   "nome": "JB Andrade",
+   "situacao": "enviado",
+   "quando": "2026-11-09T14:34:14-03:00"
   }
  },
  "fila": [
@@ -923,13 +923,14 @@
    "segmento": "Administradoras de condomínios",
    "cnpj": "",
    "perfil": "",
-   "situacao": "resposta_automatica",
+   "situacao": "contato_obtido",
    "obs": "",
    "toques": 1,
    "prazo": "2026-11-10",
-   "proximo": "Responder pedindo o contato do responsável",
+   "proximo": "Abordar o responsável indicado",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T12:29:15-03:00"
+   "ultima_acao": "2026-11-09T14:34:14-03:00",
+   "contato": "E-mail matriz@imodata.net"
   },
   {
    "ordem": 51,
@@ -1034,9 +1035,9 @@
    "prazo": "2026-11-10",
    "proximo": "Abordar o responsável indicado",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T14:24:56-03:00",
+   "ultima_acao": "2026-11-09T14:34:14-03:00",
    "telefone_original": "(21) 99708-5131",
-   "contato": "Setor de condomínio: (21) 3883-2450"
+   "contato": "Guilherme, e-mail precisao@precisaoadm.com.br"
   },
   {
    "ordem": 56,
@@ -1102,6 +1103,74 @@
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T14:24:56-03:00",
    "contato": "Cristiane Marques (atendimento)"
+  },
+  {
+   "ordem": 59,
+   "chave": "L05-01",
+   "conta": "r53",
+   "lote": "L05",
+   "nome": "Housing Imóveis",
+   "telefone": "(21) 2544-0811",
+   "bairro": "",
+   "municipio": "Rio de Janeiro",
+   "tipo": "administradora",
+   "segmento": "Administradoras de condomínios",
+   "cnpj": "",
+   "perfil": "",
+   "situacao": "respondeu",
+   "obs": "",
+   "toques": 1,
+   "prazo": "2026-11-09",
+   "proximo": "Dar sequência à conversa",
+   "fonte": "housing.com.br (botão WhatsApp, fixo com WhatsApp Business)",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T14:34:14-03:00",
+   "contato": "Keila (atendimento ao fornecedor)"
+  },
+  {
+   "ordem": 60,
+   "chave": "L05-02",
+   "conta": "r59",
+   "lote": "L05",
+   "nome": "4D Imobi",
+   "telefone": "(21) 3900-7222",
+   "bairro": "",
+   "municipio": "Rio de Janeiro",
+   "tipo": "administradora",
+   "segmento": "Administradoras de condomínios",
+   "cnpj": "",
+   "perfil": "",
+   "situacao": "resposta_automatica",
+   "obs": "celular do site sem WhatsApp; fixo com WhatsApp Business",
+   "toques": 1,
+   "prazo": "2026-11-10",
+   "proximo": "Responder pedindo o contato do responsável",
+   "fonte": "4di.mobi (botão WhatsApp)",
+   "telefone_original": "(21) 96013-1499",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T14:34:14-03:00"
+  },
+  {
+   "ordem": 61,
+   "chave": "L05-03",
+   "conta": "w28",
+   "lote": "L05",
+   "nome": "JB Andrade",
+   "telefone": "(21) 99139-9321",
+   "bairro": "",
+   "municipio": "Rio de Janeiro",
+   "tipo": "administradora",
+   "segmento": "Administradoras de condomínios",
+   "cnpj": "",
+   "perfil": "",
+   "situacao": "enviado",
+   "obs": "",
+   "toques": 1,
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "fonte": "jbandrade.com.br/administracao-de-imoveis (WhatsApp da página de administração de condomínios)",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T14:34:14-03:00"
   }
  ]
 }
