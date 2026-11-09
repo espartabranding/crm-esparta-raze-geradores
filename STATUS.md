@@ -56,6 +56,10 @@ Segundo o relatório, a carteira do LinkedIn soma 20 conexões, 18 com oferta, e
 
 Fila do Lote 03 ainda não trabalhada: os condomínios 11, 13, 14 e 15, os comerciais 17 e 18, o hospital 19 e os supermercados 21 a 25. Os itens 12 (Damai), 16 (Kaasas) e 20 (HNSA Petrópolis) precisam de confirmação antes de qualquer envio.
 
+## Regra de ICP na operação de WhatsApp (09/11)
+
+Só entra na fila de envio quem tem **prova de gerador registrada** (fonte e data). Em 09/11, 42 contas sem prova (condomínios dos Lotes 01 a 03 e fila do Lote 03) saíram da fila; o Darlington foi encerrado (portaria informou que não há gerador). Bay View, Everglades e Park Premium seguem só para qualificação na conversa. Fonte de prova que funcionou: o CNES (`cnes.datasus.gov.br/services/estabelecimentos-equipamento/{id}`) informa "GRUPO GERADOR" nos equipamentos de infraestrutura — 80 estabelecimentos privados do Rio declaram gerador, 57 de porte médio, em `analises/Saude_com_gerador_CNES_09-11-2026.csv`. Desses, 6 têm WhatsApp no telefone do CNES e foram abordados (Lote 06); os demais vão para ligação.
+
 ## Operação de WhatsApp (ponto fixo, desde 09/11)
 
 A prospecção por WhatsApp passa a ter estado gravado no repositório: `operacao/whatsapp/estado.json`, atualizado por `operacao/whatsapp/whatsapp.py` a cada mensagem registrada, com diário por dia e relatório diário em `analises/Relatorio_WhatsApp_Raze_DD-MM-AAAA.pdf`. Posição inicial (09/11): 49 contas na operação, sendo 3 com material prometido por WhatsApp na ligação de 05/10 (Barki, Além do Sonho e CCLM), 3 mensagens em um tique para reenviar, 19 entregues ou enviadas sem resposta com o segundo toque vencido, 6 sem WhatsApp para ligação, 1 recusa, 12 da fila do Lote 03 em espera (decisão sobre as fontes de contato) e 5 com dado a conferir. Ver `operacao/whatsapp/README.md`.
