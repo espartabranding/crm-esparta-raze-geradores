@@ -1363,5 +1363,50 @@
   "etapa": "tentar",
   "conversou": false,
   "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r57",
+  "quando": "2026-11-09T12:42:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à Masset pelo WhatsApp do site oficial (masset.com.br).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r57",
+  "quando": "2026-11-09T12:42:07-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "Masset respondeu em 09/11 com robô que exige nome completo, CPF e unidade para seguir (só atende condôminos). A Raze explicou que é fornecedora e pediu o contato da manutenção, mas o robô repetiu o cadastro. Próximo passo: ligar para (21) 3037-9850 e pedir o setor de condomínios/manutenção.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "r49",
+  "quando": "2026-11-09T12:42:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à Crase Sigma pelo WhatsApp do site oficial (crasesigma.com.br).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r49",
+  "quando": "2026-11-09T12:42:07-03:00",
+  "qualificacao": "Respondeu",
+  "nota": "Crase Sigma respondeu em 09/11 que a atendente Cristiane Marques vai atender a Raze. Próximo passo: aguardar a Cristiane e pedir o responsável pela manutenção dos condomínios.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-09"
+ },
+ {
+  "conta": "r41",
+  "quando": "2026-11-09T12:42:07-03:00",
+  "qualificacao": "Respondeu",
+  "nota": "Conac respondeu em 09/11: após o menu (Outros assuntos), o atendente Eduardo Sousa assumiu a conversa. A Raze pediu o nome e o contato do responsável pela manutenção dos condomínios administrados. Próximo passo: aguardar o Eduardo.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-09"
  }
 ]
