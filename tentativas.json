@@ -1138,5 +1138,50 @@
   "etapa": "tentar",
   "conversou": false,
   "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w23",
+  "quando": "2026-11-09T12:09:22-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 99883-0273. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w26",
+  "quando": "2026-11-09T12:10:30-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 98054-1846. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w27",
+  "quando": "2026-11-09T12:12:44-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 99969-7506. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "r68",
+  "quando": "2026-11-09T12:12:44-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 96480-2124. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w11",
+  "quando": "2026-11-09T12:12:44-03:00",
+  "qualificacao": "Respondeu",
+  "nota": "Everglades respondeu em 09/11: o assunto é com a Administração, que fica no local (Subsolo 1). A Raze agradeceu e pediu o nome do responsável e o telefone ou WhatsApp da administração. Próximo passo: aguardar o contato; se não vier, ligar para a administração.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-09"
  }
 ]
