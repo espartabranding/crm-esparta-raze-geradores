@@ -1309,5 +1309,59 @@
   "etapa": "apresentar",
   "conversou": true,
   "prazo": "2026-11-09"
+ },
+ {
+  "conta": "r20",
+  "quando": "2026-11-09T12:32:02-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à Atlântida pelo WhatsApp do site oficial (atlantida-adm.com.br, Fale conosco). Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w2",
+  "quando": "2026-11-09T12:34:02-03:00",
+  "qualificacao": "Contato do responsável obtido",
+  "nota": "Bay View enviou em 09/11 o cartão de contato «ADM Bay VIEW», celular (21) 99312-2669 (administração do prédio). A Raze agradeceu. Próximo passo: abordar a administração nesse número.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "r32",
+  "quando": "2026-11-09T12:34:02-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à Pacífica Gestão e Administração pelo WhatsApp do site oficial (pacifica.com.br).",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r32",
+  "quando": "2026-11-09T12:34:02-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "Pacífica respondeu em 09/11 com atendente virtual que pede aceite da política de privacidade e dados de cadastro. Próximo passo: decidir se aceita o cadastro no robô ou ligar para (21) 2518-3700.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "r40",
+  "quando": "2026-11-09T12:36:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à Precisão ADM pelo WhatsApp de atendimento do site oficial (precisaoadm.com.br). Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r41",
+  "quando": "2026-11-09T12:36:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à Conac pelo WhatsApp do site oficial (conac.com.br). Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
  }
 ]

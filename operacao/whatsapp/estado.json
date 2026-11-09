@@ -1,15 +1,15 @@
 {
  "sobre": "Ponto fixo da operação de WhatsApp da Raze. Atualizado pelo whatsapp.py a cada mensagem registrada.",
- "atualizado_em": "2026-11-09T12:31:15-03:00",
+ "atualizado_em": "2026-11-09T12:36:07-03:00",
  "numero_raze": "WhatsApp Business da Raze Geradores",
  "ultima_sessao": {
   "data": "2026-11-09",
-  "registros": 36,
+  "registros": 42,
   "ultimo_registro": {
-   "conta": "w2",
-   "nome": "Edifício Bay View",
-   "situacao": "respondeu",
-   "quando": "2026-11-09T12:31:15-03:00"
+   "conta": "r41",
+   "nome": "Conac",
+   "situacao": "enviado",
+   "quando": "2026-11-09T12:36:07-03:00"
   }
  },
  "fila": [
@@ -41,13 +41,14 @@
    "bairro": "Botafogo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "respondeu",
+   "situacao": "contato_obtido",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-09",
-   "proximo": "Dar sequência à conversa",
+   "prazo": "2026-11-10",
+   "proximo": "Abordar o responsável indicado",
    "obs": "",
-   "ultima_acao": "2026-11-09T12:31:15-03:00"
+   "ultima_acao": "2026-11-09T12:34:02-03:00",
+   "contato": "ADM Bay VIEW: (21) 99312-2669"
   },
   {
    "ordem": 3,
@@ -982,11 +983,13 @@
    "segmento": "Administradoras de condomínios",
    "cnpj": "",
    "perfil": "",
-   "situacao": "a_enviar",
+   "situacao": "enviado",
    "obs": "",
-   "toques": 0,
-   "prazo": null,
-   "proximo": "Primeira mensagem"
+   "toques": 1,
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T12:32:02-03:00"
   },
   {
    "ordem": 54,
@@ -1001,11 +1004,13 @@
    "segmento": "Administradoras de condomínios",
    "cnpj": "",
    "perfil": "",
-   "situacao": "a_enviar",
+   "situacao": "resposta_automatica",
    "obs": "",
-   "toques": 0,
-   "prazo": null,
-   "proximo": "Primeira mensagem"
+   "toques": 1,
+   "prazo": "2026-11-10",
+   "proximo": "Responder pedindo o contato do responsável",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T12:34:02-03:00"
   },
   {
    "ordem": 55,
@@ -1020,11 +1025,13 @@
    "segmento": "Administradoras de condomínios",
    "cnpj": "",
    "perfil": "",
-   "situacao": "a_enviar",
+   "situacao": "enviado",
    "obs": "",
-   "toques": 0,
-   "prazo": null,
-   "proximo": "Primeira mensagem"
+   "toques": 1,
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T12:36:07-03:00"
   },
   {
    "ordem": 56,
@@ -1039,11 +1046,13 @@
    "segmento": "Administradoras de condomínios",
    "cnpj": "",
    "perfil": "",
-   "situacao": "a_enviar",
+   "situacao": "enviado",
    "obs": "",
-   "toques": 0,
-   "prazo": null,
-   "proximo": "Primeira mensagem"
+   "toques": 1,
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T12:36:07-03:00"
   }
  ]
 }
