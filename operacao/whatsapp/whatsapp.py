@@ -472,7 +472,7 @@ def cmd_relatorio(args) -> None:
         if res in ("respondeu", "contato_obtido", "resposta_automatica", "recusou", "nao_contatar"): return "Resposta"
         if res == "followup": return "Acompanhamento"
         if antes == "1_tique": return "Reenvio"
-        if res in ("sem_whatsapp", "numero_errado") and antes in ("a_enviar", "segurar", "confirmar", ""): return "Checagem"
+        if res == "sem_whatsapp": return "Checagem"
         if antes in ("a_enviar", "segurar", "confirmar", ""): return "1ª mensagem"
         return "Atualização"
     por_conta: dict[str, dict] = {}
@@ -485,19 +485,23 @@ def cmd_relatorio(args) -> None:
     linhas_dia = list(por_conta.values())
     ENVIO = {"enviado", "entregue", "1tique", "followup", "material_enviado"}
     enviados = [p for p in linhas_dia if any(x["resultado"] in ENVIO for x in regs if x["nome"] == p["nome"])]
-    entregues = [p for p in enviados if p["final"]["resultado"] in ("entregue", "followup", "material_enviado", "respondeu", "contato_obtido")]
-    respostas = list({r["conta"]: r for r in regs if r["resultado"] in
-                      ("respondeu", "contato_obtido", "resposta_automatica", "recusou", "nao_contatar")}.values())
-    sem_wa = [p for p in linhas_dia if p["final"]["resultado"] in ("sem_whatsapp", "numero_errado")]
+    RESP = ("respondeu", "contato_obtido", "resposta_automatica", "recusou", "nao_contatar", "numero_errado")
+    respostas = list({r["conta"]: r for r in regs if r["resultado"] in RESP}.values())
+    indicados = [p for p in linhas_dia if any(x["resultado"] == "contato_obtido" or "indicou" in x.get("nota", "").lower()
+                                              for x in regs if x["conta"] == p["final"]["conta"])]
+    sem_wa = [p for p in linhas_dia if p["final"]["resultado"] == "sem_whatsapp"]
     primeiras = [p for p in linhas_dia if p["acoes"][0] == "1ª mensagem"]
-    acompanha = [p for p in linhas_dia if p["acoes"][0] in ("Acompanhamento", "Reenvio", "Material")]
+    materiais = [p for p in linhas_dia if p["acoes"][0] == "Material"]
+    reenvios = [p for p in linhas_dia if p["acoes"][0] == "Reenvio"]
+    acompanha = [p for p in linhas_dia if p["acoes"][0] == "Acompanhamento"]
 
     def pl(n, um, varios):
         return f"{n} {um if n == 1 else varios}"
 
     s = []
-    kpis = [(len(enviados), "contas com mensagem enviada"), (len(entregues), "entregues"),
-            (len(respostas), "respostas recebidas"), (len(sem_wa), "números sem WhatsApp")]
+    kpis = [(len(enviados), "mensagens enviadas"), (len(respostas), "respostas recebidas"),
+            (len([r for r in respostas if r["resultado"] != "resposta_automatica"]), "respostas de pessoas"),
+            (len(sem_wa), "números sem WhatsApp")]
     k = Table([[Paragraph(str(n), kpi_n) for n, _ in kpis], [Paragraph(t, kpi_t) for _, t in kpis]],
               colWidths=[43.5 * mm] * 4)
     k.setStyle(TableStyle([("LINEABOVE", (0, 0), (-1, 0), 2, AMARELO), ("TOPPADDING", (0, 0), (-1, 0), 6)]))
@@ -506,9 +510,11 @@ def cmd_relatorio(args) -> None:
     s.append(Paragraph("Resumo", h2))
     if regs:
         detalhe = []
+        if materiais: detalhe.append(pl(len(materiais), "apresentação enviada a quem a pediu", "apresentações enviadas a quem as pediu"))
+        if reenvios: detalhe.append(pl(len(reenvios), "mensagem reenviada", "mensagens reenviadas"))
         if primeiras: detalhe.append(pl(len(primeiras), "primeira mensagem", "primeiras mensagens"))
         if acompanha: detalhe.append(pl(len(acompanha), "mensagem de acompanhamento", "mensagens de acompanhamento"))
-        if respostas: detalhe.append(pl(len(respostas), "resposta tratada", "respostas tratadas"))
+        if respostas: detalhe.append(pl(len(respostas), "resposta recebida", "respostas recebidas"))
         if sem_wa: detalhe.append(pl(len(sem_wa), "número sem WhatsApp, encaminhado", "números sem WhatsApp, encaminhados") + " para ligação")
         s.append(Paragraph(f"Em {dia.strftime('%d/%m/%Y')}, a Raze Geradores trabalhou "
                            f"{pl(len(linhas_dia), 'conta', 'contas')} por WhatsApp"
@@ -529,8 +535,11 @@ def cmd_relatorio(args) -> None:
 
     if respostas:
         bloco = [Paragraph("Respostas e contatos", h2)]
-        for r in {x["conta"]: x for x in respostas}.values():  # a última de cada conta
-            bloco.append(Paragraph(f"<b>{r['nome']}</b>: {r['nota']}", body))
+        import re as _re
+        for r in respostas:
+            nota = _re.sub(r",? com autorização do Rodrigo", "", r["nota"])  # nota interna não vai ao cliente
+            nota = _re.sub(r"^[^:]{0,60}(respondeu|Resposta automática[^:]*) em \d\d/\d\d: ", "", nota)
+            bloco.append(Paragraph(f"<b>{r['nome']}</b>: {nota}", body))
             bloco.append(Spacer(1, 3))
         s.append(KeepTogether(bloco))
 
