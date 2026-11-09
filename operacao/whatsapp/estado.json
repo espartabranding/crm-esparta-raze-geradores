@@ -1,15 +1,15 @@
 {
  "sobre": "Ponto fixo da operação de WhatsApp da Raze. Atualizado pelo whatsapp.py a cada mensagem registrada.",
- "atualizado_em": "2026-11-09T14:34:14-03:00",
+ "atualizado_em": "2026-11-09T15:43:08-03:00",
  "numero_raze": "WhatsApp Business da Raze Geradores",
  "ultima_sessao": {
   "data": "2026-11-09",
-  "registros": 66,
+  "registros": 75,
   "ultimo_registro": {
-   "conta": "w28",
-   "nome": "JB Andrade",
-   "situacao": "enviado",
-   "quando": "2026-11-09T14:34:14-03:00"
+   "conta": "w32",
+   "nome": "Uni Rim Clínica de Nefrologia",
+   "situacao": "resposta_automatica",
+   "quando": "2026-11-09T15:43:08-03:00"
   }
  },
  "fila": [
@@ -23,12 +23,12 @@
    "bairro": "Barra da Tijuca",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T11:57:05-03:00"
   },
   {
@@ -46,7 +46,7 @@
    "ultimo_toque": "2026-11-09",
    "prazo": "2026-11-11",
    "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
-   "obs": "ADM Bay VIEW (indicada pelo prédio)",
+   "obs": "Sem prova de gerador: qualificar na conversa (perguntar se o prédio tem gerador) antes de seguir",
    "ultima_acao": "2026-11-09T14:24:55-03:00",
    "contato": "ADM Bay VIEW: (21) 99312-2669",
    "telefone_original": "(21) 98158-6069"
@@ -61,12 +61,12 @@
    "bairro": "Copacabana",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "numero_errado",
+   "situacao": "nao_contatar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
    "prazo": "2026-11-10",
    "proximo": "Buscar outro contato",
-   "obs": "",
+   "obs": "Portaria informou que o prédio não tem gerador (09/11): fora do ICP",
    "ultima_acao": "2026-11-09T14:24:56-03:00"
   },
   {
@@ -79,12 +79,12 @@
    "bairro": "Flamengo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:03:46-03:00"
   },
   {
@@ -97,12 +97,12 @@
    "bairro": "Flamengo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "sem_whatsapp",
+   "situacao": "segurar",
    "toques": 1,
    "ultimo_toque": "2026-10-26",
-   "prazo": "2026-11-10",
+   "prazo": null,
    "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:20:10-03:00"
   },
   {
@@ -115,12 +115,12 @@
    "bairro": "Leblon",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "sem_whatsapp",
+   "situacao": "segurar",
    "toques": 1,
    "ultimo_toque": "2026-10-26",
-   "prazo": "2026-11-10",
+   "prazo": null,
    "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:20:10-03:00"
   },
   {
@@ -133,12 +133,12 @@
    "bairro": "Leblon",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "enviado",
+   "situacao": "segurar",
    "toques": 1,
    "ultimo_toque": "2026-10-26",
-   "prazo": "2026-11-11",
+   "prazo": null,
    "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T11:53:17-03:00"
   },
   {
@@ -151,12 +151,12 @@
    "bairro": "Leblon",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:03:46-03:00"
   },
   {
@@ -169,12 +169,12 @@
    "bairro": "Barra da Tijuca",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:05:49-03:00"
   },
   {
@@ -187,12 +187,12 @@
    "bairro": "Recreio dos Bandeirantes",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:06:58-03:00"
   },
   {
@@ -210,7 +210,7 @@
    "ultimo_toque": "2026-11-09",
    "prazo": "2026-11-09",
    "proximo": "Dar sequência à conversa",
-   "obs": "",
+   "obs": "Sem prova de gerador: qualificar na conversa (perguntar se o prédio tem gerador) antes de seguir",
    "ultima_acao": "2026-11-09T12:12:44-03:00"
   },
   {
@@ -223,12 +223,12 @@
    "bairro": "Taquara",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:15:57-03:00"
   },
   {
@@ -241,12 +241,12 @@
    "bairro": "Jacarepaguá",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "resposta_automatica",
+   "situacao": "segurar",
    "toques": 1,
    "ultimo_toque": "2026-10-27",
-   "prazo": "2026-11-10",
+   "prazo": null,
    "proximo": "Responder pedindo o contato do responsável",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T11:54:31-03:00"
   },
   {
@@ -259,12 +259,12 @@
    "bairro": "Barra da Tijuca",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "numero_errado",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-10",
+   "prazo": null,
    "proximo": "Buscar outro contato",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:20:10-03:00"
   },
   {
@@ -277,12 +277,12 @@
    "bairro": "Flamengo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "sem_whatsapp",
+   "situacao": "segurar",
    "toques": 0,
    "ultimo_toque": "2026-10-27",
    "prazo": null,
    "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
-   "obs": ""
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 16,
@@ -294,12 +294,12 @@
    "bairro": "Jacarepaguá",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "sem_whatsapp",
+   "situacao": "segurar",
    "toques": 0,
    "ultimo_toque": "2026-10-27",
    "prazo": null,
    "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
-   "obs": ""
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 17,
@@ -311,12 +311,12 @@
    "bairro": "Centro",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "sem_whatsapp",
+   "situacao": "segurar",
    "toques": 0,
    "ultimo_toque": "2026-10-27",
    "prazo": null,
    "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
-   "obs": ""
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 18,
@@ -328,12 +328,12 @@
    "bairro": "Botafogo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "sem_whatsapp",
+   "situacao": "segurar",
    "toques": 0,
    "ultimo_toque": "2026-10-27",
    "prazo": null,
    "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
-   "obs": ""
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 19,
@@ -345,12 +345,12 @@
    "bairro": "Taquara",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:18:32-03:00"
   },
   {
@@ -363,12 +363,12 @@
    "bairro": "Leblon",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:18:32-03:00"
   },
   {
@@ -381,12 +381,12 @@
    "bairro": "Flamengo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "sem_whatsapp",
+   "situacao": "segurar",
    "toques": 0,
    "ultimo_toque": "2026-10-27",
    "prazo": null,
    "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
-   "obs": ""
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 22,
@@ -398,12 +398,12 @@
    "bairro": "Copacabana",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "sem_whatsapp",
+   "situacao": "segurar",
    "toques": 0,
    "ultimo_toque": "2026-10-28",
    "prazo": null,
    "proximo": "Ligar (Camile/Fluke) ou buscar outro contato",
-   "obs": "Buscar outro contato do condomínio"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 23,
@@ -415,12 +415,12 @@
    "bairro": "Jacarepaguá",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:09:22-03:00"
   },
   {
@@ -450,12 +450,12 @@
    "bairro": "Jacarepaguá",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "enviado",
+   "situacao": "segurar",
    "toques": 1,
    "ultimo_toque": "2026-10-28",
-   "prazo": "2026-11-11",
+   "prazo": null,
    "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T11:55:47-03:00"
   },
   {
@@ -468,12 +468,12 @@
    "bairro": "Taquara",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:10:30-03:00"
   },
   {
@@ -486,12 +486,12 @@
    "bairro": "Leblon",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:12:44-03:00"
   },
   {
@@ -504,12 +504,12 @@
    "bairro": "Recreio dos Bandeirantes",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "segurar",
    "toques": 3,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
+   "prazo": null,
    "proximo": "Ligar se não houver resposta",
-   "obs": "Resposta automática da administração; o follow-up de 28/10 pediu o contato do síndico",
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data).",
    "ultima_acao": "2026-11-09T12:12:44-03:00"
   },
   {
@@ -527,7 +527,7 @@
    "ultimo_toque": "2026-11-09",
    "prazo": "2026-11-09",
    "proximo": "Dar sequência à conversa",
-   "obs": "",
+   "obs": "Sem prova de gerador: qualificar na conversa (perguntar se o prédio tem gerador) antes de seguir",
    "ultima_acao": "2026-11-09T14:24:56-03:00"
   },
   {
@@ -604,7 +604,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 34,
@@ -623,7 +623,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 35,
@@ -642,7 +642,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 36,
@@ -657,11 +657,11 @@
    "segmento": "Condomínios",
    "cnpj": "28263198000115",
    "perfil": "Complexo de condomínio no bairro Recreio dos Bandeirantes, Rio de Janeiro, com 83 avaliações no Google.",
-   "situacao": "confirmar",
+   "situacao": "segurar",
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Celular de DDD 24 para prédio no Recreio: pode ser de corretor ou do incorporador"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 37,
@@ -680,7 +680,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 38,
@@ -699,7 +699,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 39,
@@ -718,7 +718,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 40,
@@ -733,11 +733,11 @@
    "segmento": "Condomínios",
    "cnpj": "",
    "perfil": "Complexo de condomínio no bairro Barra da Tijuca, Rio de Janeiro, com 13 avaliações no Google.",
-   "situacao": "confirmar",
+   "situacao": "segurar",
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Nome de empreendimento de casas: pode ser número de venda"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 41,
@@ -756,7 +756,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 42,
@@ -771,11 +771,11 @@
    "segmento": "Comércio e centros comerciais",
    "cnpj": "73383630000166",
    "perfil": "Centro comercial no bairro Leblon, Rio de Janeiro, com 11 avaliações no Google.",
-   "situacao": "confirmar",
+   "situacao": "segurar",
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "CNPJ casado só pelo endereço: conferir"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 43,
@@ -790,11 +790,11 @@
    "segmento": "Saúde",
    "cnpj": "33575127000600",
    "perfil": "Hospital geral privado no bairro Tijuca, Rio de Janeiro, com 103 leitos, 22 de UTI, centro cirúrgico e plantão 24h (CNES).",
-   "situacao": "confirmar",
+   "situacao": "segurar",
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "DDD presumido pelo município (CNES): conferir"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 44,
@@ -809,11 +809,11 @@
    "segmento": "Saúde",
    "cnpj": "32019926000115",
    "perfil": "Hospital geral filantrópico no bairro Valparaíso, Petrópolis, com 110 leitos, 34 de UTI, centro cirúrgico e plantão 24h (CNES).",
-   "situacao": "confirmar",
+   "situacao": "segurar",
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Petrópolis: confirmar se a Raze atende a Região Serrana"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 45,
@@ -832,7 +832,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 46,
@@ -851,7 +851,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 47,
@@ -870,7 +870,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 48,
@@ -889,7 +889,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 49,
@@ -908,7 +908,7 @@
    "toques": 0,
    "prazo": null,
    "proximo": "Primeira mensagem",
-   "obs": "Em espera até a decisão sobre as fontes de contato (STATUS de 28/10)"
+   "obs": "Retirado da fila em 09/11: sem prova de gerador. Só volta com prova registrada (fonte e data)."
   },
   {
    "ordem": 50,
@@ -1117,15 +1117,15 @@
    "segmento": "Administradoras de condomínios",
    "cnpj": "",
    "perfil": "",
-   "situacao": "respondeu",
+   "situacao": "contato_obtido",
    "obs": "",
    "toques": 1,
-   "prazo": "2026-11-09",
-   "proximo": "Dar sequência à conversa",
+   "prazo": "2026-11-10",
+   "proximo": "Abordar o responsável indicado",
    "fonte": "housing.com.br (botão WhatsApp, fixo com WhatsApp Business)",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T14:34:14-03:00",
-   "contato": "Keila (atendimento ao fornecedor)"
+   "ultima_acao": "2026-11-09T15:37:35-03:00",
+   "contato": "Claudia Dias (gerente), housing@housing.com.br"
   },
   {
    "ordem": 60,
@@ -1171,6 +1171,138 @@
    "fonte": "jbandrade.com.br/administracao-de-imoveis (WhatsApp da página de administração de condomínios)",
    "ultimo_toque": "2026-11-09",
    "ultima_acao": "2026-11-09T14:34:14-03:00"
+  },
+  {
+   "ordem": 62,
+   "chave": "L06-01",
+   "conta": "w29",
+   "lote": "L06",
+   "nome": "Prisma Oftalmologia",
+   "telefone": "(21) 99594-5757",
+   "bairro": "Ipanema",
+   "municipio": "Rio de Janeiro",
+   "tipo": "saude",
+   "segmento": " telefone do CNES (WhatsApp Business «Prisma Oftalmologia»)",
+   "cnpj": "",
+   "perfil": "",
+   "situacao": "enviado",
+   "obs": "",
+   "toques": 1,
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "fonte": "CNES 5565391 declara grupo gerador",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T15:43:07-03:00"
+  },
+  {
+   "ordem": 63,
+   "chave": "L06-02",
+   "conta": "w30",
+   "lote": "L06",
+   "nome": "Laboratório De Sant Anna Medicina Diagnóstica",
+   "telefone": "(21) 96845-9159",
+   "bairro": "Campo Grande",
+   "municipio": "Rio de Janeiro",
+   "tipo": "saude",
+   "segmento": " telefone do CNES (WhatsApp Business com o nome do laboratório)",
+   "cnpj": "",
+   "perfil": "",
+   "situacao": "resposta_automatica",
+   "obs": "",
+   "toques": 1,
+   "prazo": "2026-11-10",
+   "proximo": "Responder pedindo o contato do responsável",
+   "fonte": "CNES 4485866 declara grupo gerador",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T15:43:08-03:00"
+  },
+  {
+   "ordem": 64,
+   "chave": "L06-03",
+   "conta": "w31",
+   "lote": "L06",
+   "nome": "RB Laboratório Diagnóstico",
+   "telefone": "(21) 2533-9133",
+   "bairro": "Centro",
+   "municipio": "Rio de Janeiro",
+   "tipo": "saude",
+   "segmento": " telefone do CNES (WhatsApp Business «Rb Laboratorio»)",
+   "cnpj": "",
+   "perfil": "",
+   "situacao": "enviado",
+   "obs": "",
+   "toques": 1,
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "fonte": "CNES 2925370 declara grupo gerador",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T15:43:07-03:00"
+  },
+  {
+   "ordem": 65,
+   "chave": "L06-04",
+   "conta": "w32",
+   "lote": "L06",
+   "nome": "Uni Rim Clínica de Nefrologia",
+   "telefone": "(21) 2573-7577",
+   "bairro": "Penha",
+   "municipio": "Rio de Janeiro",
+   "tipo": "saude",
+   "segmento": " telefone do CNES",
+   "cnpj": "",
+   "perfil": "",
+   "situacao": "resposta_automatica",
+   "obs": "",
+   "toques": 1,
+   "prazo": "2026-11-10",
+   "proximo": "Responder pedindo o contato do responsável",
+   "fonte": "CNES 2269872 declara grupo gerador",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T15:43:08-03:00"
+  },
+  {
+   "ordem": 66,
+   "chave": "L06-05",
+   "conta": "w33",
+   "lote": "L06",
+   "nome": "Agarez Patologia Cirúrgica e Molecular",
+   "telefone": "(21) 96415-3899",
+   "bairro": "Tijuca",
+   "municipio": "Rio de Janeiro",
+   "tipo": "saude",
+   "segmento": " telefone do CNES",
+   "cnpj": "",
+   "perfil": "",
+   "situacao": "enviado",
+   "obs": "",
+   "toques": 1,
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "fonte": "CNES 9357076 declara grupo gerador",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T15:43:07-03:00"
+  },
+  {
+   "ordem": 67,
+   "chave": "L06-06",
+   "conta": "w34",
+   "lote": "L06",
+   "nome": "Clivert",
+   "telefone": "(21) 99618-2269",
+   "bairro": "Barra da Tijuca",
+   "municipio": "Rio de Janeiro",
+   "tipo": "saude",
+   "segmento": " telefone do CNES",
+   "cnpj": "",
+   "perfil": "",
+   "situacao": "enviado",
+   "obs": "",
+   "toques": 1,
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "fonte": "CNES 2922290 declara grupo gerador",
+   "ultimo_toque": "2026-11-09",
+   "ultima_acao": "2026-11-09T15:43:07-03:00"
   }
  ]
 }

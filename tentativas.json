@@ -1579,5 +1579,86 @@
   "etapa": "tentar",
   "conversou": false,
   "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r53",
+  "quando": "2026-11-09T15:37:35-03:00",
+  "qualificacao": "Contato do responsável obtido",
+  "nota": "Housing: a Keila indicou em 09/11 a gerente Claudia Dias, pelo e-mail housing@housing.com.br. A Raze agradeceu. Próximo passo: enviar a apresentação por e-mail à Claudia Dias.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "w29",
+  "quando": "2026-11-09T15:43:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze a Prisma Oftalmologia (ICP comprovado: o CNES declara grupo gerador), pelo telefone registrado no CNES, pedindo o responsável pela parte de energia e gerador. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w30",
+  "quando": "2026-11-09T15:43:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze a Laboratório De Sant Anna (ICP comprovado: o CNES declara grupo gerador), pelo telefone registrado no CNES, pedindo o responsável pela parte de energia e gerador. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w31",
+  "quando": "2026-11-09T15:43:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze a RB Laboratório (ICP comprovado: o CNES declara grupo gerador), pelo telefone registrado no CNES, pedindo o responsável pela parte de energia e gerador. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w32",
+  "quando": "2026-11-09T15:43:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze a Uni Rim (ICP comprovado: o CNES declara grupo gerador), pelo telefone registrado no CNES, pedindo o responsável pela parte de energia e gerador. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w33",
+  "quando": "2026-11-09T15:43:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze a Agarez (ICP comprovado: o CNES declara grupo gerador), pelo telefone registrado no CNES, pedindo o responsável pela parte de energia e gerador. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w34",
+  "quando": "2026-11-09T15:43:07-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze a Clivert (ICP comprovado: o CNES declara grupo gerador), pelo telefone registrado no CNES, pedindo o responsável pela parte de energia e gerador. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w30",
+  "quando": "2026-11-09T15:43:08-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "De Sant Anna respondeu em 09/11 com menu de unidades; a Raze escolheu a Unidade Campo Grande (a do CNES com gerador). Próximo passo: responder o atendente no mesmo dia.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "w32",
+  "quando": "2026-11-09T15:43:08-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "Uni Rim respondeu em 09/11 com menu (Recepção, Administrativo, Enfermagem, Multidisciplinar); a Raze escolheu Administrativo. Próximo passo: responder o atendente no mesmo dia.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
  }
 ]
