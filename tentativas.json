@@ -1408,5 +1408,104 @@
   "etapa": "apresentar",
   "conversou": true,
   "prazo": "2026-11-09"
+ },
+ {
+  "conta": "w2",
+  "quando": "2026-11-09T14:24:55-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem da Raze à administração do Bay View, (21) 99312-2669 (ADM Bay VIEW, contato enviado pelo prédio), pedindo o responsável pelo gerador. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "x7",
+  "quando": "2026-11-09T14:24:55-03:00",
+  "qualificacao": "WhatsApp enviado",
+  "nota": "WhatsApp em 09/11: 1ª mensagem ao time comercial do Além do Sonho, (21) 99491-7249, indicado pela Fernanda. Próximo passo: 2º toque em 11/11 se não houver resposta.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "x10",
+  "quando": "2026-11-09T14:24:55-03:00",
+  "qualificacao": "Material enviado",
+  "nota": "WhatsApp em 09/11: apresentação da Raze enviada ao atendimento da CCLM, (21) 99581-6981, conforme a resposta automática; o robô transferiu para o departamento Fale conosco. Próximo passo: aguardar o atendente; responder no mesmo dia.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-11"
+ },
+ {
+  "conta": "r40",
+  "quando": "2026-11-09T14:24:56-03:00",
+  "qualificacao": "Contato do responsável obtido",
+  "nota": "Precisão: o Vinicius informou em 09/11 que o (21) 99708-5131 é da locação e que o setor de condomínio é o (21) 3883-2450. A Raze agradeceu, escreveu ao setor de condomínio, passou pelo menu (Condomínio > Outros assuntos) e pediu o nome e o contato do responsável pela manutenção dos condomínios. O atendimento respondeu que vai encaminhar a solicitação. Próximo passo: aguardar o retorno.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "r80",
+  "quando": "2026-11-09T14:24:56-03:00",
+  "qualificacao": "Respondeu",
+  "nota": "Park Premium respondeu em 09/11 com «Olá, boa tarde». A Raze se apresentou e perguntou se é com a pessoa que se fala sobre o gerador; se não, pediu o nome e o telefone do síndico ou da administradora. Próximo passo: responder assim que chegar o retorno.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-09"
+ },
+ {
+  "conta": "w3",
+  "quando": "2026-11-09T14:24:56-03:00",
+  "qualificacao": "Número errado",
+  "nota": "Darlington respondeu em 09/11: o número é da portaria e «aqui não tem nenhum gerador». A Raze agradeceu e pediu desculpas pelo incômodo. Próximo passo: confirmar se o prédio tem gerador antes de nova abordagem; se não tiver, encerrar.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "r49",
+  "quando": "2026-11-09T14:24:56-03:00",
+  "qualificacao": "Respondeu",
+  "nota": "Crase Sigma: a atendente Cristiane Marques respondeu em 09/11 com o e-mail crase@crasesigma.com.br e o atendimento foi encerrado. Próximo passo: enviar a apresentação da Raze por e-mail para crase@crasesigma.com.br.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-09"
+ },
+ {
+  "conta": "r41",
+  "quando": "2026-11-09T14:24:56-03:00",
+  "qualificacao": "Respondeu",
+  "nota": "Conac: o atendente Eduardo Sousa pediu em 09/11 que a Raze encaminhe a proposta por e-mail para atendimento@conac.com.br, que eles repassam ao setor responsável; o atendimento foi encerrado. Próximo passo: enviar a apresentação por e-mail para atendimento@conac.com.br.",
+  "etapa": "apresentar",
+  "conversou": true,
+  "prazo": "2026-11-09"
+ },
+ {
+  "conta": "r5",
+  "quando": "2026-11-09T14:24:56-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "ML Administradora encerrou o atendimento automático em 09/11 por falta de interação (o robô exigia aceite da política de privacidade e cadastro de cliente). Próximo passo: ligar para (21) 3032-6400 e pedir o setor de condomínios.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "r32",
+  "quando": "2026-11-09T14:24:56-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "Pacífica encerrou o atendimento automático em 09/11 por falta de interação (o robô exigia aceite da política de privacidade e cadastro). Próximo passo: ligar para (21) 2518-3700 e pedir o setor de condomínios.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
+ },
+ {
+  "conta": "r57",
+  "quando": "2026-11-09T14:24:56-03:00",
+  "qualificacao": "Resposta automática",
+  "nota": "Masset encerrou o atendimento em 09/11; o robô exige nome, CPF e unidade (só atende condôminos). Próximo passo: ligar para (21) 3037-9850 e pedir o setor de condomínios/manutenção.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-10"
  }
 ]

@@ -1,15 +1,15 @@
 {
  "sobre": "Ponto fixo da operação de WhatsApp da Raze. Atualizado pelo whatsapp.py a cada mensagem registrada.",
- "atualizado_em": "2026-11-09T12:42:07-03:00",
+ "atualizado_em": "2026-11-09T14:24:56-03:00",
  "numero_raze": "WhatsApp Business da Raze Geradores",
  "ultima_sessao": {
   "data": "2026-11-09",
-  "registros": 47,
+  "registros": 58,
   "ultimo_registro": {
-   "conta": "r41",
-   "nome": "Conac",
-   "situacao": "respondeu",
-   "quando": "2026-11-09T12:42:07-03:00"
+   "conta": "r57",
+   "nome": "Masset",
+   "situacao": "resposta_automatica",
+   "quando": "2026-11-09T14:24:56-03:00"
   }
  },
  "fila": [
@@ -37,18 +37,19 @@
    "conta": "w2",
    "lote": "L01",
    "nome": "Edifício Bay View",
-   "telefone": "(21) 98158-6069",
+   "telefone": "(21) 99312-2669",
    "bairro": "Botafogo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "contato_obtido",
-   "toques": 2,
+   "situacao": "enviado",
+   "toques": 3,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-10",
-   "proximo": "Abordar o responsável indicado",
-   "obs": "",
-   "ultima_acao": "2026-11-09T12:34:02-03:00",
-   "contato": "ADM Bay VIEW: (21) 99312-2669"
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "obs": "ADM Bay VIEW (indicada pelo prédio)",
+   "ultima_acao": "2026-11-09T14:24:55-03:00",
+   "contato": "ADM Bay VIEW: (21) 99312-2669",
+   "telefone_original": "(21) 98158-6069"
   },
   {
    "ordem": 3,
@@ -60,13 +61,13 @@
    "bairro": "Copacabana",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "numero_errado",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
-   "proximo": "Ligar se não houver resposta",
+   "prazo": "2026-11-10",
+   "proximo": "Buscar outro contato",
    "obs": "",
-   "ultima_acao": "2026-11-09T11:59:33-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00"
   },
   {
    "ordem": 4,
@@ -521,13 +522,13 @@
    "bairro": "Recreio dos Bandeirantes",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "followup",
+   "situacao": "respondeu",
    "toques": 2,
    "ultimo_toque": "2026-11-09",
-   "prazo": "2026-11-12",
-   "proximo": "Ligar se não houver resposta",
+   "prazo": "2026-11-09",
+   "proximo": "Dar sequência à conversa",
    "obs": "",
-   "ultima_acao": "2026-11-09T12:14:49-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00"
   },
   {
    "ordem": 30,
@@ -553,18 +554,19 @@
    "conta": "x7",
    "lote": "Material 05/10",
    "nome": "Além do Sonho Eventos",
-   "telefone": "(21) 96892-8133",
+   "telefone": "(21) 99491-7249",
    "bairro": "Ilha de Guaratiba",
    "tipo": "comercial",
    "segmento": "Hotelaria e eventos",
-   "situacao": "contato_obtido",
-   "toques": 1,
-   "prazo": "2026-11-10",
-   "proximo": "Abordar o responsável indicado",
-   "obs": "Pediu a apresentação por WhatsApp na ligação de 05/10",
+   "situacao": "enviado",
+   "toques": 2,
+   "prazo": "2026-11-11",
+   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "obs": "time comercial indicado pela Fernanda",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T11:51:58-03:00",
-   "contato": "Time comercial: (21) 99491-7249"
+   "ultima_acao": "2026-11-09T14:24:55-03:00",
+   "contato": "Time comercial: (21) 99491-7249",
+   "telefone_original": "(21) 96892-8133"
   },
   {
    "ordem": 32,
@@ -572,17 +574,18 @@
    "conta": "x10",
    "lote": "Material 05/10",
    "nome": "Clínica Cirúrgica Oftalmológica Largo do Machado – CCLM",
-   "telefone": "(21) 98198-5759",
+   "telefone": "(21) 99581-6981",
    "bairro": "Flamengo",
    "tipo": "hospital",
    "segmento": "Saúde",
-   "situacao": "resposta_automatica",
-   "toques": 1,
-   "prazo": "2026-11-10",
-   "proximo": "Responder pedindo o contato do responsável",
-   "obs": "Pediu a apresentação por WhatsApp na ligação de 05/10",
+   "situacao": "material_enviado",
+   "toques": 2,
+   "prazo": "2026-11-11",
+   "proximo": "Confirmar o recebimento do material",
+   "obs": "atendimento indicado pela resposta automática",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T11:51:58-03:00"
+   "ultima_acao": "2026-11-09T14:24:55-03:00",
+   "telefone_original": "(21) 98198-5759"
   },
   {
    "ordem": 33,
@@ -968,7 +971,7 @@
    "prazo": "2026-11-10",
    "proximo": "Responder pedindo o contato do responsável",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T12:31:15-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00"
   },
   {
    "ordem": 53,
@@ -1010,7 +1013,7 @@
    "prazo": "2026-11-10",
    "proximo": "Responder pedindo o contato do responsável",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T12:34:02-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00"
   },
   {
    "ordem": 55,
@@ -1018,20 +1021,22 @@
    "conta": "r40",
    "lote": "L04",
    "nome": "Precisão ADM",
-   "telefone": "(21) 99708-5131",
+   "telefone": "(21) 3883-2450",
    "bairro": "",
    "municipio": "Rio de Janeiro",
    "tipo": "administradora",
    "segmento": "Administradoras de condomínios",
    "cnpj": "",
    "perfil": "",
-   "situacao": "enviado",
-   "obs": "",
+   "situacao": "contato_obtido",
+   "obs": "setor de condomínio indicado pelo Vinicius",
    "toques": 1,
-   "prazo": "2026-11-11",
-   "proximo": "Conferir a entrega e fazer o 2º toque se não houver resposta",
+   "prazo": "2026-11-10",
+   "proximo": "Abordar o responsável indicado",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T12:36:07-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00",
+   "telefone_original": "(21) 99708-5131",
+   "contato": "Setor de condomínio: (21) 3883-2450"
   },
   {
    "ordem": 56,
@@ -1052,7 +1057,7 @@
    "prazo": "2026-11-09",
    "proximo": "Dar sequência à conversa",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T12:42:07-03:00",
+   "ultima_acao": "2026-11-09T14:24:56-03:00",
    "contato": "Eduardo Sousa (atendimento)"
   },
   {
@@ -1074,7 +1079,7 @@
    "prazo": "2026-11-10",
    "proximo": "Responder pedindo o contato do responsável",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T12:42:07-03:00"
+   "ultima_acao": "2026-11-09T14:24:56-03:00"
   },
   {
    "ordem": 58,
@@ -1095,7 +1100,7 @@
    "prazo": "2026-11-09",
    "proximo": "Dar sequência à conversa",
    "ultimo_toque": "2026-11-09",
-   "ultima_acao": "2026-11-09T12:42:07-03:00",
+   "ultima_acao": "2026-11-09T14:24:56-03:00",
    "contato": "Cristiane Marques (atendimento)"
   }
  ]
