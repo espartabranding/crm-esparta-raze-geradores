@@ -1093,5 +1093,50 @@
   "etapa": "tentar",
   "conversou": false,
   "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w4",
+  "quando": "2026-11-09T12:03:46-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 98181-2314. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w8",
+  "quando": "2026-11-09T12:03:46-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: 2º toque da Raze pedindo o responsável pelo gerador; o número aparece como Francois Amorim. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w9",
+  "quando": "2026-11-09T12:05:49-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 99511-3380. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w10",
+  "quando": "2026-11-09T12:06:58-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 96951-5432. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w11",
+  "quando": "2026-11-09T12:08:09-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 96444-2627. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
  }
 ]

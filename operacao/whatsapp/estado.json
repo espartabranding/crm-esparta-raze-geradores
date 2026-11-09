@@ -1,15 +1,15 @@
 {
  "sobre": "Ponto fixo da operação de WhatsApp da Raze. Atualizado pelo whatsapp.py a cada mensagem registrada.",
- "atualizado_em": "2026-11-09T11:59:33-03:00",
+ "atualizado_em": "2026-11-09T12:08:09-03:00",
  "numero_raze": "WhatsApp Business da Raze Geradores",
  "ultima_sessao": {
   "data": "2026-11-09",
-  "registros": 12,
+  "registros": 17,
   "ultimo_registro": {
-   "conta": "w3",
-   "nome": "Edifício Darlington",
+   "conta": "w11",
+   "nome": "Everglades Escritórios",
    "situacao": "followup",
-   "quando": "2026-11-09T11:59:33-03:00"
+   "quando": "2026-11-09T12:08:09-03:00"
   }
  },
  "fila": [
@@ -77,12 +77,13 @@
    "bairro": "Flamengo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:03:46-03:00"
   },
   {
    "ordem": 5,
@@ -146,12 +147,13 @@
    "bairro": "Leblon",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:03:46-03:00"
   },
   {
    "ordem": 9,
@@ -163,12 +165,13 @@
    "bairro": "Barra da Tijuca",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:05:49-03:00"
   },
   {
    "ordem": 10,
@@ -180,12 +183,13 @@
    "bairro": "Recreio dos Bandeirantes",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:06:58-03:00"
   },
   {
    "ordem": 11,
@@ -197,12 +201,13 @@
    "bairro": "Recreio dos Bandeirantes",
    "tipo": "comercial",
    "segmento": "Comércio e centros comerciais",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T12:08:09-03:00"
   },
   {
    "ordem": 12,
