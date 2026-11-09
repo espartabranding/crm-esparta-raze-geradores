@@ -1,15 +1,15 @@
 {
  "sobre": "Ponto fixo da operação de WhatsApp da Raze. Atualizado pelo whatsapp.py a cada mensagem registrada.",
- "atualizado_em": "2026-11-09T11:55:47-03:00",
+ "atualizado_em": "2026-11-09T11:59:33-03:00",
  "numero_raze": "WhatsApp Business da Raze Geradores",
  "ultima_sessao": {
   "data": "2026-11-09",
-  "registros": 9,
+  "registros": 12,
   "ultimo_registro": {
-   "conta": "w25",
-   "nome": "Conjunto Residencial Âncora",
-   "situacao": "enviado",
-   "quando": "2026-11-09T11:55:47-03:00"
+   "conta": "w3",
+   "nome": "Edifício Darlington",
+   "situacao": "followup",
+   "quando": "2026-11-09T11:59:33-03:00"
   }
  },
  "fila": [
@@ -23,12 +23,13 @@
    "bairro": "Barra da Tijuca",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T11:57:05-03:00"
   },
   {
    "ordem": 2,
@@ -40,12 +41,13 @@
    "bairro": "Botafogo",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T11:58:18-03:00"
   },
   {
    "ordem": 3,
@@ -57,12 +59,13 @@
    "bairro": "Copacabana",
    "tipo": "condominio",
    "segmento": "Condomínios",
-   "situacao": "entregue",
-   "toques": 1,
-   "ultimo_toque": "2026-10-26",
-   "prazo": null,
-   "proximo": "2º toque se não houver resposta",
-   "obs": ""
+   "situacao": "followup",
+   "toques": 2,
+   "ultimo_toque": "2026-11-09",
+   "prazo": "2026-11-12",
+   "proximo": "Ligar se não houver resposta",
+   "obs": "",
+   "ultima_acao": "2026-11-09T11:59:33-03:00"
   },
   {
    "ordem": 4,

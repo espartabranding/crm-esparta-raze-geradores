@@ -1066,5 +1066,32 @@
   "etapa": "tentar",
   "conversou": false,
   "prazo": "2026-11-11"
+ },
+ {
+  "conta": "w1",
+  "quando": "2026-11-09T11:57:05-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 97931-4846. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w2",
+  "quando": "2026-11-09T11:58:18-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 98158-6069. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
+ },
+ {
+  "conta": "w3",
+  "quando": "2026-11-09T11:59:33-03:00",
+  "qualificacao": "Follow-up por WhatsApp",
+  "nota": "WhatsApp em 09/11: Follow-up por WhatsApp, número (21) 99303-5879. Próximo passo: ligar se não houver resposta, em 12/11.",
+  "etapa": "tentar",
+  "conversou": false,
+  "prazo": "2026-11-12"
  }
 ]
